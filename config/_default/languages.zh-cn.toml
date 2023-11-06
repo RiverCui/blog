@@ -7,19 +7,19 @@ title = "River's Blog"
   displayName = "中文"
   isoCode = "zh-cn"
   rtl = false
-  dateFormat = "2 January 2006"
+  dateFormat = "2006-01-02"
   # logo = "img/logo.png"
   # secondaryLogo = "img/secondary-logo.png"
   # description = "My awesome website"
   # copyright = "Copy, _right?_ :thinking_face:"
 
 [author]
-  name = "CuiYulu"
+  name = "River"
   image = "img/author.jpeg"
   headline = "Hi there!"
   bio = "A self-taught developer who loves to build things."
   links = [
-    { email = "cuiyulu@outlook.it" },
+    { email = "RiverTsui@outlook.com" },
     { github = "https://github.com/RiverCui" },
 #     { link = "https://link-to-some-website.com/" },
 #     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },

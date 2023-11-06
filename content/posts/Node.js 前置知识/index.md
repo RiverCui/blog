@@ -1,14 +1,20 @@
-+++
-title = 'Node.js'
-date = 2023-11-02T14:49:48+08:00
-tags = ["Node.js"]
-+++
-# Node.js 是 JavaScript 运行时环境
+---
+title: 'Node.js 前置知识'
+date: 2023-11-06
+draft: false
+description: "Node.js 学习笔记"
+summary: "Node.js 并不是一种语言而是一个平台，是 JavaScript 的**运行时环境**。"
+tags: ["Node.js"]
+series: ["Node.js"]
+series_order: 1
+---
+## Node.js 是 JavaScript 运行时环境
+
 > Node.js® is an open-source, cross-platform JavaScript runtime environment.
 
 引用来源：[Node.js](https://nodejs.org/en)
 
-Node.js 并不是一种语言而是一个平台，为 JavaScript 提供**运行时环境**(runtime environment)/宿主环境(host environment)。
+Node.js 并不是一种语言而是一个平台，是 JavaScript 的**运行时环境**(runtime environment)/宿主环境(host environment)。
 
 讨论 Node.js 就不得不提到 Chrome V8 引擎。09年，谷歌开始研发 Chrome 浏览器，这也是现今使用最为广泛的浏览器，由 Lars Bak 领导开发的 Chrome V8 引擎也相应问世，JavaScript 就此展开了一场性能革命，Node.js 就是基于 Chrome V8 引擎构建的。随后，Node.js 的作者 Ryan Dahl 还构建了 [Deno](https://github.com/denoland/deno)。
 
@@ -22,7 +28,8 @@ Node.js 并不是一种语言而是一个平台，为 JavaScript 提供**运行�
 - 到了引擎层面，除了上文提到的 Chrome V8 外，还有 SpiderMonkey、QuickJS、JerryScript 等常见引擎。
 - 最上面是运行时环境，基于 Chrome V8 封装的运行时环境有 Node.js、Chromium、Deno、CloudFlare Workers，Firefox 是基于 SpiderMonkey 封装的运行时环境。
 
-# Node.js 基本架构
+## Node.js 基本架构
+
 ![Node.js 架构图](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/nodejs-architecture-diagram.png)
 图片来源：[medium.com](https://chathuranga94.medium.com/nodejs-architecture-concurrency-model-f71da5f53d1d)
 
@@ -32,7 +39,8 @@ Node.js 是运行在操作系统之上的，底层由 Chrome V8 引擎和一些 
 
 再上一层是 Node.js 的 API 层，我们使用 Node.js 开发应用，主要使用的就是 API 层，Node.js 应用最终运行在 API 层之上。
 
-# Node.js 使用场景
+## Node.js 使用场景
+
 - 服务端
   
   Node.js 提供了基于事件驱动和非阻塞的接口，可用于编写高并发状态下的程序，而且 JavaScript 的匿名函数、闭包、回调函数等特性就是为事件驱动而设计的。
