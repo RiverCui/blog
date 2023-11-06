@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My New Hugo Site</title>
-    <link>https://example.org/tags/</link>
-    <description>Recent content in Tags on My New Hugo Site</description>
+    <title>Tags on River&#39;s Blog</title>
+    <link>https://cuiyulu.me/tags/</link>
+    <description>Recent content in Tags on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <copyright>© 2023 CuiYulu</copyright>
+    <lastBuildDate>Thu, 02 Nov 2023 14:49:48 +0800</lastBuildDate><atom:link href="https://cuiyulu.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Node.js</title>
+      <link>https://cuiyulu.me/tags/node.js/</link>
+      <pubDate>Thu, 02 Nov 2023 14:49:48 +0800</pubDate>
+      
+      <guid>https://cuiyulu.me/tags/node.js/</guid>
+      <description></description>
+      
+    </item>
+    
   </channel>
 </rss>

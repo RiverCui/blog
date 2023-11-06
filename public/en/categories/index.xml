@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on River&#39;s Blog</title>
-    <link>https://cuiyulu.me/categories/</link>
+    <link>https://cuiyulu.me/en/categories/</link>
     <description>Recent content in Categories on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en</language>
     <copyright>© 2023 CuiYulu</copyright>
-    <atom:link href="https://cuiyulu.me/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cuiyulu.me/en/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
