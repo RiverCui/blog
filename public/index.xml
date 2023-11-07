@@ -6,16 +6,16 @@
     <description>Recent content on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>© 2023 CuiYulu</copyright>
-    <lastBuildDate>Thu, 02 Nov 2023 14:49:48 +0800</lastBuildDate><atom:link href="https://cuiyulu.me/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2023 River</copyright>
+    <lastBuildDate>Mon, 06 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cuiyulu.me/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Node.js</title>
-      <link>https://cuiyulu.me/posts/%E5%88%9D%E8%AF%86-node.js/</link>
-      <pubDate>Thu, 02 Nov 2023 14:49:48 +0800</pubDate>
+      <title>Node.js 前置知识</title>
+      <link>https://cuiyulu.me/posts/node.js-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://cuiyulu.me/posts/%E5%88%9D%E8%AF%86-node.js/</guid>
-      <description>Node.</description>
-      
+      <guid>https://cuiyulu.me/posts/node.js-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</guid>
+      <description>Node.js 并不是一种语言而是一个平台，是 JavaScript 的&lt;strong&gt;运行时环境&lt;/strong&gt;。</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://cuiyulu.me/posts/node.js-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/featured.jpg" />
     </item>
     
   </channel>
