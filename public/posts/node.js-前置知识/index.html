@@ -97,7 +97,7 @@
     "keywords": ["Node.js"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "171"
+    "wordCount": "169"
   }]
   </script>
 
@@ -746,8 +746,8 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#nodejs-是-javascript-运行时环境">Node.js 是 JavaScript 运行时环境</a></li>
-    <li><a href="#nodejs-基本架构">Node.js 基本架构</a></li>
-    <li><a href="#nodejs-使用场景">Node.js 使用场景</a></li>
+    <li><a href="#基本架构">基本架构</a></li>
+    <li><a href="#使用场景">使用场景</a></li>
   </ul>
 </nav>
   </div>
@@ -762,8 +762,8 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#nodejs-是-javascript-运行时环境">Node.js 是 JavaScript 运行时环境</a></li>
-    <li><a href="#nodejs-基本架构">Node.js 基本架构</a></li>
-    <li><a href="#nodejs-使用场景">Node.js 使用场景</a></li>
+    <li><a href="#基本架构">基本架构</a></li>
+    <li><a href="#使用场景">使用场景</a></li>
   </ul>
 </nav>
   </div>
@@ -834,12 +834,12 @@
 <li>到了引擎层面，除了上文提到的 Chrome V8 外，还有 SpiderMonkey、QuickJS、JerryScript 等常见引擎。</li>
 <li>最上面是运行时环境，基于 Chrome V8 封装的运行时环境有 Node.js、Chromium、Deno、CloudFlare Workers，Firefox 是基于 SpiderMonkey 封装的运行时环境。</li>
 </ul>
-<div id="nodejs-基本架构" class="anchor"></div>
-<h2 class="relative group">Node.js 基本架构 
+<div id="基本架构" class="anchor"></div>
+<h2 class="relative group">基本架构 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#nodejs-%e5%9f%ba%e6%9c%ac%e6%9e%b6%e6%9e%84" aria-label="锚点">#</a></span>        
+            style="text-decoration-line: none !important;" href="#%e5%9f%ba%e6%9c%ac%e6%9e%b6%e6%9e%84" aria-label="锚点">#</a></span>        
     
 </h2>
 <p>
@@ -858,12 +858,12 @@
 <p>Node.js 是运行在操作系统之上的，底层由 Chrome V8 引擎和一些 C/C++ 写的库构成，比如 libUv、c-ares、llhttp/http-parser、open-ssl、zlib等。其中，libUV 负责处理事件循环，c-ares、llhttp/http-parser、open-ssl、zlib 等库提供 DNS 解析、HTTP 协议、HTTPS 和文件压缩等功能。</p>
 <p>中间层由 Node.js Bindings、Node.js Standard Library 和 C/C++ AddOns 构成。<strong>Node.js Bindings</strong> 层的作用是将底层那些用 C/C++ 写的库接口暴露给 JS 环境，而 <strong>Node.js Standard Library</strong> 是 Node.js 本身的核心模块。至于 <strong>C/C++ AddOns</strong>，它可以让用户自己的 C/C++ 模块通过桥接的方式提供给Node.js。</p>
 <p>再上一层是 Node.js 的 API 层，我们使用 Node.js 开发应用，主要使用的就是 API 层，Node.js 应用最终运行在 API 层之上。</p>
-<div id="nodejs-使用场景" class="anchor"></div>
-<h2 class="relative group">Node.js 使用场景 
+<div id="使用场景" class="anchor"></div>
+<h2 class="relative group">使用场景 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#nodejs-%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af" aria-label="锚点">#</a></span>        
+            style="text-decoration-line: none !important;" href="#%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af" aria-label="锚点">#</a></span>        
     
 </h2>
 <ul>
@@ -883,8 +883,8 @@
 <p>除了通过 WebGL 在浏览器里写前端页面上的游戏、通过 Electron 封装成看起来像端游的游戏外，JavaScript 还能通过 Node.js 的 binding 去使用 OpenGL 甚至 DirectX 去写货真价实的桌面游戏。</p>
 </li>
 <li>
-<p>机器学习
-<a href="https://github.com/alibaba/pipcook"   target="_blank">
+<p>机器学习</p>
+<p><a href="https://github.com/alibaba/pipcook"   target="_blank">
     pipcook</a></p>
 </li>
 </ul>

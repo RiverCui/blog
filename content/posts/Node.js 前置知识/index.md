@@ -28,7 +28,7 @@ Node.js 并不是一种语言而是一个平台，是 JavaScript 的**运行时�
 - 到了引擎层面，除了上文提到的 Chrome V8 外，还有 SpiderMonkey、QuickJS、JerryScript 等常见引擎。
 - 最上面是运行时环境，基于 Chrome V8 封装的运行时环境有 Node.js、Chromium、Deno、CloudFlare Workers，Firefox 是基于 SpiderMonkey 封装的运行时环境。
 
-## Node.js 基本架构
+## 基本架构
 
 ![Node.js 架构图](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/nodejs-architecture-diagram.png)
 图片来源：[medium.com](https://chathuranga94.medium.com/nodejs-architecture-concurrency-model-f71da5f53d1d)
@@ -39,7 +39,7 @@ Node.js 是运行在操作系统之上的，底层由 Chrome V8 引擎和一些 
 
 再上一层是 Node.js 的 API 层，我们使用 Node.js 开发应用，主要使用的就是 API 层，Node.js 应用最终运行在 API 层之上。
 
-## Node.js 使用场景
+## 使用场景
 
 - 服务端
   
@@ -58,6 +58,7 @@ Node.js 是运行在操作系统之上的，底层由 Chrome V8 引擎和一些 
   除了通过 WebGL 在浏览器里写前端页面上的游戏、通过 Electron 封装成看起来像端游的游戏外，JavaScript 还能通过 Node.js 的 binding 去使用 OpenGL 甚至 DirectX 去写货真价实的桌面游戏。
 
 - 机器学习
+  
   [pipcook](https://github.com/alibaba/pipcook)
 
 Node.js 最早被设想为一种用于构建服务端应用的技术，但作为运行在操作系统中的 JavaScript 运行时环境，它已经成为了一个平台，可适配领域涵盖了泛前端和后端，传统服务和 Serverless，工具、商业、游戏等等。
