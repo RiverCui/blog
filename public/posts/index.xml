@@ -18,5 +18,15 @@
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://cuiyulu.me/posts/node.js-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/featured.jpg" />
     </item>
     
+    <item>
+      <title>模块管理</title>
+      <link>https://cuiyulu.me/posts/%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cuiyulu.me/posts/%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/</guid>
+      <description>&lt;code&gt;CommonJS&lt;/code&gt; 和 &lt;code&gt;ES Modules&lt;/code&gt; 是 JavaScript 中两种主要的模块系统。</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://cuiyulu.me/posts/%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/featured.jpg" />
+    </item>
+    
   </channel>
 </rss>
