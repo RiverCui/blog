@@ -768,7 +768,7 @@
       <ul>
         <li><a href="#cjs-动态加载"><code>CJS</code> 动态加载</a></li>
         <li><a href="#esm-静态加载"><code>ESM</code> 静态加载</a></li>
-        <li><a href="#esm-实现异步加载"><code>ESM</code> 实现异步加载</a></li>
+        <li><a href="#esm-实现动态加载"><code>ESM</code> 实现动态加载</a></li>
       </ul>
     </li>
     <li><a href="#esm-向下兼容"><code>ESM</code> 向下兼容</a></li>
@@ -808,7 +808,7 @@
       <ul>
         <li><a href="#cjs-动态加载"><code>CJS</code> 动态加载</a></li>
         <li><a href="#esm-静态加载"><code>ESM</code> 静态加载</a></li>
-        <li><a href="#esm-实现异步加载"><code>ESM</code> 实现异步加载</a></li>
+        <li><a href="#esm-实现动态加载"><code>ESM</code> 实现动态加载</a></li>
       </ul>
     </li>
     <li><a href="#esm-向下兼容"><code>ESM</code> 向下兼容</a></li>
@@ -1071,12 +1071,12 @@
 <li><strong>编译时加载</strong>。模块依赖关系在编译时就确定。<code>import</code> 和 <code>export</code> 都必须放在最外层，不能被包含在函数或条件语句内。</li>
 <li><strong>异步加载</strong>。异步加载允许代码在模块下载和处理期间继续执行，解决了阻塞问题，当然也使模块管理更加复杂。</li>
 </ul>
-<div id="esm-实现异步加载" class="anchor"></div>
-<h3 class="relative group"><code>ESM</code> 实现异步加载 
+<div id="esm-实现动态加载" class="anchor"></div>
+<h3 class="relative group"><code>ESM</code> 实现动态加载 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#esm-%e5%ae%9e%e7%8e%b0%e5%bc%82%e6%ad%a5%e5%8a%a0%e8%bd%bd" aria-label="锚点">#</a></span>        
+            style="text-decoration-line: none !important;" href="#esm-%e5%ae%9e%e7%8e%b0%e5%8a%a8%e6%80%81%e5%8a%a0%e8%bd%bd" aria-label="锚点">#</a></span>        
     
 </h3>
 <p><code>ESM</code> 不允许 <code>import</code> 语句用动态路径，也不允许在语句块中使用，但允许通过使用 <code>import()</code> 函数实现<strong>动态加载</strong>，而且是<strong>异步</strong>进行的。</p>
