@@ -10,9 +10,7 @@ series_order: 1
 ---
 ## Node.js 是 JavaScript 运行时环境
 
-> Node.js® is an open-source, cross-platform JavaScript runtime environment.
-
-引用来源：[Node.js](https://nodejs.org/en)
+> Node.js® is an open-source, cross-platform JavaScript runtime environment.<center><font size=2>引用来源：[Node.js](https://nodejs.org/en)</font></center>
 
 Node.js 并不是一种语言而是一个平台，是 JavaScript 的**运行时环境**(runtime environment)/宿主环境(host environment)。
 
@@ -20,8 +18,7 @@ Node.js 并不是一种语言而是一个平台，是 JavaScript 的**运行时�
 
 如今，JavaScript 的层级架构也基本趋于稳定，如图：
 
-![JavaScript 架构图](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/js-architecture-diagram.png)
-图片来源：[掘金小册](https://juejin.cn/book/7196627546253819916/section/7195089399787290635)
+![JavaScript 架构图](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/js-architecture-diagram.png)<center><font size=2>图片来源：[掘金小册](https://juejin.cn/book/7196627546253819916/section/7195089399787290635)</font></center>
 
 - 最下面的层级是**脚本语言规范**(Spec)，[ECMAScript](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)。
 - 再往上一层是语言实现，JavaScript、JScript、ActionScript 等都是对 ECMAScript 的语言实现。
