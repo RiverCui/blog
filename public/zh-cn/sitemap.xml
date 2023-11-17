@@ -17,6 +17,15 @@
   
     
       <url>
+            <loc>https://cuiyulu.me/posts/npm/</loc>
+            <lastmod>2023-11-06T00:00:00+00:00</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+          </url>
+    
+  
+    
+      <url>
             <loc>https://cuiyulu.me/posts/</loc>
             <lastmod>2023-11-06T00:00:00+00:00</lastmod>
             <changefreq>daily</changefreq>
