@@ -8,17 +8,8 @@
   
     
       <url>
-            <loc>https://cuiyulu.me/posts/node.js-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</loc>
-            <lastmod>2023-11-06T00:00:00+00:00</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-    
-  
-    
-      <url>
             <loc>https://cuiyulu.me/posts/npm/</loc>
-            <lastmod>2023-11-06T00:00:00+00:00</lastmod>
+            <lastmod>2023-11-17T00:00:00+00:00</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -27,7 +18,7 @@
     
       <url>
             <loc>https://cuiyulu.me/posts/</loc>
-            <lastmod>2023-11-06T00:00:00+00:00</lastmod>
+            <lastmod>2023-11-17T00:00:00+00:00</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -36,7 +27,7 @@
     
       <url>
             <loc>https://cuiyulu.me/</loc>
-            <lastmod>2023-11-06T00:00:00+00:00</lastmod>
+            <lastmod>2023-11-17T00:00:00+00:00</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
             <xhtml:link
@@ -59,6 +50,15 @@
     
       <url>
             <loc>https://cuiyulu.me/posts/%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/</loc>
+            <lastmod>2023-11-16T00:00:00+00:00</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+          </url>
+    
+  
+    
+      <url>
+            <loc>https://cuiyulu.me/posts/node.js-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</loc>
             <lastmod>2023-11-06T00:00:00+00:00</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>

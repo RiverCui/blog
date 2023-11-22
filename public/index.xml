@@ -7,21 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2023 River</copyright>
-    <lastBuildDate>Mon, 06 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cuiyulu.me/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Node.js 前置知识</title>
-      <link>https://cuiyulu.me/posts/node.js-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</link>
-      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://cuiyulu.me/posts/node.js-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</guid>
-      <description>Node.js 并不是一种语言而是一个平台，是 JavaScript 的&lt;strong&gt;运行时环境&lt;/strong&gt;。</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://cuiyulu.me/posts/node.js-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/featured.jpg" />
-    </item>
-    
+    <lastBuildDate>Fri, 17 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cuiyulu.me/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NPM</title>
       <link>https://cuiyulu.me/posts/npm/</link>
-      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 17 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://cuiyulu.me/posts/npm/</guid>
       <description>npm 是 JavaScript 的包管理工具。</description>
@@ -31,11 +21,21 @@
     <item>
       <title>模块管理</title>
       <link>https://cuiyulu.me/posts/%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/</link>
-      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://cuiyulu.me/posts/%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/</guid>
       <description>&lt;code&gt;CommonJS&lt;/code&gt; 和 &lt;code&gt;ES Modules&lt;/code&gt; 是 JavaScript 中两种主要的模块系统。</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://cuiyulu.me/posts/%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Node.js 前置知识</title>
+      <link>https://cuiyulu.me/posts/node.js-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cuiyulu.me/posts/node.js-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</guid>
+      <description>Node.js 并不是一种语言而是一个平台，是 JavaScript 的&lt;strong&gt;运行时环境&lt;/strong&gt;。</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://cuiyulu.me/posts/node.js-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/featured.jpg" />
     </item>
     
   </channel>
