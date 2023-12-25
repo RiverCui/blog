@@ -96,7 +96,7 @@
     "keywords": ["HTTP 协议","HTTPS 协议","vite"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "168"
+    "wordCount": "171"
   }]
   </script>
 
@@ -824,7 +824,7 @@
 
 
         <div class="max-w-prose mb-20">
-          <p>我最近在开发一个能提供扫码功能的简单网页，扫码功能需要调用相机权限，浏览器出于安全考虑只在 HTTPS 环境下允许，所以想要在本地调试这些功能，需要为本地开发服务器配置 HTTPS。有很多方法去实现这个功能，下面我会介绍两种方法，足够在开发中使用。</p>
+          <p>我最近在开发一个能够提供扫码功能的网页，但是扫码功能需要调用相机权限，浏览器出于安全考虑只在 HTTPS 环境下允许。所以想要在本地调试这些功能，需要为本地开发服务器配置 HTTPS。解决这个问题的本质就是<strong>生成本地证书和自签名</strong>，网上能找到很多方法，在这里我会介绍两种，看到这篇博客的朋友可以跟着下面的步骤实践，足够你在简单基础的开发中去使用。</p>
 <div id="mkcert" class="anchor"></div>
 <h2 class="relative group">mkcert 
     <span
@@ -833,8 +833,8 @@
             style="text-decoration-line: none !important;" href="#mkcert" aria-label="锚点">#</a></span>        
     
 </h2>
-<p>解决办法是生成本地证书和自签名 SSL，我这里用了 <a href="https://github.com/FiloSottile/mkcert"   target="_blank">
-    mkcert</a> 工具。<code>mkcert</code> 的使用和证书配置步骤如下：</p>
+<p><a href="https://github.com/FiloSottile/mkcert"   target="_blank">
+    mkcert</a> 是一个简化了的本地 CA 工具，用来生成有效的本地 HTTPS 证书。<code>mkcert</code> 的使用和证书配置步骤如下：</p>
 <div id="1安装" class="anchor"></div>
 <h3 class="relative group">1.安装 
     <span
@@ -866,7 +866,7 @@
     
 </h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkcert localhost 127.0.0.1 ::1
-</span></span></code></pre></div><p>创建成功后，Terminal 会显示证书的存放位置和过期时间</p>
+</span></span></code></pre></div><p>创建成功后，Terminal 会显示证书的存放位置和过期时间，如下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">The certificate is at <span class="s2">&#34;./localhost+2.pem&#34;</span> and the key at <span class="s2">&#34;./localhost+2-key.pem&#34;</span> ✅
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">It will expire on <span class="m">25</span> March <span class="m">2026</span> 🗓
@@ -878,7 +878,19 @@
             style="text-decoration-line: none !important;" href="#4%e5%b0%86%e8%af%81%e4%b9%a6%e5%ad%98%e6%94%be%e5%9c%a8%e9%a1%b9%e7%9b%ae%e4%b8%ad" aria-label="锚点">#</a></span>        
     
 </h3>
-<p>我在项目目录下新建了一个名为 <code>cert</code> 的文件夹，并将刚才生成的 <code>localhost+2.pem</code> 和 <code>localhost+2-key.pem</code> 移动到该目录下。</p>
+<p>在项目目录下新建一个文件夹，方便管理证书。</p>
+<p>例如我在我的项目目录下新建了一个 <code>cert</code> 的文件夹，并将刚才生成的 <code>localhost+2.pem</code> 和 <code>localhost+2-key.pem</code> 移动到该目录下。</p>
+<p>
+
+
+
+
+  <figure>
+    <img class="my-0 rounded-md" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202312252213449.png" alt="存放证书" />
+    
+  </figure>
+
+</p>
 <div id="5配置-vite-以使用-https" class="anchor"></div>
 <h3 class="relative group">5.配置 vite 以使用 HTTPS 
     <span
@@ -888,7 +900,7 @@
     
 </h3>
 <p>我的项目技术栈是 <code>vue3 + vite</code>，所以这里配置的是 <code>vite.config.js</code> 文件，如果你使用其他构建工具(比如<code>vue-cli + webpack</code>)，配置方法也都大同小异，只需查阅官方文档做出相应调整即可。
-注意：修改配置后重新运行服务。</p>
+注意：修改配置后记得重新运行服务。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// vite.config.js
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">fs</span> <span class="nx">from</span> <span class="s1">&#39;fs&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">path</span> <span class="nx">from</span> <span class="s1">&#39;path&#39;</span><span class="p">;</span>
