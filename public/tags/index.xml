@@ -7,7 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2023 River</copyright>
-    <lastBuildDate>Fri, 17 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cuiyulu.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cuiyulu.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTTP 协议</title>
+      <link>https://cuiyulu.me/tags/http-%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cuiyulu.me/tags/http-%E5%8D%8F%E8%AE%AE/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>HTTPS 协议</title>
+      <link>https://cuiyulu.me/tags/https-%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cuiyulu.me/tags/https-%E5%8D%8F%E8%AE%AE/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>vite</title>
+      <link>https://cuiyulu.me/tags/vite/</link>
+      <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cuiyulu.me/tags/vite/</guid>
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>Node.js</title>
       <link>https://cuiyulu.me/tags/node.js/</link>

@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>NPM &middot; River&#39;s Blog</title>
-  <meta name="title" content="NPM &middot; River&#39;s Blog" />
+  <title>为本地开发服务器配置 HTTPS 协议 &middot; River&#39;s Blog</title>
+  <meta name="title" content="为本地开发服务器配置 HTTPS 协议 &middot; River&#39;s Blog" />
   
-  <meta name="description" content="npm 是 JavaScript 的包管理工具。" />
-  <meta name="keywords" content="Node.js, " />
+  <meta name="description" content="在前端开发过程中，本地运行调试时默认使用 HTTP 协议，而调用某些敏感的功能（比如相机、麦克风、地理位置等）时，浏览器出于安全考虑，只允许在 HTTPS 协议下调用，本文就讲述了如何在本地开发环境中配置 HTTPS。" />
+  <meta name="keywords" content="HTTP 协议, HTTPS 协议, vite, " />
   
   
-  <link rel="canonical" href="https://cuiyulu.me/posts/npm/" />
+  <link rel="canonical" href="https://cuiyulu.me/posts/%E4%B8%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE-https/" />
   
   
   
@@ -58,19 +58,18 @@
   
   
   
-  <meta property="og:title" content="NPM" />
-<meta property="og:description" content="Node.js 学习笔记" />
+  <meta property="og:title" content="为本地开发服务器配置 HTTPS 协议" />
+<meta property="og:description" content="介绍两种在本地运行 HTTPS 协议的方法" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cuiyulu.me/posts/npm/" /><meta property="og:image" content="https://cuiyulu.me/posts/npm/featured.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-11-17T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-11-17T00:00:00+00:00" />
-<meta property="og:see_also" content="https://cuiyulu.me/posts/%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/" /><meta property="og:see_also" content="https://cuiyulu.me/posts/node.js-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/" />
+<meta property="og:url" content="https://cuiyulu.me/posts/%E4%B8%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE-https/" /><meta property="og:image" content="https://cuiyulu.me/posts/%E4%B8%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE-https/featured.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-12-25T00:00:00+00:00" />
 
 
   <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://cuiyulu.me/posts/npm/featured.png"/>
-<meta name="twitter:title" content="NPM"/>
-<meta name="twitter:description" content="Node.js 学习笔记"/>
+<meta name="twitter:image" content="https://cuiyulu.me/posts/%E4%B8%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE-https/featured.png"/>
+<meta name="twitter:title" content="为本地开发服务器配置 HTTPS 协议"/>
+<meta name="twitter:description" content="介绍两种在本地运行 HTTPS 协议的方法"/>
 
   
   <script type="application/ld+json">
@@ -78,26 +77,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "NPM",
-    "headline": "NPM",
-    "description": "Node.js 学习笔记",
-    "abstract": "npm 是 JavaScript 的包管理工具。",
+    "name": "为本地开发服务器配置 HTTPS 协议",
+    "headline": "为本地开发服务器配置 HTTPS 协议",
+    "description": "介绍两种在本地运行 HTTPS 协议的方法",
+    "abstract": "在前端开发过程中，本地运行调试时默认使用 HTTP 协议，而调用某些敏感的功能（比如相机、麦克风、地理位置等）时，浏览器出于安全考虑，只允许在 HTTPS 协议下调用，本文就讲述了如何在本地开发环境中配置 HTTPS。",
     "inLanguage": "zh-cn",
-    "url" : "https:\/\/cuiyulu.me\/posts\/npm\/",
+    "url" : "https:\/\/cuiyulu.me\/posts\/%E4%B8%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE-https\/",
     "author" : {
       "@type": "Person",
       "name": "River"
     },
     "copyrightYear": "2023",
-    "dateCreated": "2023-11-17T00:00:00\u002b00:00",
-    "datePublished": "2023-11-17T00:00:00\u002b00:00",
+    "dateCreated": "2023-12-25T00:00:00\u002b00:00",
+    "datePublished": "2023-12-25T00:00:00\u002b00:00",
     
-    "dateModified": "2023-11-17T00:00:00\u002b00:00",
+    "dateModified": "2023-12-25T00:00:00\u002b00:00",
     
-    "keywords": ["Node.js"],
+    "keywords": ["HTTP 协议","HTTPS 协议","vite"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "78"
+    "wordCount": "168"
   }]
   </script>
 
@@ -430,7 +429,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/posts/npm/featured.png);">
+    style="background-image:url(/posts/%E4%B8%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE-https/featured.png);">
     
 
 
@@ -483,8 +482,8 @@
   <li class="inline hidden">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/posts/npm/"
-      >NPM</a
+      href="/posts/%E4%B8%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE-https/"
+      >为本地开发服务器配置 HTTPS 协议</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -493,7 +492,7 @@
 
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      NPM
+      为本地开发服务器配置 HTTPS 协议
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -540,9 +539,9 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-11-17 00:00:00 &#43;0000 UTC">2023-11-17</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2023-12-25 00:00:00 &#43;0000 UTC">2023-12-25</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
     
-    <span id="views_posts/NPM/index.md" title="views">0</span> 
+    <span id="views_posts/为本地开发服务器配置 HTTPS/index.md" title="views">0</span> 
     
     <span class="inline-block align-text-bottom">
 
@@ -554,7 +553,7 @@
 </span>
 </span><span class="px-2 text-primary-500">&middot;</span><span>
     
-    <span id="likes_posts/NPM/index.md" title="likes">0</span> 
+    <span id="likes_posts/为本地开发服务器配置 HTTPS/index.md" title="likes">0</span> 
     
     <span class="inline-block align-text-bottom">
 
@@ -624,12 +623,34 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/node.js/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/http-%E5%8D%8F%E8%AE%AE/&#34;,'_self');">
     <span class="flex">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
   >
-    Node.js
+    HTTP 协议
+  </span>
+</span>
+
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/https-%E5%8D%8F%E8%AE%AE/&#34;,'_self');">
+    <span class="flex">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
+  >
+    HTTPS 协议
+  </span>
+</span>
+
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/vite/&#34;,'_self');">
+    <span class="flex">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
+  >
+    vite
   </span>
 </span>
 
@@ -745,7 +766,21 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#npm">NPM</a></li>
+    <li><a href="#mkcert">mkcert</a>
+      <ul>
+        <li><a href="#1安装">1.安装</a></li>
+        <li><a href="#2安装本地-ca">2.安装本地 CA</a></li>
+        <li><a href="#3为-localhost-创建证书">3.为 localhost 创建证书</a></li>
+        <li><a href="#4将证书存放在项目中">4.将证书存放在项目中</a></li>
+        <li><a href="#5配置-vite-以使用-https">5.配置 vite 以使用 HTTPS</a></li>
+      </ul>
+    </li>
+    <li><a href="#vue--react-自带选项">Vue / React 自带选项</a>
+      <ul>
+        <li><a href="#1安装插件-vitejsplugin-basic-ssl">1.安装插件 <code>@vitejs/plugin-basic-ssl</code>：</a></li>
+        <li><a href="#2配置-vite">2.配置 vite</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -759,7 +794,21 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#npm">NPM</a></li>
+    <li><a href="#mkcert">mkcert</a>
+      <ul>
+        <li><a href="#1安装">1.安装</a></li>
+        <li><a href="#2安装本地-ca">2.安装本地 CA</a></li>
+        <li><a href="#3为-localhost-创建证书">3.为 localhost 创建证书</a></li>
+        <li><a href="#4将证书存放在项目中">4.将证书存放在项目中</a></li>
+        <li><a href="#5配置-vite-以使用-https">5.配置 vite 以使用 HTTPS</a></li>
+      </ul>
+    </li>
+    <li><a href="#vue--react-自带选项">Vue / React 自带选项</a>
+      <ul>
+        <li><a href="#1安装插件-vitejsplugin-basic-ssl">1.安装插件 <code>@vitejs/plugin-basic-ssl</code>：</a></li>
+        <li><a href="#2配置-vite">2.配置 vite</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -772,134 +821,134 @@
       <div class="min-w-0 min-h-0 max-w-fit">
         
         
-<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5" >
-    <summary
-        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        Node.js - This article is part of a series.
-    </summary>
-    
-    
-    
-    
-    <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://cuiyulu.me/posts/node.js-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/">
-            Part 1: Node.js 前置知识
-        </a>
-    </div>
-    
-    
-    
-    <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://cuiyulu.me/posts/%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/">
-            Part 2: 模块管理
-        </a>
-    </div>
-    
-    
-    
-    <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        Part 3: This Article
-    </div>
-    
-    
-
-</details>
-
 
 
         <div class="max-w-prose mb-20">
-          <div id="npm" class="anchor"></div>
-<h2 class="relative group">NPM 
+          <p>我最近在开发一个能提供扫码功能的简单网页，扫码功能需要调用相机权限，浏览器出于安全考虑只在 HTTPS 环境下允许，所以想要在本地调试这些功能，需要为本地开发服务器配置 HTTPS。有很多方法去实现这个功能，下面我会介绍两种方法，足够在开发中使用。</p>
+<div id="mkcert" class="anchor"></div>
+<h2 class="relative group">mkcert 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#npm" aria-label="锚点">#</a></span>        
+            style="text-decoration-line: none !important;" href="#mkcert" aria-label="锚点">#</a></span>        
     
 </h2>
-<p>NPM 是 Node.js 自带的包管理工具。</p>
-<p>Node.js 的模块大致分为内部模块和其他模块。内部模块是 Node.js 内部集成的模块，不需要引用 JS 外部文件，而是通过 <code>require</code> 或 <code>import</code> 模块名引入。</p>
-<p>比如内置 fs 模块（文件操作相关的模块），可以这样引入：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">)</span>
-</span></span></code></pre></div><p>
-
-
-
-
-  <figure>
-    <img class="my-0 rounded-md" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/iShot_2023-11-16_16.17.43.png" alt="Node.js 内置模块" />
+<p>解决办法是生成本地证书和自签名 SSL，我这里用了 <a href="https://github.com/FiloSottile/mkcert"   target="_blank">
+    mkcert</a> 工具。<code>mkcert</code> 的使用和证书配置步骤如下：</p>
+<div id="1安装" class="anchor"></div>
+<h3 class="relative group">1.安装 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#1%e5%ae%89%e8%a3%85" aria-label="锚点">#</a></span>        
     
-  </figure>
-
-</p>
-<p>除了上图这些内置模块外，在开发中还会使用很多其他模块，有两种方式可以引入：</p>
-<ul>
-<li>
-<p>通过文件路径引入</p>
-<p>例如，在下面这个项目中，想要在 <code>b</code> 目录下的 <code>bar.js</code> 中引入 <code>a</code> 目录下的 <code>foo.js</code>。</p>
-<pre tabindex="0"><code>- a
-  foo.js
-- b
-  bar.js
-</code></pre><p>可以在 <code>bar.js</code> 里这样引入：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../a/foo.js&#39;</span><span class="p">)</span>
-</span></span></code></pre></div></li>
-<li>
-<p>通过 NPM 将模块安装到项目中(默认是 node_modules 目录)，在代码中用包名来引用模块。</p>
-<p><a href="https://www.npmjs.com/"   target="_blank">
-    npm registry</a> 是 NPM 的官方仓库，可查找需要的包，并按照包文档的指引进行安装使用。</p>
-<p>比如，<a href="https://www.npmjs.com/package/dayjs"   target="_blank">
-    dayjs</a> 这个插件，使用 NPM 安装：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">dayjs</span>
-</span></span></code></pre></div><p>使用：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">dayjs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;dayjs&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nx">dayjs</span><span class="p">().</span><span class="nx">format</span><span class="p">()</span>
-</span></span></code></pre></div><p><strong>当通过包名引入模块时，Node.js 会根据 <code>resolve</code> 算法先搜索模块所在的目录下的 node_modules，如果没找到，会递归查找上级目录中的 node_modules，直到根目录。</strong></p>
-</li>
-</ul>
-<p>NPM 值得讲的很多，以后会单独开个专题✍️。</p>
-
+</h3>
+<p>如果你也是 macOS 系统且安装了 homebrew，可以按照下面这个方式进行安装：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew instal mkcert
+</span></span><span class="line"><span class="cl">brew install nss <span class="c1"># 如果电脑中有 Firefox，还需要这一步骤，否则会报错</span>
+</span></span></code></pre></div><p>如果你是 Windows，可以<a href="https://github.com/FiloSottile/mkcert?tab=readme-ov-file#windows"   target="_blank">
+    点击此处</a>查看安装步骤。</p>
+<div id="2安装本地-ca" class="anchor"></div>
+<h3 class="relative group">2.安装本地 CA 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#2%e5%ae%89%e8%a3%85%e6%9c%ac%e5%9c%b0-ca" aria-label="锚点">#</a></span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkcert -install
+</span></span></code></pre></div><div id="3为-localhost-创建证书" class="anchor"></div>
+<h3 class="relative group">3.为 localhost 创建证书 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#3%e4%b8%ba-localhost-%e5%88%9b%e5%bb%ba%e8%af%81%e4%b9%a6" aria-label="锚点">#</a></span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkcert localhost 127.0.0.1 ::1
+</span></span></code></pre></div><p>创建成功后，Terminal 会显示证书的存放位置和过期时间</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">The certificate is at <span class="s2">&#34;./localhost+2.pem&#34;</span> and the key at <span class="s2">&#34;./localhost+2-key.pem&#34;</span> ✅
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">It will expire on <span class="m">25</span> March <span class="m">2026</span> 🗓
+</span></span></code></pre></div><div id="4将证书存放在项目中" class="anchor"></div>
+<h3 class="relative group">4.将证书存放在项目中 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#4%e5%b0%86%e8%af%81%e4%b9%a6%e5%ad%98%e6%94%be%e5%9c%a8%e9%a1%b9%e7%9b%ae%e4%b8%ad" aria-label="锚点">#</a></span>        
+    
+</h3>
+<p>我在项目目录下新建了一个名为 <code>cert</code> 的文件夹，并将刚才生成的 <code>localhost+2.pem</code> 和 <code>localhost+2-key.pem</code> 移动到该目录下。</p>
+<div id="5配置-vite-以使用-https" class="anchor"></div>
+<h3 class="relative group">5.配置 vite 以使用 HTTPS 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#5%e9%85%8d%e7%bd%ae-vite-%e4%bb%a5%e4%bd%bf%e7%94%a8-https" aria-label="锚点">#</a></span>        
+    
+</h3>
+<p>我的项目技术栈是 <code>vue3 + vite</code>，所以这里配置的是 <code>vite.config.js</code> 文件，如果你使用其他构建工具(比如<code>vue-cli + webpack</code>)，配置方法也都大同小异，只需查阅官方文档做出相应调整即可。
+注意：修改配置后重新运行服务。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// vite.config.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">fs</span> <span class="nx">from</span> <span class="s1">&#39;fs&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">path</span> <span class="nx">from</span> <span class="s1">&#39;path&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">defineConfig</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">server</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">https</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">key</span><span class="o">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;cert/localhost+2-key.pem&#39;</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">cert</span><span class="o">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;cert/localhost+2.pem&#39;</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></div><div id="vue--react-自带选项" class="anchor"></div>
+<h2 class="relative group">Vue / React 自带选项 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#vue--react-%e8%87%aa%e5%b8%a6%e9%80%89%e9%a1%b9" aria-label="锚点">#</a></span>        
+    
+</h2>
+<p>不管是 React 还是 Vue，都自带了开启 HTTPS 的选项，这也使得我们在本地使用 HTTPS 协议更加简单。</p>
+<p>也以 vite 为例，<a href="https://vitejs.dev/config/server-options.html#server-https"   target="_blank">
+    官方文档</a>中有提到，如果需要合法证书，可以使用它们提供的插件 <a href="https://www.npmjs.com/package/@vitejs/plugin-basic-ssl"   target="_blank">
+    @vitejs/plugin-basic-ssl</a>，这个插件会自动创建和缓存一个自签名的证书。</p>
+<div id="1安装插件-vitejsplugin-basic-ssl" class="anchor"></div>
+<h3 class="relative group">1.安装插件 <code>@vitejs/plugin-basic-ssl</code>： 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#1%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6-vitejsplugin-basic-ssl" aria-label="锚点">#</a></span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pnpm add @vitejs/plugin-basic/ssl -D
+</span></span></code></pre></div><div id="2配置-vite" class="anchor"></div>
+<h3 class="relative group">2.配置 vite 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#2%e9%85%8d%e7%bd%ae-vite" aria-label="锚点">#</a></span>        
+    
+</h3>
+<p>配置 vite 后运行即可，需要注意浏览器可能会有安全警告，这是因为我们生成的自签名证书不是受信任的证书颁发机构签发的，但不妨碍我们开发使用，只要不投入生产环境使用就没问题。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// vite.config.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">defineConfig</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">basicSsl</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">server</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">https</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></div>
         </div>
                 
         
-<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5">
-    <summary
-        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        Node.js - This article is part of a series.
-    </summary>
-    
-    
-    
-    
-    <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://cuiyulu.me/posts/node.js-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/">
-            Part 1: Node.js 前置知识
-        </a>
-    </div>
-    
-    
-    
-    <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://cuiyulu.me/posts/%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/">
-            Part 2: 模块管理
-        </a>
-    </div>
-    
-    
-    
-    <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        Part 3: This Article
-    </div>
-    
-    
-
-</details>
-
 
         
   
@@ -909,7 +958,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://cuiyulu.me/posts/npm/&amp;title=NPM"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://cuiyulu.me/posts/%E4%B8%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE-https/&amp;title=%e4%b8%ba%e6%9c%ac%e5%9c%b0%e5%bc%80%e5%8f%91%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%85%8d%e7%bd%ae%20HTTPS%20%e5%8d%8f%e8%ae%ae"
       title="分享到 LinkedIn"
       aria-label="分享到 LinkedIn"
       >
@@ -928,7 +977,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://cuiyulu.me/posts/npm/&amp;subject=NPM"
+      href="mailto:?body=https://cuiyulu.me/posts/%E4%B8%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE-https/&amp;subject=%e4%b8%ba%e6%9c%ac%e5%9c%b0%e5%bc%80%e5%8f%91%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%85%8d%e7%bd%ae%20HTTPS%20%e5%8d%8f%e8%ae%ae"
       title="通过电子邮件发送"
       aria-label="通过电子邮件发送"
       >
@@ -951,6 +1000,157 @@
 
 <h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
 <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+  
+  
+
+  <a href="/posts/npm/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative backdrop-blur">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/npm/featured.png);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/npm/">NPM</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2023-11-17 00:00:00 &#43;0000 UTC">2023-11-17</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+    
+    <span id="views_posts/NPM/index.md" title="views">0</span> 
+    
+    <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span><span class="px-2 text-primary-500">&middot;</span><span>
+    
+    <span id="likes_posts/NPM/index.md" title="likes">0</span> 
+    
+    <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/node.js/&#34;,'_self');">
+    <span class="flex">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
+  >
+    Node.js
+  </span>
+</span>
+
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+        
+        <div class="py-1 prose dark:prose-invert">
+          npm 是 JavaScript 的包管理工具。
+        </div>
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
   
   
 
@@ -1260,8 +1460,8 @@
       </div>
      
      <script>
-        var oid = "views_posts\/NPM\/index.md"
-        var oid_likes = "likes_posts\/NPM\/index.md"
+        var oid = "views_posts\/为本地开发服务器配置 HTTPS\/index.md"
+        var oid_likes = "likes_posts\/为本地开发服务器配置 HTTPS\/index.md"
       </script>
       
       
@@ -1280,7 +1480,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/">
+            <a class="flex group mr-3" href="/posts/npm/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1292,11 +1492,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >模块管理</span
+                  >NPM</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2023-11-16 00:00:00 &#43;0000 UTC">2023-11-16</time>
+                    <time datetime="2023-11-17 00:00:00 &#43;0000 UTC">2023-11-17</time>
                   
                 </span>
               </span>
@@ -1304,28 +1504,6 @@
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/posts/%E4%B8%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE-https/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >为本地开发服务器配置 HTTPS 协议</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2023-12-25 00:00:00 &#43;0000 UTC">2023-12-25</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>

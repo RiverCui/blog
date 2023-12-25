@@ -8,17 +8,8 @@
   
     
       <url>
-            <loc>https://cuiyulu.me/posts/npm/</loc>
-            <lastmod>2023-11-17T00:00:00+00:00</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-    
-  
-    
-      <url>
             <loc>https://cuiyulu.me/posts/</loc>
-            <lastmod>2023-11-17T00:00:00+00:00</lastmod>
+            <lastmod>2023-12-25T00:00:00+00:00</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -27,7 +18,7 @@
     
       <url>
             <loc>https://cuiyulu.me/</loc>
-            <lastmod>2023-11-17T00:00:00+00:00</lastmod>
+            <lastmod>2023-12-25T00:00:00+00:00</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
             <xhtml:link
@@ -43,6 +34,30 @@
           </url>
     
   
+    
+  
+    
+  
+    
+      <url>
+            <loc>https://cuiyulu.me/posts/%E4%B8%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE-https/</loc>
+            <lastmod>2023-12-25T00:00:00+00:00</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+          </url>
+    
+  
+    
+  
+    
+  
+    
+      <url>
+            <loc>https://cuiyulu.me/posts/npm/</loc>
+            <lastmod>2023-11-17T00:00:00+00:00</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+          </url>
     
   
     
