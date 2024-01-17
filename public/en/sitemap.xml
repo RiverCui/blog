@@ -1,31 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-    
-  
-    
-  
-    
-      <url>
-            <loc>https://cuiyulu.me/en/</loc>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-            <xhtml:link
-              rel="alternate"
-              hreflang="zh-cn"
-              href="https://cuiyulu.me/"
-              />
-            <xhtml:link
-              rel="alternate"
-              hreflang="en"
-              href="https://cuiyulu.me/en/"
-              />
-          </url>
-    
-  
-    
-  
-    
-  
-</urlset>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    ><url>
+            <loc>https://cuiyulu.me/en/authors/</loc><changefreq>daily</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://cuiyulu.me/authors/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://cuiyulu.me/en/authors/"
+                    /></url><url>
+            <loc>https://cuiyulu.me/en/categories/</loc><changefreq>daily</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://cuiyulu.me/categories/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://cuiyulu.me/en/categories/"
+                    /></url><url>
+            <loc>https://cuiyulu.me/en/</loc><changefreq>daily</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://cuiyulu.me/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://cuiyulu.me/en/"
+                    /></url><url>
+            <loc>https://cuiyulu.me/en/series/</loc><changefreq>daily</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://cuiyulu.me/series/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://cuiyulu.me/en/series/"
+                    /></url><url>
+            <loc>https://cuiyulu.me/en/tags/</loc><changefreq>daily</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://cuiyulu.me/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://cuiyulu.me/en/tags/"
+                    /></url></urlset>

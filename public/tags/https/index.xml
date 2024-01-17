@@ -1,22 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>HTTPS on River&#39;s Blog</title>
-    <link>https://cuiyulu.me/tags/https/</link>
-    <description>Recent content in HTTPS on River&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>© 2023 River</copyright>
-    <lastBuildDate>Mon, 25 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cuiyulu.me/tags/https/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>为本地开发服务器配置 HTTPS 协议</title>
-      <link>https://cuiyulu.me/posts/%E4%B8%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE-https/</link>
-      <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://cuiyulu.me/posts/%E4%B8%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE-https/</guid>
-      <description>在前端开发过程中，本地运行调试时默认使用 HTTP 协议，而调用某些敏感的功能（比如相机、麦克风、地理位置等）时，浏览器出于安全考虑，只允许在 HTTPS 协议下调用，本文就讲述了如何在本地开发环境中配置 HTTPS。</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://cuiyulu.me/posts/%E4%B8%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE-https/featured.png" />
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>HTTPS - 标签 - River&#39;s Blog</title>
+        <link>https://cuiyulu.me/tags/https/</link>
+        <description>HTTPS - 标签 - River&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 25 Dec 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://cuiyulu.me/tags/https/" rel="self" type="application/rss+xml" /><item>
+    <title>为本地开发服务器配置 HTTPS 协议</title>
+    <link>https://cuiyulu.me/posts/https-for-local-development/</link>
+    <pubDate>Mon, 25 Dec 2023 00:00:00 &#43;0000</pubDate><author>
+        <name>River</name>
+    </author><guid>https://cuiyulu.me/posts/https-for-local-development/</guid>
+    <description><![CDATA[在前端开发过程中，本地运行调试时默认使用 HTTP 协议，而调用某些敏感的功能（比如相机、麦克风、地理位置等）时，浏览器出于安全考虑，只允许在 HTTPS 协议下调用，本文就讲述了如何在本地开发环境中配置 HTTPS。]]></description>
+</item></channel>
 </rss>
