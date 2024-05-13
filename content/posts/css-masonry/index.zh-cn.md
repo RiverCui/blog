@@ -85,7 +85,7 @@ img {
 
 ### 我的观点
 
-首次这个新功能的时候，有些地方是很迷惑的。
+首次使用这个新功能的时候，有些地方是很迷惑的。
 
 首先，作为一个 nonnative English speaker，masonry 这个词对我来说非常陌生，并不像 CSS 中常见的 `border`、`center`、`none` 让人一目了然，有语言门槛。
 
