@@ -1,21 +1,36 @@
 ---
 title: "About"
-date: 2019-08-02T11:04:49+08:00
-draft: false
 
 lightgallery: true
+showReadingtime: false
 
 math:
   enable: true
 ---
+### Hi
 
-## 技能
-- 参与网络标准开发（主要是CSS和国际化）
-- 高度精通超文本标记语言和CSS（带有Sass），用于在浏览器中快速原型设计
-- 精通Javascript和Typescript，以及使用Git进行版本控制
-- 之前在网络项目的各种语言和框架方面的经验，包括Ruby on Rails、Python（Flash）和PHP（Drupal）
-- 熟悉基于Unix的网站部署服务器设置，在命令行环境中工作非常自如
+你好，我是 River，热爱认知的输入与输出，热爱挑战。
 
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,vue,react,ts,webpack)](https://skillicons.dev)
+目前工作时长 4 年，是一个前端工程师，向全栈工程师进化中。建博客是想有个独立的空间存放文章，阅读、写作是我想要一直坚持下去的事情。
 
-[![My Skills](https://skillicons.dev/icons?i=nextjs,nodejs,docker,go,postgres)](https://skillicons.dev)
+非典型 INTJ，有一只猫，在学游泳，阅片量即将迈入900大关。
+
+以我最喜欢的一句话结尾 —— “贪安稳就没有自由，要自由就要历些风险”。
+
+### 技能 🌲
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=js,ts,html,css" />
+  </a>
+</p>
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=vue,nextjs,react,nodejs,webpack" />
+  </a>
+</p>
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=docker,go,postgres" />
+  </a>
+</p>

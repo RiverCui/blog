@@ -24,21 +24,13 @@
   title = ""
   weight = 2
 [[main]]
-  identifier = "series"
-  pre = ""
-  post = ""
-  name = "Series"
-  url = "/series/"
-  title = ""
-  weight = 4
-[[main]]
   identifier = "about"
   pre = ""
   post = ""
   name = "About"
   url = "/about/"
   title = ""
-  weight = 8
+  weight = 3
 [[main]]
   identifier = "search"
   pre = ""
@@ -46,4 +38,4 @@
   name = "search"
   url = "/search/"
   title = ""
-  weight = 8
+  weight = 4
