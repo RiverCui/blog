@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>CSS Masonry | River&#39;s Blog</title>
 <meta name="keywords" content="CSS, Grid, Masonry">
 <meta name="description" content="WebKit 团队和 Chrome 团队对 CSS Masonry 的辩论，以及作者看法">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/css-masonry/">
+<link rel="canonical" href="https://moon-odyssey.com/posts/css-masonry/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://moon-odyssey.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://moon-odyssey.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://moon-odyssey.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://moon-odyssey.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://moon-odyssey.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="zh-cn" href="http://localhost:1313/posts/css-masonry/">
+<link rel="alternate" hreflang="zh-cn" href="https://moon-odyssey.com/posts/css-masonry/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,7 +55,68 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="CSS Masonry" />
+<meta property="og:description" content="WebKit 团队和 Chrome 团队对 CSS Masonry 的辩论，以及作者看法" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://moon-odyssey.com/posts/css-masonry/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-05-13T22:05:46+08:00" />
+<meta property="article:modified_time" content="2024-05-13T22:05:46+08:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CSS Masonry"/>
+<meta name="twitter:description" content="WebKit 团队和 Chrome 团队对 CSS Masonry 的辩论，以及作者看法"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://moon-odyssey.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "CSS Masonry",
+      "item": "https://moon-odyssey.com/posts/css-masonry/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "CSS Masonry",
+  "name": "CSS Masonry",
+  "description": "WebKit 团队和 Chrome 团队对 CSS Masonry 的辩论，以及作者看法",
+  "keywords": [
+    "CSS", "Grid", "Masonry"
+  ],
+  "articleBody": "围绕 Masonry 展开的辩论 前段时间，WebKit 团队发表了一篇名为 Help us invent CSS Grid Level 3, aka “Masonry” layout 的文章，讨论了关于 Masonry layout 的提案。\nMasonry 在英文中的意思是建筑物的砖石部分（如下图），这种瀑布流布局样式很常见，像 Pinterest 、小红书等都采用了这种样式。\nMasonry 是最开始也是由 WebKit 团队提出的，你可以在 MDN 上查看到它的使用方法（现在只有 Safari 和 Firefox 浏览器支持）。而在 WebKit 发表的这篇文章中，他们解释了为什么他们认为 Masonry 应该成为 CSS Grid 的一部分，并且解释了如果 CSS Working Group 使用替换方案 display: masonry 的可行性，并且向开发者、设计师寻求建议。\nChrome 团队也在前几日站出来，发表了一篇名为 An alternative proposal for CSS masonry 的文章，关于 CSS Masonry，他们明确的提出了 “implementing it as a part of the CSS Grid specification [..] would be a mistake\"（将其作为 CSS Grid 规范的一部分是个错误）的观点。\nMasonry 怎么用 虽然瀑布流很常见，但是作为一名前端工程师，我还从未写过这种样式，趁热打铁，就用这个新布局来写一个瀑布流页面。\n首先我们建一个 html 文件，添加一些图片做瀑布流使用。\n\u003cdiv class=\"gallery-container\"\u003e \u003cfigure\u003e \u003cimg src=\"https://picsum.photos/seed/1715619706392/500/500\"\u003e \u003c/figure\u003e \u003cfigure\u003e \u003cimg src=\"https://picsum.photos/seed/1715619668573/500/1000\"\u003e \u003c/figure\u003e \u003cfigure\u003e \u003cimg src=\"https://picsum.photos/seed/1715619707240/500/500\"\u003e \u003c/figure\u003e \u003cfigure\u003e \u003cimg src=\"https://picsum.photos/seed/1715619669966/500/1000\"\u003e \u003c/figure\u003e \u003cfigure\u003e \u003cimg src=\"https://picsum.photos/seed/1715619687217/500/800\"\u003e \u003c/figure\u003e \u003cfigure\u003e \u003cimg src=\"https://picsum.photos/seed/1715619713060/500/500\"\u003e \u003c/figure\u003e \u003c/div\u003e 然后写入 CSS，通过 grid-template-rows: masonry 来实现瀑布流布局。\nimg { width: 500px; object-fit: contain; border-radius: 15px; } .gallery-container { display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 1rem; grid-template-rows: masonry; } 我们可以看到，虽然 grid 布局生效了，但 grid-template-rows: masonry 并未生效，图与图之间存在大片的空白。\n这是因为 Masonry 目前只是个实验性功能，大部分浏览器还不支持，你可以下载 Safari Technology Preview 或者 Firefox Nightly 来体验这个新特性。\n我使用的是 safari tp，如下图所示，一个简单的瀑布流就实现了。\n得益于 masonry，整个实现过程非常简单。附上完整代码：https://github.com/RiverCui/waterfall-demo\n我的观点 首次这个新功能的时候，有些地方是很迷惑的。\n首先，作为一个 nonnative English speaker，masonry 这个词对我来说非常陌生，并不像 CSS 中常见的 border、center、none 让人一目了然，有语言门槛。\n其次，对于 grid-template-columns/grid-template-rows 搭配 masonry 使用，与我的思维习惯相悖，简单来说就是，要想实现纵向的瀑布流，需要使用 grid-template-rows: masonry，而我潜意识认为是 grid-template-columns。这里有点像一个习惯使用 windows 的人，第一次用 macos 浏览网页对于上下滚动的无所适从。\n总结一下，我对 Masonry 的建议有两点：\n将 masonry 这个单词换成更容易理解的 waterfall 和 chrome 团队一样，Masonry 不应该是 Grid 的一部分，应该单独的使用 —— display: masonry。 ",
+  "wordCount" : "195",
+  "inLanguage": "zh-cn",
+  "datePublished": "2024-05-13T22:05:46+08:00",
+  "dateModified": "2024-05-13T22:05:46+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://moon-odyssey.com/posts/css-masonry/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "River's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://moon-odyssey.com/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -73,7 +134,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="River&#39;s Blog (Alt + H)">River&#39;s Blog</a>
+            <a href="https://moon-odyssey.com/" accesskey="h" title="River&#39;s Blog (Alt + H)">River&#39;s Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -97,7 +158,7 @@
                 </button>
                 <ul class="lang-switch"><li>|</li>
                     <li>
-                        <a href="http://localhost:1313/en/" title="English"
+                        <a href="https://moon-odyssey.com/en/" title="English"
                             aria-label="English">En</a>
                     </li>
                 </ul>
@@ -105,22 +166,22 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/posts/" title="所有文章">
+                <a href="https://moon-odyssey.com/posts/" title="所有文章">
                     <span>所有文章</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="标签">
+                <a href="https://moon-odyssey.com/tags/" title="标签">
                     <span>标签</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/series/" title="系列">
+                <a href="https://moon-odyssey.com/series/" title="系列">
                     <span>系列</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="关于">
+                <a href="https://moon-odyssey.com/about/" title="关于">
                     <span>关于</span>
                 </a>
             </li>
@@ -221,16 +282,16 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/css/">CSS</a></li>
-      <li><a href="http://localhost:1313/tags/grid/">Grid</a></li>
-      <li><a href="http://localhost:1313/tags/masonry/">Masonry</a></li>
+      <li><a href="https://moon-odyssey.com/tags/css/">CSS</a></li>
+      <li><a href="https://moon-odyssey.com/tags/grid/">Grid</a></li>
+      <li><a href="https://moon-odyssey.com/tags/masonry/">Masonry</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="http://localhost:1313/">River&#39;s Blog</a></span>
+    <span>&copy; 2024 <a href="https://moon-odyssey.com/">River&#39;s Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

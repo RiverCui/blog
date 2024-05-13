@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Node.js 前置知识 | River&#39;s Blog</title>
 <meta name="keywords" content="Node.js">
 <meta name="description" content="Node.js 学习笔记">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/pre-knowledge-of-nodejs/">
+<link rel="canonical" href="https://moon-odyssey.com/posts/pre-knowledge-of-nodejs/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://moon-odyssey.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://moon-odyssey.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://moon-odyssey.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://moon-odyssey.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://moon-odyssey.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="zh-cn" href="http://localhost:1313/posts/pre-knowledge-of-nodejs/">
+<link rel="alternate" hreflang="zh-cn" href="https://moon-odyssey.com/posts/pre-knowledge-of-nodejs/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,7 +55,69 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="Node.js 前置知识" />
+<meta property="og:description" content="Node.js 学习笔记" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://moon-odyssey.com/posts/pre-knowledge-of-nodejs/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-11-06T00:00:00+00:00" />
+<meta property="og:see_also" content="https://moon-odyssey.com/posts/npm/" /><meta property="og:see_also" content="https://moon-odyssey.com/posts/module-management/" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Node.js 前置知识"/>
+<meta name="twitter:description" content="Node.js 学习笔记"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://moon-odyssey.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Node.js 前置知识",
+      "item": "https://moon-odyssey.com/posts/pre-knowledge-of-nodejs/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Node.js 前置知识",
+  "name": "Node.js 前置知识",
+  "description": "Node.js 学习笔记",
+  "keywords": [
+    "Node.js"
+  ],
+  "articleBody": "Node.js 是 JavaScript 运行时环境 Node.js® is an open-source, cross-platform JavaScript runtime environment.引用来源：Node.js\nNode.js 并不是一种语言而是一个平台，是 JavaScript 的运行时环境(runtime environment)/宿主环境(host environment)。\n讨论 Node.js 就不得不提到 Chrome V8 引擎。09年，谷歌开始研发 Chrome 浏览器，这也是现今使用最为广泛的浏览器，由 Lars Bak 领导开发的 Chrome V8 引擎也相应问世，JavaScript 就此展开了一场性能革命，Node.js 就是基于 Chrome V8 引擎构建的。随后，Node.js 的作者 Ryan Dahl 还构建了 Deno。\n如今，JavaScript 的层级架构也基本趋于稳定，如图：\n图片来源：掘金小册\n最下面的层级是脚本语言规范(Spec)，ECMAScript。 再往上一层是语言实现，JavaScript、JScript、ActionScript 等都是对 ECMAScript 的语言实现。 到了引擎层面，除了上文提到的 Chrome V8 外，还有 SpiderMonkey、QuickJS、JerryScript 等常见引擎。 最上面是运行时环境，基于 Chrome V8 封装的运行时环境有 Node.js、Chromium、Deno、CloudFlare Workers，Firefox 是基于 SpiderMonkey 封装的运行时环境。 基本架构 图片来源：medium.com\nNode.js 是运行在操作系统之上的，底层由 Chrome V8 引擎和一些 C/C++ 写的库构成，比如 libUv、c-ares、llhttp/http-parser、open-ssl、zlib等。其中，libUV 负责处理事件循环，c-ares、llhttp/http-parser、open-ssl、zlib 等库提供 DNS 解析、HTTP 协议、HTTPS 和文件压缩等功能。\n中间层由 Node.js Bindings、Node.js Standard Library 和 C/C++ AddOns 构成。Node.js Bindings 层的作用是将底层那些用 C/C++ 写的库接口暴露给 JS 环境，而 Node.js Standard Library 是 Node.js 本身的核心模块。至于 C/C++ AddOns，它可以让用户自己的 C/C++ 模块通过桥接的方式提供给Node.js。\n再上一层是 Node.js 的 API 层，我们使用 Node.js 开发应用，主要使用的就是 API 层，Node.js 应用最终运行在 API 层之上。\n使用场景 服务端\nNode.js 提供了基于事件驱动和非阻塞的接口，可用于编写高并发状态下的程序，而且 JavaScript 的匿名函数、闭包、回调函数等特性就是为事件驱动而设计的。\nNode.js 一些内置模块如 http、net、fs，就是为服务端设计的。无论是 HTTP，还是 TCP、UDP，又或是 RPC 服务，Node.js 都可以胜任。\n桌面端\nElectron.js，由OpenJS基金会开发和维护的自由开源软件框架。该框架旨在使用Chromium浏览器引擎版本和使用Node.js运行时环境的后端渲染的网络技术创建桌面应用程序。\nVisual Studio Code、1Password、钉钉等软件，都是基于 Electron 开发的。\n端游\n除了通过 WebGL 在浏览器里写前端页面上的游戏、通过 Electron 封装成看起来像端游的游戏外，JavaScript 还能通过 Node.js 的 binding 去使用 OpenGL 甚至 DirectX 去写货真价实的桌面游戏。\n机器学习\npipcook\nNode.js 最早被设想为一种用于构建服务端应用的技术，但作为运行在操作系统中的 JavaScript 运行时环境，它已经成为了一个平台，可适配领域涵盖了泛前端和后端，传统服务和 Serverless，工具、商业、游戏等等。\n",
+  "wordCount" : "161",
+  "inLanguage": "zh-cn",
+  "datePublished": "2023-11-06T00:00:00Z",
+  "dateModified": "2023-11-06T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://moon-odyssey.com/posts/pre-knowledge-of-nodejs/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "River's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://moon-odyssey.com/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -73,7 +135,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="River&#39;s Blog (Alt + H)">River&#39;s Blog</a>
+            <a href="https://moon-odyssey.com/" accesskey="h" title="River&#39;s Blog (Alt + H)">River&#39;s Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -97,7 +159,7 @@
                 </button>
                 <ul class="lang-switch"><li>|</li>
                     <li>
-                        <a href="http://localhost:1313/en/" title="English"
+                        <a href="https://moon-odyssey.com/en/" title="English"
                             aria-label="English">En</a>
                     </li>
                 </ul>
@@ -105,22 +167,22 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/posts/" title="所有文章">
+                <a href="https://moon-odyssey.com/posts/" title="所有文章">
                     <span>所有文章</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="标签">
+                <a href="https://moon-odyssey.com/tags/" title="标签">
                     <span>标签</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/series/" title="系列">
+                <a href="https://moon-odyssey.com/series/" title="系列">
                     <span>系列</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="关于">
+                <a href="https://moon-odyssey.com/about/" title="关于">
                     <span>关于</span>
                 </a>
             </li>
@@ -203,14 +265,14 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/node.js/">Node.js</a></li>
+      <li><a href="https://moon-odyssey.com/tags/node.js/">Node.js</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="http://localhost:1313/">River&#39;s Blog</a></span>
+    <span>&copy; 2024 <a href="https://moon-odyssey.com/">River&#39;s Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

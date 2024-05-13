@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CSS on River&#39;s Blog</title>
-    <link>http://localhost:1313/tags/css/</link>
+    <link>https://moon-odyssey.com/tags/css/</link>
     <description>Recent content in CSS on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 13 May 2024 22:05:46 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://moon-odyssey.com/tags/css/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CSS Masonry</title>
-      <link>http://localhost:1313/posts/css-masonry/</link>
+      <link>https://moon-odyssey.com/posts/css-masonry/</link>
       <pubDate>Mon, 13 May 2024 22:05:46 +0800</pubDate>
-      <guid>http://localhost:1313/posts/css-masonry/</guid>
-      <description>围绕 Masonry 展开的辩论 前段时间，WebKit 团队发表了一篇名为 Help us invent CSS Grid Level 3, aka “Masonry” layout 的文章，讨论了关于 Masonry layout 的提案。</description>
+      <guid>https://moon-odyssey.com/posts/css-masonry/</guid>
+      <description>WebKit 团队和 Chrome 团队对 CSS Masonry 的辩论，以及作者看法</description>
     </item>
   </channel>
 </rss>

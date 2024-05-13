@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>为本地开发服务器配置 HTTPS 协议 | River&#39;s Blog</title>
 <meta name="keywords" content="HTTPS, HTTP, vite">
 <meta name="description" content="介绍两种在本地运行 HTTPS 协议的方法">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/https-for-local-development/">
+<link rel="canonical" href="https://moon-odyssey.com/posts/https-for-local-development/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://moon-odyssey.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://moon-odyssey.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://moon-odyssey.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://moon-odyssey.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://moon-odyssey.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="zh-cn" href="http://localhost:1313/posts/https-for-local-development/">
+<link rel="alternate" hreflang="zh-cn" href="https://moon-odyssey.com/posts/https-for-local-development/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,7 +55,68 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="为本地开发服务器配置 HTTPS 协议" />
+<meta property="og:description" content="介绍两种在本地运行 HTTPS 协议的方法" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://moon-odyssey.com/posts/https-for-local-development/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-12-25T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="为本地开发服务器配置 HTTPS 协议"/>
+<meta name="twitter:description" content="介绍两种在本地运行 HTTPS 协议的方法"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://moon-odyssey.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "为本地开发服务器配置 HTTPS 协议",
+      "item": "https://moon-odyssey.com/posts/https-for-local-development/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "为本地开发服务器配置 HTTPS 协议",
+  "name": "为本地开发服务器配置 HTTPS 协议",
+  "description": "介绍两种在本地运行 HTTPS 协议的方法",
+  "keywords": [
+    "HTTPS", "HTTP", "vite"
+  ],
+  "articleBody": "我最近在开发一个能够提供扫码功能的网页，但是扫码功能需要调用相机权限，浏览器出于安全考虑只在 HTTPS 环境下允许。所以想要在本地调试这些功能，需要为本地开发服务器配置 HTTPS。解决这个问题的本质就是生成本地证书和自签名，网上能找到很多方法，在这里我会介绍两种，看到这篇博客的朋友可以跟着下面的步骤实践，足够你在简单基础的开发中去使用。\nmkcert mkcert 是一个简化了的本地 CA 工具，用来生成有效的本地 HTTPS 证书。mkcert 的使用和证书配置步骤如下：\n1.安装 如果你也是 macOS 系统且安装了 homebrew，可以按照下面这个方式进行安装：\nbrew instal mkcert brew install nss # 如果电脑中有 Firefox，还需要这一步骤，否则会报错 如果你是 Windows，可以点击此处查看安装步骤。\n2.安装本地 CA mkcert -install 3.为 localhost 创建证书 mkcert localhost 127.0.0.1 ::1 创建成功后，Terminal 会显示证书的存放位置和过期时间，如下：\nThe certificate is at \"./localhost+2.pem\" and the key at \"./localhost+2-key.pem\" ✅ It will expire on 25 March 2026 🗓 4.将证书存放在项目中 在项目目录下新建一个文件夹，方便管理证书。\n例如我在我的项目目录下新建了一个 cert 的文件夹，并将刚才生成的 localhost+2.pem 和 localhost+2-key.pem 移动到该目录下。\n5.配置 vite 以使用 HTTPS 我的项目技术栈是 vue3 + vite，所以这里配置的是 vite.config.js 文件，如果你使用其他构建工具(比如vue-cli + webpack)，配置方法也都大同小异，只需查阅官方文档做出相应调整即可。 注意：修改配置后记得重新运行服务。\n// vite.config.js import fs from 'fs'; import path from 'path'; export default defineConfig({ // ... server: { // ... https: { key: fs.readFileSync(path.resolve(__dirname, 'cert/localhost+2-key.pem')), cert: fs.readFileSync(path.resolve(__dirname, 'cert/localhost+2.pem')), }, }, }) Vue / React 自带选项 不管是 React 还是 Vue，都自带了开启 HTTPS 的选项，这也使得我们在本地使用 HTTPS 协议更加简单。\n也以 vite 为例，官方文档中有提到，如果需要合法证书，可以使用它们提供的插件 @vitejs/plugin-basic-ssl，这个插件会自动创建和缓存一个自签名的证书。\n1.安装插件 @vitejs/plugin-basic-ssl： pnpm add @vitejs/plugin-basic/ssl -D 2.配置 vite 配置 vite 后运行即可，需要注意浏览器可能会有安全警告，这是因为我们生成的自签名证书不是受信任的证书颁发机构签发的，但不妨碍我们开发使用，只要不投入生产环境使用就没问题。\n// vite.config.js export default defineConfig({ // ... plugins: [ // ... basicSsl(), ], server: { // ... https: true, }, }) ",
+  "wordCount" : "160",
+  "inLanguage": "zh-cn",
+  "datePublished": "2023-12-25T00:00:00Z",
+  "dateModified": "2023-12-25T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://moon-odyssey.com/posts/https-for-local-development/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "River's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://moon-odyssey.com/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -73,7 +134,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="River&#39;s Blog (Alt + H)">River&#39;s Blog</a>
+            <a href="https://moon-odyssey.com/" accesskey="h" title="River&#39;s Blog (Alt + H)">River&#39;s Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -97,7 +158,7 @@
                 </button>
                 <ul class="lang-switch"><li>|</li>
                     <li>
-                        <a href="http://localhost:1313/en/" title="English"
+                        <a href="https://moon-odyssey.com/en/" title="English"
                             aria-label="English">En</a>
                     </li>
                 </ul>
@@ -105,22 +166,22 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/posts/" title="所有文章">
+                <a href="https://moon-odyssey.com/posts/" title="所有文章">
                     <span>所有文章</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="标签">
+                <a href="https://moon-odyssey.com/tags/" title="标签">
                     <span>标签</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/series/" title="系列">
+                <a href="https://moon-odyssey.com/series/" title="系列">
                     <span>系列</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="关于">
+                <a href="https://moon-odyssey.com/about/" title="关于">
                     <span>关于</span>
                 </a>
             </li>
@@ -216,16 +277,16 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/https/">HTTPS</a></li>
-      <li><a href="http://localhost:1313/tags/http/">HTTP</a></li>
-      <li><a href="http://localhost:1313/tags/vite/">Vite</a></li>
+      <li><a href="https://moon-odyssey.com/tags/https/">HTTPS</a></li>
+      <li><a href="https://moon-odyssey.com/tags/http/">HTTP</a></li>
+      <li><a href="https://moon-odyssey.com/tags/vite/">Vite</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="http://localhost:1313/">River&#39;s Blog</a></span>
+    <span>&copy; 2024 <a href="https://moon-odyssey.com/">River&#39;s Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

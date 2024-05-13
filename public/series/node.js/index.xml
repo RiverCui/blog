@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Node.js on River&#39;s Blog</title>
-    <link>http://localhost:1313/series/node.js/</link>
+    <link>https://moon-odyssey.com/series/node.js/</link>
     <description>Recent content in Node.js on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 17 Nov 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/series/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://moon-odyssey.com/series/node.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NPM</title>
-      <link>http://localhost:1313/posts/npm/</link>
+      <link>https://moon-odyssey.com/posts/npm/</link>
       <pubDate>Fri, 17 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/npm/</guid>
+      <guid>https://moon-odyssey.com/posts/npm/</guid>
       <description>Node.js 学习笔记</description>
     </item>
     <item>
       <title>模块管理</title>
-      <link>http://localhost:1313/posts/module-management/</link>
+      <link>https://moon-odyssey.com/posts/module-management/</link>
       <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/module-management/</guid>
+      <guid>https://moon-odyssey.com/posts/module-management/</guid>
       <description>Node.js 学习笔记</description>
     </item>
     <item>
       <title>Node.js 前置知识</title>
-      <link>http://localhost:1313/posts/pre-knowledge-of-nodejs/</link>
+      <link>https://moon-odyssey.com/posts/pre-knowledge-of-nodejs/</link>
       <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pre-knowledge-of-nodejs/</guid>
+      <guid>https://moon-odyssey.com/posts/pre-knowledge-of-nodejs/</guid>
       <description>Node.js 学习笔记</description>
     </item>
   </channel>
