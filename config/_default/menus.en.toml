@@ -23,14 +23,6 @@
   url = "/tags/"
   title = ""
   weight = 2
-# [[main]]
-#   identifier = "categories"
-#   pre = ""
-#   post = ""
-#   name = "Categories"
-#   url = "/categories/"
-#   title = ""
-#   weight = 3
 [[main]]
   identifier = "series"
   pre = ""
@@ -39,38 +31,6 @@
   url = "/series/"
   title = ""
   weight = 4
-# [[main]]
-#   identifier = "authors"
-#   pre = ""
-#   post = ""
-#   name = "Authors"
-#   url = "/authors/"
-#   title = ""
-#   weight = 5
-# [[main]]
-#   identifier = "showcase"
-#   pre = ""
-#   post = ""
-#   name = "Showcase"
-#   url = "/showcase/"
-#   title = ""
-#   weight = 6
-# [[main]]
-#   identifier = "documentation"
-#   pre = ""
-#   post = ""
-#   name = "Docs"
-#   url = "/categories/documentation/"
-#   title = ""
-#   weight = 7
-# [[main]]
-#   identifier = "others"
-#   pre = ""
-#   post = ""
-#   name = "Others"
-#   url = "/others/"
-#   title = ""
-#   weight = 5
 [[main]]
   identifier = "about"
   pre = ""
@@ -80,10 +40,10 @@
   title = ""
   weight = 8
 [[main]]
-  identifier = "github"
-  pre = "<i class='fab fa-github fa-fw'></i>"
+  identifier = "search"
+  pre = ""
   post = ""
-  name = ""
-  url = "https://github.com/HEIGE-PCloud/DoIt"
-  title = "GitHub"
-  weight = 9
+  name = "search"
+  url = "/search/"
+  title = ""
+  weight = 8

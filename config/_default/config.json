@@ -1,0 +1,52 @@
+{
+  "theme": "papermod",
+  "baseURL": "https://moon-odyssey.com/",
+  "defaultContentLanguage": "zh-cn",
+  "enableRobotsTXT": true,
+  "paginate": 10,
+  "summaryLength": 0,
+  "buildDrafts": false,
+  "buildFuture": false,
+  "params": {
+    "homeInfoParams": {
+      "Title": "Hi there 👋",
+      "Content": "Welcome to my blog! I'm a software engineer and I write about programming, software development, and other tech-related topics."
+    },
+    "socialIcons": [
+      {
+        "name": "github",
+        "url": "https://github.com/RiverCui"
+      },
+      {
+        "name": "x",
+        "url": "https://x.com/tree172194471"
+      },
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/river-tsui-411aab242"
+      },
+      {
+        "name": "spotify",
+        "url": "https://open.spotify.com/user/31dwfgajemiledl3og3tz3x5dknm"
+      }
+    ],
+    "ShowReadingTime": true,
+    "ShowCodeCopyButtons": true,
+    "fuseOpts": {
+      "isCaseSensitive": false,
+      "shouldSort": true,
+      "location": 0,
+      "distance": 1000,
+      "threshold": 0.4,
+      "minMatchCharLength": 0,
+      "keys": ["title", "permalink", "summary", "content"]
+    }
+  },
+  "outputs": {
+    "home": [
+      "HTML",
+      "RSS",
+      "JSON"
+    ]
+  }
+}

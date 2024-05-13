@@ -3,22 +3,26 @@ title: 'CSS Masonry'
 date: 2024-05-13T22:05:46+08:00
 description: "WebKit 团队和 Chrome 团队对 CSS Masonry 的辩论，以及作者看法"
 summary: "最近 WebKit 团队发布了一篇关于 CSS Masonry layout 的博客，随后 Chrome 也发布了一篇博客回应，对于这个 CSS 属性，双方意见相左..."
-tags: ["CSS", "Grid", "Masonry"]
+tags: ["CSS"]
 ---
 
-## 围绕 Masonry 展开的辩论
+### 围绕 Masonry 展开的辩论
 
 前段时间，WebKit 团队发表了一篇名为 [Help us invent CSS Grid Level 3, aka “Masonry” layout](https://webkit.org/blog/15269/help-us-invent-masonry-layouts-for-css-grid-level-3/) 的文章，讨论了关于 `Masonry` layout 的提案。
 
-`Masonry` 在英文中的意思是建筑物的砖石部分（如下图），这种瀑布流布局样式很常见，像 [Pinterest](https://www.pinterest.com/) 、小红书等都采用了这种样式。
+`Masonry` 在英文中的意思是建筑物的砖石部分（如下图）。
 
 ![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405132239973.png)
+
+这种瀑布流布局样式很常见，像 [Pinterest](https://www.pinterest.com/) 、小红书等都采用了这种样式。
+
+![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405140259611.png)
 
 `Masonry` 是最开始也是由 WebKit 团队提出的，你可以在 [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout) 上查看到它的使用方法（现在只有 Safari 和 Firefox 浏览器支持）。而在 WebKit 发表的这篇文章中，他们解释了为什么他们认为 `Masonry` 应该成为 CSS Grid 的一部分，并且解释了如果 CSS Working Group 使用替换方案 `display: masonry` 的可行性，并且向开发者、设计师寻求建议。
 
 Chrome 团队也在前几日站出来，发表了一篇名为 [An alternative proposal for CSS masonry](https://developer.chrome.com/blog/masonry) 的文章，关于 CSS Masonry，他们明确的提出了 "*implementing it as a part of the CSS Grid specification [..] would be a mistake*"（将其作为 CSS Grid 规范的一部分是个错误）的观点。
 
-## Masonry 怎么用
+### Masonry 怎么用
 
 虽然瀑布流很常见，但是作为一名前端工程师，我还从未写过这种样式，趁热打铁，就用这个新布局来写一个瀑布流页面。
 
@@ -76,10 +80,10 @@ img {
 
 ![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405140106121.png)
 
-得益于 `masonry`，整个实现过程非常简单。附上完整代码：https://github.com/RiverCui/waterfall-demo
+得益于 `masonry`，整个实现过程非常简单。附上完整代码：[waterfall-demo](https://github.com/RiverCui/waterfall-demo)
 
 
-## 我的观点
+### 我的观点
 
 首次这个新功能的时候，有些地方是很迷惑的。
 
@@ -89,4 +93,4 @@ img {
 
 总结一下，我对 `Masonry` 的建议有两点：
 1. 将 masonry 这个单词换成更容易理解的 waterfall
-2. 和 chrome 团队一样，`Masonry` 不应该是 `Grid` 的一部分，应该单独的使用 —— `display: masonry`。
+2. 和 chrome 团队的观点一样，`Masonry` 不应该是 `Grid` 的一部分，应该单独的使用 —— `display: masonry`。

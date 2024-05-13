@@ -61,8 +61,6 @@
 <meta property="og:url" content="https://moon-odyssey.com/posts/pre-knowledge-of-nodejs/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-11-06T00:00:00+00:00" />
 <meta property="article:modified_time" content="2023-11-06T00:00:00+00:00" />
-<meta property="og:see_also" content="https://moon-odyssey.com/posts/npm/" /><meta property="og:see_also" content="https://moon-odyssey.com/posts/module-management/" />
-
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Node.js 前置知识"/>
@@ -187,14 +185,8 @@
                 </a>
             </li>
             <li>
-                <a href="https://github.com/HEIGE-PCloud/DoIt" title="GitHub">
-                    <span><i class='fab fa-github fa-fw'></i></span>&nbsp;
-                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14L21 3"></path>
-                    </svg>
+                <a href="https://moon-odyssey.com/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
                 </a>
             </li>
         </ul>
@@ -211,7 +203,7 @@
     <div class="post-description">
       Node.js 学习笔记
     </div>
-    <div class="post-meta"><span title='2023-11-06 00:00:00 +0000 UTC'>2023-11-06</span>
+    <div class="post-meta"><span title='2023-11-06 00:00:00 +0000 UTC'>2023-11-06</span>&nbsp;·&nbsp;1 min
 
 </div>
   </header> 
@@ -338,6 +330,53 @@
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

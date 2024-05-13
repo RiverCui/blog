@@ -2,23 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://moon-odyssey.com/en/authors/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://moon-odyssey.com/authors/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://moon-odyssey.com/en/authors/"
-                />
-  </url><url>
     <loc>https://moon-odyssey.com/en/categories/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -31,8 +15,6 @@
                 />
   </url><url>
     <loc>https://moon-odyssey.com/en/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -44,23 +26,19 @@
                 href="https://moon-odyssey.com/en/"
                 />
   </url><url>
-    <loc>https://moon-odyssey.com/en/series/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
+    <loc>https://moon-odyssey.com/en/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://moon-odyssey.com/series/"
+                href="https://moon-odyssey.com/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://moon-odyssey.com/en/series/"
+                href="https://moon-odyssey.com/en/search/"
                 />
   </url><url>
     <loc>https://moon-odyssey.com/en/tags/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
