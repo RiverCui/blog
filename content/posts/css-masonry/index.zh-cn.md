@@ -12,7 +12,7 @@ tags = ["CSS", "Grid", "Masonry"]
 
 ![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405132239973.png)
 
-`Masonry` 是最开始也是由 WebKit 团队提出的，你可以在 [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout) 上查看到它的使用方法（现在只有 Safari 浏览器支持）。而在 WebKit 发表的这篇文章中，他们解释了为什么他们认为 `Masonry` 应该成为 CSS Grid 的一部分，并且解释了如果 CSS Working Group 使用替换方案 `display: masonry` 的可行性，并且向开发者、设计师寻求建议。
+`Masonry` 是最开始也是由 WebKit 团队提出的，你可以在 [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout) 上查看到它的使用方法（现在只有 Safari 和 Firefox 浏览器支持）。而在 WebKit 发表的这篇文章中，他们解释了为什么他们认为 `Masonry` 应该成为 CSS Grid 的一部分，并且解释了如果 CSS Working Group 使用替换方案 `display: masonry` 的可行性，并且向开发者、设计师寻求建议。
 
 Chrome 团队也在前几日站出来，发表了一篇名为 [An alternative proposal for CSS masonry](https://developer.chrome.com/blog/masonry) 的文章，关于 CSS Masonry，他们明确的提出了 "*implementing it as a part of the CSS Grid specification [..] would be a mistake*"（将其作为 CSS Grid 规范的一部分是个错误）的观点。
 
