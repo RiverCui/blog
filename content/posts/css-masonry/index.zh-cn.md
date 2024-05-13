@@ -87,7 +87,7 @@ img {
 
 首次使用这个新功能的时候，有些地方是很迷惑的。
 
-首先，作为一个 nonnative English speaker，masonry 这个词对我来说非常陌生，并不像 CSS 中常见的 `border`、`center`、`none` 让人一目了然，有语言门槛。
+首先，作为一个 nonnative English speaker，masonry 这个词对我来说非常陌生，并不像 CSS 中常见的 `border`、`center`、`none` 让人一目了然，是有语言门槛的。
 
 其次，对于 `grid-template-columns`/`grid-template-rows` 搭配 `masonry` 使用，与我的思维习惯相悖，简单来说就是，要想实现纵向的瀑布流，需要使用 `grid-template-rows: masonry`，而我潜意识认为是 `grid-template-columns`。这里有点像一个习惯使用 windows 的人，第一次用 macos 浏览网页对于上下滚动的无所适从。
 
