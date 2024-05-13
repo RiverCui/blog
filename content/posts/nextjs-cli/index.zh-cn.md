@@ -1,7 +1,7 @@
 ---
 title: 'Next.js CLI'
 date: 2024-01-15
-draft: false
+draft: true
 tags: ["Next.js", "React"]
 series: ["Next.js"]
 series_order: 1

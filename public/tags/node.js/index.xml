@@ -1,28 +1,28 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Node.js - 标签 - River&#39;s Blog</title>
-        <link>https://cuiyulu.me/tags/node.js/</link>
+        <link>https://moon-odyssey.com/tags/node.js/</link>
         <description>Node.js - 标签 - River&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 17 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://cuiyulu.me/tags/node.js/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 17 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://moon-odyssey.com/tags/node.js/" rel="self" type="application/rss+xml" /><item>
     <title>NPM</title>
-    <link>https://cuiyulu.me/posts/npm/</link>
+    <link>https://moon-odyssey.com/posts/npm/</link>
     <pubDate>Fri, 17 Nov 2023 00:00:00 &#43;0000</pubDate><author>
         <name>River</name>
-    </author><guid>https://cuiyulu.me/posts/npm/</guid>
+    </author><guid>https://moon-odyssey.com/posts/npm/</guid>
     <description><![CDATA[npm 是 JavaScript 的包管理工具。]]></description>
 </item><item>
     <title>模块管理</title>
-    <link>https://cuiyulu.me/posts/module-management/</link>
+    <link>https://moon-odyssey.com/posts/module-management/</link>
     <pubDate>Thu, 16 Nov 2023 00:00:00 &#43;0000</pubDate><author>
         <name>River</name>
-    </author><guid>https://cuiyulu.me/posts/module-management/</guid>
+    </author><guid>https://moon-odyssey.com/posts/module-management/</guid>
     <description><![CDATA[<code>CommonJS</code> 和 <code>ES Modules</code> 是 JavaScript 中两种主要的模块系统。]]></description>
 </item><item>
     <title>Node.js 前置知识</title>
-    <link>https://cuiyulu.me/posts/pre-knowledge-of-nodejs/</link>
+    <link>https://moon-odyssey.com/posts/pre-knowledge-of-nodejs/</link>
     <pubDate>Mon, 06 Nov 2023 00:00:00 &#43;0000</pubDate><author>
         <name>River</name>
-    </author><guid>https://cuiyulu.me/posts/pre-knowledge-of-nodejs/</guid>
+    </author><guid>https://moon-odyssey.com/posts/pre-knowledge-of-nodejs/</guid>
     <description><![CDATA[Node.js 并不是一种语言而是一个平台，是 JavaScript 的<strong>运行时环境</strong>。]]></description>
 </item></channel>
 </rss>
