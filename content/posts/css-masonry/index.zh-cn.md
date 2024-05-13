@@ -1,8 +1,10 @@
-+++
-title = 'CSS Masonry'
-date = 2024-05-13T22:05:46+08:00
-tags = ["CSS", "Grid", "Masonry"]
-+++
+---
+title: 'CSS Masonry'
+date: 2024-05-13T22:05:46+08:00
+description: "WebKit 团队和 Chrome 团队对 CSS Masonry 的辩论，以及作者看法"
+summary: "最近 WebKit 团队发布了一篇关于 CSS Masonry layout 的博客，随后 Chrome 也发布了一篇博客回应，对于这个 CSS 属性，双方意见相左..."
+tags: ["CSS", "Grid", "Masonry"]
+---
 
 ## 围绕 Masonry 展开的辩论
 

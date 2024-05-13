@@ -15,9 +15,7 @@ App Router 在 `app` 目录下工作，Pages Router 在 `page` 目录下工作�
 
 为了能够逐步采纳 App Router，两套方案是兼容的，也就是说 `app` 目录与 `pages` 目录可以同时存在，所以过去使用 Pages Router 范式的项目，在新增路由的时候也能选择用 App Router 或 Pages Router。
 
-{{<admonition tip>}}
-**App Router 优先级高于 Pages Router**，且跨目录的路由不能解析到相同的 URL 路径上，构建时会报错。
-{{</admonition>}}
+tips: **App Router 优先级高于 Pages Router**，且跨目录的路由不能解析到相同的 URL 路径上，构建时会报错。
 
 `app` 目录下的页面默认使用 `React Server Component`，这是一项性能优化，不过你也可以通过声明 `use client` 使用 `Client Component
 
@@ -68,9 +66,7 @@ export default function Page() {
 访问 `http://localhost:3000/dashboard/`：
 ![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221149725.png)
 
-{{<admonition tip>}}
-不止 `.js` 文件，Next.js 默认支持 React、TypeScript，所以 `.js`、`.jsx`、`.tsx` 文件都是可以的。
-{{</admonition>}}
+tips: 不止 `.js` 文件，Next.js 默认支持 React、TypeScript，所以 `.js`、`.jsx`、`.tsx` 文件都是可以的。
 
 ### 定义布局 Layouts
 

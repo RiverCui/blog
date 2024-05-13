@@ -6,14 +6,16 @@ tags: ["Next.js", "React"]
 series: ["Next.js"]
 series_order: 1
 ---
-{{<admonition question "什么是 Next.js">}}
+## Next.js 和 Next.js CLI
+
+### 什么是 Next.js
 [Next.js](https://nextjs.org) 是基于  `Node.js` 和 `React` 的 Web 开发框架，集成了基于 `Rust` 的 `JavaScript` 工具，可以快速创建**全栈应用**。
-{{</admonition>}}
-{{<admonition question "什么是 Next.js CLI">}}
+
+### 什么是 Next.js CLI
 **CLI** (Command Line Interface) 即命令行界面，是一种用**文本命令**与计算机系统**交互**的方式，用户可以通过在终端输入特定命令来执行操作。
 
 [Next.js CLI](https://nextjs.org/docs/pages/api-reference/next-cli) 是用来帮助用户启动、构建和导出应用程序的，是我们开发中常用到的命令行。
-{{</admonition>}}
+
 
 不过在讲 Next.js CLI 之前，我们先来创建一个演示项目吧！
 
@@ -127,7 +129,7 @@ Next.js 提供了丰富的[示例代码](https://github.com/vercel/next.js/tree/
 npx create-next-app --example with-redux your-app-name
 ```
 
-{{<image src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401092224194.png" caption="官方 with-redux demo">}}
+![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401092224194.png)
 
 ### 2. 手动创建
 你也可以选择手动创建项目：
@@ -149,9 +151,9 @@ npm 会自动创建 `package.json` 文件并且安装依赖项，但你还需要
   ...
 }
 ```
-{{<admonition tip>}}
-如果是全新的项目，推荐**自动创建方式**。如果是项目中引入 Next.js，可以参考手动创建方式。
-{{</admonition>}}
+
+tips: 如果是全新的项目，推荐**自动创建方式**。如果是项目中引入 Next.js，可以参考手动创建方式。
+
 
 ## Next.js CLI
 
@@ -190,9 +192,8 @@ npx next build
 
 也许你已经注意到，上图中还有一项数据 `First Load JS shared by all`，是指每个路由都需要依赖的 JS 大小。也就是说 `Size`+`First Load JS shared by all`=`First Load JS`。
 
-{{<admonition>}}
+
 这些值都是 gzip 压缩后的大小，`First Load JS` 会用绿色、黄色和红色来表示，**绿色代表着高性能**，黄色和红色则需要优化。
-{{</admonition>}}
 
 
 #### `next build --profile`
@@ -225,10 +226,7 @@ export default function Page() {
 
 ![React Developer Tools Profiler](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401131043860.png)
 
-{{< style "strong{color:#61bc84;}" >}}
 可以看到 Profiler 已经正常运行了，**这个功能可以帮助我们排查线上的性能问题**。
-{{< /style >}}
-
 
 #### `next build --debug`
 使用这个参数获取更详细的构建输出，比如 `rewrites`、`redirect`、`headers`。
@@ -288,9 +286,7 @@ next dev --experimental-https
 next dev --experimental-https --experimental-https-key ./certificates/localhost-key.pem --experimental-https-cert ./certificates/localhost.pem
 ```
 
-{{<admonition>}}
 `next dev --experimental-https` 只是用 `mkcert` 创建一个用于开发模式的本地受信任证书，在生产环境中，需要使用受信任机构办法的证书。当然如果你在 `Vercel` 上部署，`Vercel` 会自动为你配置 Next.js 应用。
-{{</admonition>}}
 
 在写这篇文章之前，我也遇到过要求 HTTPS 的场景（浏览器需要调用相机权限），并且专门写了文章介绍如何 [为本地开发服务器配置 HTTPS](../https-for-local-development/)。
 
