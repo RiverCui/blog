@@ -6,8 +6,15 @@
     <description>Recent content in HTTPS on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 25 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Mar 2024 17:36:56 +0800</lastBuildDate>
     <atom:link href="https://moon-odyssey.com/tags/https/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抓取移动设备的 HTTPS 请求</title>
+      <link>https://moon-odyssey.com/posts/capture-https-request-with-mobile-device/</link>
+      <pubDate>Sun, 10 Mar 2024 17:36:56 +0800</pubDate>
+      <guid>https://moon-odyssey.com/posts/capture-https-request-with-mobile-device/</guid>
+      <description>最近在为公司重构项目，因为原本是原生安卓和ios应用，所以为了快速了解业务逻辑和编写新代码，我决定一边用手机操作业务进行抓包，一边对照已有文档、代码进行重构。这篇文章介绍了我是如何用一台电脑和手机来实现抓包移动设备网络请求的。</description>
+    </item>
     <item>
       <title>为本地开发服务器配置 HTTPS 协议</title>
       <link>https://moon-odyssey.com/posts/https-for-local-development/</link>

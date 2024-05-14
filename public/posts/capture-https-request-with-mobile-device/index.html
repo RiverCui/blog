@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=3000&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>抓取移动设备的 HTTPS 请求 | River&#39;s Blog</title>
 <meta name="keywords" content="Tools, HTTPS">
 <meta name="description" content="最近在为公司重构项目，因为原本是原生安卓和ios应用，所以为了快速了解业务逻辑和编写新代码，我决定一边用手机操作业务进行抓包，一边对照已有文档、代码进行重构。这篇文章介绍了我是如何用一台电脑和手机来实现抓包移动设备网络请求的。">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:3000/posts/capture-https-request-with-mobile-device/">
+<link rel="canonical" href="https://moon-odyssey.com/posts/capture-https-request-with-mobile-device/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:3000/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:3000/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:3000/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:3000/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:3000/safari-pinned-tab.svg">
+<link rel="icon" href="https://moon-odyssey.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://moon-odyssey.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://moon-odyssey.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://moon-odyssey.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://moon-odyssey.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="zh-cn" href="http://localhost:3000/posts/capture-https-request-with-mobile-device/">
+<link rel="alternate" hreflang="zh-cn" href="https://moon-odyssey.com/posts/capture-https-request-with-mobile-device/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,7 +55,67 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="抓取移动设备的 HTTPS 请求" />
+<meta property="og:description" content="最近在为公司重构项目，因为原本是原生安卓和ios应用，所以为了快速了解业务逻辑和编写新代码，我决定一边用手机操作业务进行抓包，一边对照已有文档、代码进行重构。这篇文章介绍了我是如何用一台电脑和手机来实现抓包移动设备网络请求的。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://moon-odyssey.com/posts/capture-https-request-with-mobile-device/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-10T17:36:56+08:00" />
+<meta property="article:modified_time" content="2024-03-10T17:36:56+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="抓取移动设备的 HTTPS 请求"/>
+<meta name="twitter:description" content="最近在为公司重构项目，因为原本是原生安卓和ios应用，所以为了快速了解业务逻辑和编写新代码，我决定一边用手机操作业务进行抓包，一边对照已有文档、代码进行重构。这篇文章介绍了我是如何用一台电脑和手机来实现抓包移动设备网络请求的。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://moon-odyssey.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "抓取移动设备的 HTTPS 请求",
+      "item": "https://moon-odyssey.com/posts/capture-https-request-with-mobile-device/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "抓取移动设备的 HTTPS 请求",
+  "name": "抓取移动设备的 HTTPS 请求",
+  "description": "最近在为公司重构项目，因为原本是原生安卓和ios应用，所以为了快速了解业务逻辑和编写新代码，我决定一边用手机操作业务进行抓包，一边对照已有文档、代码进行重构。这篇文章介绍了我是如何用一台电脑和手机来实现抓包移动设备网络请求的。",
+  "keywords": [
+    "Tools", "HTTPS"
+  ],
+  "articleBody": "最近在为公司重构项目，因为原本是原生安卓和ios应用，所以为了快速了解业务逻辑和编写新代码，我决定一边用手机操作业务进行抓包，一边对照已有文档、代码进行重构。这篇文章介绍了我是如何用一台电脑和手机来实现抓包移动设备网络请求的。\n首先介绍一下使用的工具 —— Charles，这是一款网络抓包工具，它允许开发者查看、监控发送和接收的HTTP/HTTPS通信数据，主要面向开发者对 Web应用、移动 App 等进行网络调试和分析。你可以点击进入 Charles 官网下载，支持 Windows、macOS 和 Linux。\n基本使用 安装好 Charles 后，可以按照我下面给出的步骤进行使用：\n1. 让你的手机和电脑处在同一局域网 2. 电脑运行 Charles（默认端口号 8888） 3. 打开手机的 WLAN 设置 修改以下三项，可参考下方小米手机截图：\n代理：改为手动\n主机名：填写你的电脑 IP\n端口号： 8888（8888 为 Charles 默认端口号，如有需要可以在 Charles 中的 Proxy Settings 修改）\n4. 在手机中打开需要抓取的 App 现在你可以看到 Charles 已经开始正常运行，开始抓取 HTTP 请求了。\n虽然 HTTP 请求抓取正常，但你也许会和我一样，有需要抓取 HTTPS 请求的使用场景，但此时 Charles 抓包会出现乱码，这是由于 HTTPS 更高的安全性，我们要提供证书才可以正常获取数据。\n配置以抓包 HTTPS Request 在移动设备上安装证书：\n1. 配置 Charles 的 SSL Proxy -\u003e SSL Proxying Settings\n添加 *:443。\n2. 从 Charles 下载证书 打开 Charles，Help -\u003e SSL Proxying，因为我们使用的是手机，所以这里就选择 Mobile Device。\nCharles 会弹出提示，我们根据提示，用手机访问 chls.pro/ssl 下载证书。\n3. 手机安装证书 还是以小米手机为例，系统是 MUI 13.0.7，安装证书步骤如下：\n安全 -\u003e 更多安全设置 -\u003e 加密与凭据 -\u003e 安装证书 -\u003e CA 证书，然后选择刚才下载好的 Charles 证书安装\n现在再打开 Charles，可以看到抓到的 HTTPS 请求信息了。\n",
+  "wordCount" : "109",
+  "inLanguage": "zh-cn",
+  "datePublished": "2024-03-10T17:36:56+08:00",
+  "dateModified": "2024-03-10T17:36:56+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://moon-odyssey.com/posts/capture-https-request-with-mobile-device/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "River's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://moon-odyssey.com/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -73,7 +133,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:3000/" accesskey="h" title="River&#39;s Blog (Alt + H)">River&#39;s Blog</a>
+            <a href="https://moon-odyssey.com/" accesskey="h" title="River&#39;s Blog (Alt + H)">River&#39;s Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -97,7 +157,7 @@
                 </button>
                 <ul class="lang-switch"><li>|</li>
                     <li>
-                        <a href="http://localhost:3000/en/" title="English"
+                        <a href="https://moon-odyssey.com/en/" title="English"
                             aria-label="English">En</a>
                     </li>
                 </ul>
@@ -105,22 +165,22 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:3000/posts/" title="所有文章">
+                <a href="https://moon-odyssey.com/posts/" title="所有文章">
                     <span>所有文章</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:3000/tags/" title="标签">
+                <a href="https://moon-odyssey.com/tags/" title="标签">
                     <span>标签</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:3000/about/" title="关于">
+                <a href="https://moon-odyssey.com/about/" title="关于">
                     <span>关于</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:3000/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                <a href="https://moon-odyssey.com/search/" title="搜索 (Alt &#43; /)" accesskey=/>
                     <span>搜索</span>
                 </a>
             </li>
@@ -134,14 +194,8 @@
     
     <h1 class="post-title entry-hint-parent">
       抓取移动设备的 HTTPS 请求
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
     </h1>
-    <div class="post-meta"><span title='2024-05-14 17:36:56 +0800 CST'>2024-05-14</span>&nbsp;·&nbsp;1 min
+    <div class="post-meta"><span title='2024-03-10 17:36:56 +0800 CST'>2024-03-10</span>&nbsp;·&nbsp;1 min
 
 </div>
   </header> 
@@ -197,15 +251,15 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:3000/tags/tools/">Tools</a></li>
-      <li><a href="http://localhost:3000/tags/https/">HTTPS</a></li>
+      <li><a href="https://moon-odyssey.com/tags/tools/">Tools</a></li>
+      <li><a href="https://moon-odyssey.com/tags/https/">HTTPS</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="http://localhost:3000/">River&#39;s Blog</a></span>
+    <span>&copy; 2024 <a href="https://moon-odyssey.com/">River&#39;s Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
