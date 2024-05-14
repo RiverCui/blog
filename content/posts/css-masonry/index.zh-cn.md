@@ -14,7 +14,7 @@ tags: ["CSS"]
 
 ![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405132239973.png)
 
-这种瀑布流布局样式很常见，像 [Pinterest](https://www.pinterest.com/) 、小红书等都采用了这种样式。
+masonry 布局是一种类似砖墙或石墙的模式的布局，也就是我们常说的瀑布流布局，这种布局样式很常见，比如 [Pinterest](https://www.pinterest.com/) 、[小红书](https://www.xiaohongshu.com/)等都采用了这种样式。
 
 ![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405140259611.png)
 
