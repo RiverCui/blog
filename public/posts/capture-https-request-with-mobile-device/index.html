@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=3000&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>抓取移动设备的 HTTPS 请求 | River&#39;s Blog</title>
+<meta name="keywords" content="Tools, HTTPS">
+<meta name="description" content="最近在为公司重构项目，因为原本是原生安卓和ios应用，所以为了快速了解业务逻辑和编写新代码，我决定一边用手机操作业务进行抓包，一边对照已有文档、代码进行重构。这篇文章介绍了我是如何用一台电脑和手机来实现抓包移动设备网络请求的。">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:3000/posts/capture-https-request-with-mobile-device/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:3000/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:3000/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:3000/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:3000/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:3000/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="http://localhost:3000/posts/capture-https-request-with-mobile-device/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:3000/" accesskey="h" title="River&#39;s Blog (Alt + H)">River&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="http://localhost:3000/en/" title="English"
+                            aria-label="English">En</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:3000/posts/" title="所有文章">
+                    <span>所有文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:3000/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:3000/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:3000/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      抓取移动设备的 HTTPS 请求
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h1>
+    <div class="post-meta"><span title='2024-05-14 17:36:56 +0800 CST'>2024-05-14</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header> 
+  <div class="post-content"><p>最近在为公司重构项目，因为原本是原生安卓和ios应用，所以为了快速了解业务逻辑和编写新代码，我决定一边用手机操作业务进行抓包，一边对照已有文档、代码进行重构。这篇文章介绍了我是<strong>如何用一台电脑和手机来实现抓包移动设备网络请求的</strong>。</p>
+<p>首先介绍一下使用的工具 —— <strong>Charles</strong>，这是一款网络抓包工具，它允许开发者查看、监控发送和接收的HTTP/HTTPS通信数据，主要面向开发者对 Web应用、移动 App 等进行网络调试和分析。你可以点击进入 <a href="https://www.charlesproxy.com/">Charles 官网</a>下载，支持 Windows、macOS 和 Linux。</p>
+<h3 id="基本使用">基本使用<a hidden class="anchor" aria-hidden="true" href="#基本使用">#</a></h3>
+<p>安装好 Charles 后，可以按照我下面给出的步骤进行使用：</p>
+<h4 id="1-让你的手机和电脑处在同一局域网">1. 让你的手机和电脑处在同一局域网<a hidden class="anchor" aria-hidden="true" href="#1-让你的手机和电脑处在同一局域网">#</a></h4>
+<h4 id="2-电脑运行-charles默认端口号-8888">2. 电脑运行 Charles（默认端口号 8888）<a hidden class="anchor" aria-hidden="true" href="#2-电脑运行-charles默认端口号-8888">#</a></h4>
+<h4 id="3-打开手机的-wlan-设置">3. 打开手机的 WLAN 设置<a hidden class="anchor" aria-hidden="true" href="#3-打开手机的-wlan-设置">#</a></h4>
+<p>修改以下三项，可参考下方小米手机截图：</p>
+<ul>
+<li>
+<p>代理：改为<strong>手动</strong></p>
+</li>
+<li>
+<p>主机名：填写你的<strong>电脑 IP</strong></p>
+</li>
+<li>
+<p>端口号： <strong>8888</strong>（8888 为 Charles 默认端口号，如有需要可以在 Charles 中的 Proxy Settings 修改）</p>
+</li>
+</ul>
+<p><img loading="lazy" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405141801827.png" alt=""  />
+</p>
+<h4 id="4-在手机中打开需要抓取的-app">4. 在手机中打开需要抓取的 App<a hidden class="anchor" aria-hidden="true" href="#4-在手机中打开需要抓取的-app">#</a></h4>
+<p>现在你可以看到 Charles 已经开始正常运行，开始抓取 HTTP 请求了。</p>
+<p>虽然 HTTP 请求抓取正常，但你也许会和我一样，有需要抓取 <strong>HTTPS 请求</strong>的使用场景，但此时 Charles 抓包会出现乱码，这是<strong>由于 HTTPS 更高的安全性</strong>，我们要提供证书才可以正常获取数据。</p>
+<p><img loading="lazy" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405141813564.png" alt=""  />
+</p>
+<h3 id="配置以抓包-https-request">配置以抓包 HTTPS Request<a hidden class="anchor" aria-hidden="true" href="#配置以抓包-https-request">#</a></h3>
+<p>在移动设备上安装证书：</p>
+<h4 id="1-配置-charles-的-ssl">1. 配置 Charles 的 SSL<a hidden class="anchor" aria-hidden="true" href="#1-配置-charles-的-ssl">#</a></h4>
+<p>Proxy -&gt; SSL Proxying Settings</p>
+<p><img loading="lazy" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405141820500.png" alt=""  />
+</p>
+<p>添加 <code>*:443</code>。</p>
+<p><img loading="lazy" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405141818660.png" alt=""  />
+</p>
+<h4 id="2-从-charles-下载证书">2. 从 Charles 下载证书<a hidden class="anchor" aria-hidden="true" href="#2-从-charles-下载证书">#</a></h4>
+<p>打开 Charles，Help -&gt; SSL Proxying，因为我们使用的是手机，所以这里就选择 Mobile Device。</p>
+<p><img loading="lazy" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405141824077.png" alt=""  />
+</p>
+<p>Charles 会弹出提示，我们根据提示，用手机访问 <code>chls.pro/ssl</code> 下载证书。</p>
+<p><img loading="lazy" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405141826786.png" alt=""  />
+</p>
+<h4 id="3-手机安装证书">3. 手机安装证书<a hidden class="anchor" aria-hidden="true" href="#3-手机安装证书">#</a></h4>
+<p>还是以小米手机为例，系统是 MUI 13.0.7，安装证书步骤如下：</p>
+<p>安全 -&gt; 更多安全设置 -&gt; 加密与凭据 -&gt; 安装证书 -&gt; CA 证书，然后选择刚才下载好的 Charles 证书安装</p>
+<p>现在再打开 Charles，可以看到抓到的 HTTPS 请求信息了。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:3000/tags/tools/">Tools</a></li>
+      <li><a href="http://localhost:3000/tags/https/">HTTPS</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:3000/">River&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

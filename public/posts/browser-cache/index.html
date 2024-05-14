@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=3000&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>浏览器的缓存机制 | River&#39;s Blog</title>
+<meta name="keywords" content="浏览器, 性能优化">
+<meta name="description" content="...">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:3000/posts/browser-cache/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:3000/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:3000/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:3000/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:3000/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:3000/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="http://localhost:3000/posts/browser-cache/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:3000/" accesskey="h" title="River&#39;s Blog (Alt + H)">River&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="http://localhost:3000/en/" title="English"
+                            aria-label="English">En</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:3000/posts/" title="所有文章">
+                    <span>所有文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:3000/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:3000/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:3000/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      浏览器的缓存机制
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h1>
+    <div class="post-description">
+      ...
+    </div>
+    <div class="post-meta"><span title='2023-12-21 00:00:00 +0000 UTC'>2023-12-21</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header> 
+  <div class="post-content"><p>浏览器缓存是一种提高网页加载速度和性能的技术，它允许浏览器存储网站资源，比如 HTML 页面、图片、CSS 样式表和 JS 脚本文件等。本质是通过<strong>减少对服务器的请求，从本地缓存中加载资源，从而减少加载时间和服务器负载</strong>，是前端性能优化的重要手段。</p>
+<p>一.浏览器缓存
+1.HTTP缓存
+(1) HTTP 缓存机制
+<img loading="lazy" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/HTTP%20%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6.png" alt="HTTP 缓存机制"  />
+
+A.强缓存
+B.协商缓存
+(2) 强缓存、协商缓存区别
+2.本地缓存
+（1）localStorage
+（2）sessionStorage
+（3）indexDB
+二.浏览器缓存位置</p>
+<p>相关面试题：
+Web 缓存通常包括哪些
+浏览器什么情况下会使用本地缓存
+强缓存和协商缓存的区别
+强制 ctrl + F5 刷新会发生什么
+session、cookie 以及 storage 的区别</p>
+<ol>
+<li>
+<p><strong>Web 缓存通常包括哪些类型？</strong>
+Web 缓存主要可以分为以下几种类型：</p>
+<ul>
+<li><strong>浏览器缓存（Browser Cache）</strong>：它存在于客户端，用于临时存放经过用户访问过的网页资源，如HTML页面、图片、脚本等。</li>
+<li><strong>代理缓存（Proxy Cache）</strong>：代理服务器上的缓存，用于服务多个用户，减少重复的网络请求，加快访问速度。</li>
+<li><strong>网关缓存（Gateway Cache）</strong>：作为服务端和客户端之间的一个中介层，通常由CDN（内容分发网络）执行。</li>
+<li><strong>应用服务器缓存</strong>：直接在应用服务器上缓存常用数据，如数据库查询结果、计算结果等。</li>
+<li><strong>数据库缓存</strong>：为了减少数据库查询的次数，直接在数据库层面缓存查询结果。</li>
+</ul>
+</li>
+<li>
+<p><strong>浏览器什么情况下会使用本地缓存？</strong>
+浏览器会在以下情况下使用本地缓存：</p>
+<ul>
+<li>当访问的资源存在有效的缓存指令时，如Cache-Control头或Expires头的有效日期内。</li>
+<li>当资源未修改，且存在Etag或Last-Modified头匹配本地缓存时，可以使用本地缓存。</li>
+<li>用户访问历史、临时重定向等场景也可能触发浏览器使用本地缓存。</li>
+</ul>
+</li>
+<li>
+<p><strong>强缓存和协商缓存的区别？</strong></p>
+<ul>
+<li><strong>强缓存（Strong Caching）</strong>：不需要向服务器发送请求就能加载资源。它通过<code>Cache-Control</code>的<code>max-age</code>指令或<code>Expires</code>头来控制资源在本地缓存的有效时间。只有在缓存有效期内，资源就从本地缓存加载，否则浏览器会发起新的网络请求。</li>
+<li><strong>协商缓存（Negotiated Caching）</strong>：当强缓存过期后，浏览器会向服务器发送带有<code>If-None-Match</code>（对应于ETag）或<code>If-Modified-Since</code>（对应于Last-Modified）的请求头的请求。服务器接收到请求后，会根据这些条件头判断资源是否有更新。如果资源未更新，返回<code>304 Not Modified</code>响应，浏览器继续使用本地缓存的资源；若资源有更新，服务器返回<code>200 OK</code>与新的资源内容。</li>
+</ul>
+</li>
+<li>
+<p><strong>强制 Ctrl + F5 刷新会发生什么？</strong>
+按下Ctrl + F5执行强制刷新时，浏览器会忽略所有缓存（包括强缓存和协商缓存），向服务器发送一个全新的请求，并下载最新的资源。这个行为通常用于获取网页的最新版本，例如在更新网页内容后。</p>
+</li>
+<li>
+<p><strong>session、cookie 以及 storage 的区别？</strong></p>
+<ul>
+<li><strong>Cookie</strong>：小段数据，由服务器发送到用户的浏览器，并保存在用户本地，随后的HTTP请求都会携带这些数据，向服务器传递信息。Cookie有大小限制（一般为4KB），和生命周期限制。</li>
+<li><strong>Session</strong>：服务器端的存储机制，用来存储用户的会话信息。通常，服务器会在客户端创建一个Session标识（session id），这个标识通常被存储在客户端的Cookie中。当用户再次访问服务器时，服务器通过session id来识别用户。</li>
+<li><strong>Storage</strong>：HTML5引入的Web Storage API，包括localStorage和sessionStorage。localStorage用于持久化的本地存储，即数据在浏览器关闭后依然存在；sessionStorage用于会话级别的存储，即数据只在页面会话期间存在，关闭页面或浏览器后会被清除。_storage_有更大的空间限制（通常至少5MB）比cookies，并且仅在客户端存储，不会随HTTP请求发送到服务器。</li>
+</ul>
+</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:3000/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a></li>
+      <li><a href="http://localhost:3000/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:3000/">River&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
