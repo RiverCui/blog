@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Read on River&#39;s Blog</title>
+    <link>https://moon-odyssey.com/tags/read/</link>
+    <description>Recent content in Read on River&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 14 May 2024 18:45:10 +0800</lastBuildDate>
+    <atom:link href="https://moon-odyssey.com/tags/read/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>个人向的 RSS 订阅推荐</title>
+      <link>https://moon-odyssey.com/posts/personal-rss-feed-recommendations/</link>
+      <pubDate>Tue, 14 May 2024 18:45:10 +0800</pubDate>
+      <guid>https://moon-odyssey.com/posts/personal-rss-feed-recommendations/</guid>
+      <description>分享我的 RSS 订阅单，希望看到这篇文章的你能用到</description>
+    </item>
+  </channel>
+</rss>

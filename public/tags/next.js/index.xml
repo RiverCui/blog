@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Next.js on River&#39;s Blog</title>
-    <link>http://localhost:3000/tags/next.js/</link>
+    <link>http://localhost:1313/tags/next.js/</link>
     <description>Recent content in Next.js on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:3000/tags/next.js/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/next.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Next.js CLI</title>
-      <link>http://localhost:3000/posts/nextjs-cli/</link>
+      <link>http://localhost:1313/posts/nextjs-cli/</link>
       <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:3000/posts/nextjs-cli/</guid>
+      <guid>http://localhost:1313/posts/nextjs-cli/</guid>
       <description>Next.js 和 Next.</description>
     </item>
     <item>
       <title>Next.js 路由 App Router</title>
-      <link>http://localhost:3000/posts/app-router/</link>
+      <link>http://localhost:1313/posts/app-router/</link>
       <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:3000/posts/app-router/</guid>
+      <guid>http://localhost:1313/posts/app-router/</guid>
       <description>Next.js 目前有两种路由方案，一个是旧有的 Pages Router，另一个是 13 版本新推出的 App Router。在这篇文章中，我们将深入探讨 App Router 的核心概念、如何在 Next.</description>
     </item>
   </channel>
