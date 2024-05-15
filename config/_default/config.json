@@ -30,6 +30,7 @@
         "url": "https://open.spotify.com/user/31dwfgajemiledl3og3tz3x5dknm"
       }
     ],
+    "ShowShareButtons": false,
     "ShowReadingTime": true,
     "ShowCodeCopyButtons": true,
     "fuseOpts": {

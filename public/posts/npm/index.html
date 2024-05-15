@@ -165,8 +165,8 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://moon-odyssey.com/posts/" title="所有文章">
-                    <span>所有文章</span>
+                <a href="https://moon-odyssey.com/archives/" title="归档">
+                    <span>归档</span>
                 </a>
             </li>
             <li>
@@ -206,7 +206,7 @@
 <p>NPM 是 Node.js 自带的包管理工具。</p>
 <p>Node.js 的模块大致分为内部模块和其他模块。内部模块是 Node.js 内部集成的模块，不需要引用 JS 外部文件，而是通过 <code>require</code> 或 <code>import</code> 模块名引入。</p>
 <p>比如内置 fs 模块（文件操作相关的模块），可以这样引入：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>)
 </span></span></code></pre></div><p><img loading="lazy" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/iShot_2023-11-16_16.17.43.png" alt="Node.js 内置模块"  />
 </p>
 <p>除了上图这些内置模块外，在开发中还会使用很多其他模块，有两种方式可以引入：</p>
@@ -219,16 +219,16 @@
 - b
   bar.js
 </code></pre><p>可以在 <code>bar.js</code> 里这样引入：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../a/foo.js&#39;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;../a/foo.js&#39;</span>)
 </span></span></code></pre></div></li>
 <li>
 <p>通过 NPM 将模块安装到项目中(默认是 node_modules 目录)，在代码中用包名来引用模块。</p>
 <p><a href="https://www.npmjs.com/">npm registry</a> 是 NPM 的官方仓库，可查找需要的包，并按照包文档的指引进行安装使用。</p>
 <p>比如，<a href="https://www.npmjs.com/package/dayjs">dayjs</a> 这个插件，使用 NPM 安装：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">dayjs</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">dayjs</span>
 </span></span></code></pre></div><p>使用：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">dayjs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;dayjs&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nx">dayjs</span><span class="p">().</span><span class="nx">format</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dayjs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;dayjs&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">dayjs</span>().<span style="color:#a6e22e">format</span>()
 </span></span></code></pre></div><p><strong>当通过包名引入模块时，Node.js 会根据 <code>resolve</code> 算法先搜索模块所在的目录下的 node_modules，如果没找到，会递归查找上级目录中的 node_modules，直到根目录。</strong></p>
 </li>
 </ul>

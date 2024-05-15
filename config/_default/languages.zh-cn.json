@@ -1,0 +1,12 @@
+{
+  "languageCode": "zh-cn",
+  "languageName": "Chinese",
+  "weight": 1,
+  "title": "River's Blog",
+  "params": {
+    "displayName": "中文",
+    "isoCode": "zh-cn",
+    "rtl": false,
+    "dateFormat": "2006-01-02"
+  }
+}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Next.js 路由 App Router | River&#39;s Blog</title>
+<title>Next.js 路由 App Router | </title>
 <meta name="keywords" content="Next.js, React">
 <meta name="description" content="Next.js 目前有两种路由方案，一个是旧有的 Pages Router，另一个是 13 版本新推出的 App Router。在这篇文章中，我们将深入探讨 App Router 的核心概念、如何在 Next.">
 <meta name="author" content="">
@@ -73,7 +73,6 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="River&#39;s Blog (Alt + H)">River&#39;s Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -97,8 +96,8 @@
                 </button>
                 <ul class="lang-switch"><li>|</li>
                     <li>
-                        <a href="http://localhost:1313/en/" title="English"
-                            aria-label="English">En</a>
+                        <a href="http://localhost:1313/en/" title="En"
+                            aria-label="En">En</a>
                     </li>
                 </ul>
             </div>
@@ -141,7 +140,7 @@
         </svg>
       </span>
     </h1>
-    <div class="post-meta"><span title='2024-01-15 00:00:00 +0000 UTC'>2024-01-15</span>&nbsp;·&nbsp;1 min
+    <div class="post-meta"><span title='2024-01-15 00:00:00 +0000 UTC'>January 15, 2024</span>&nbsp;·&nbsp;1 min
 
 </div>
   </header> 
@@ -171,14 +170,14 @@
 <p>现在我们来创建第一个 <code>page.js</code> 页面吧：
 <img loading="lazy" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221146387.png" alt=""  />
 </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// app/page.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="nx">Home</span> <span class="nx">Page</span><span class="o">!&lt;</span><span class="err">/h1&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// app/dashboard/page.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="nx">Dashboard</span> <span class="nx">Page</span><span class="o">!&lt;</span><span class="err">/h1&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// app/page.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Page</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span>, <span style="color:#a6e22e">Home</span> <span style="color:#a6e22e">Page</span><span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// app/dashboard/page.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Page</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span>, <span style="color:#a6e22e">Dashboard</span> <span style="color:#a6e22e">Page</span><span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><code>npm run dev</code> 运行项目，访问 <code>http://localhost:3000/</code>，效果如下：
 <img loading="lazy" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221149969.png" alt=""  />
 </p>
@@ -191,17 +190,17 @@
 <p>现在新建一个 <code>layout.js</code> 的文件，该文件会默认导出一个 React 组件，这个组件接收一个 <code>children</code> prop，<code>children</code> 用来表示子布局（如果有的话）或者子页面。</p>
 <p><img loading="lazy" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221157258.png" alt=""  />
 </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// app/dashboard/layout.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">DashboardLayout</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">children</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="p">})</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">section</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">nav</span><span class="o">&gt;</span><span class="nx">NAV</span><span class="o">&lt;</span><span class="err">/nav&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">children</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="err">/section&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// app/dashboard/layout.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">DashboardLayout</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">children</span>,
+</span></span><span style="display:flex;"><span>}) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">section</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">nav</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">NAV</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/nav&gt;</span>
+</span></span><span style="display:flex;"><span>      {<span style="color:#a6e22e">children</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/section&gt;</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>效果如图所示：
 <img loading="lazy" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221200578.png" alt=""  />
 </p>
@@ -221,7 +220,7 @@
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="http://localhost:1313/">River&#39;s Blog</a></span>
+    <span>&copy; 2024 <a href="http://localhost:1313/"></a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
