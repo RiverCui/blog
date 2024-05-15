@@ -1,0 +1,101 @@
+title: "River's Blog"
+baseURL: "https://moon-odyssey.com/"
+paginate: 10
+theme: papermod
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+enableEmoji: true
+
+defaultContentLanguage: "zh-cn"
+languages:
+  zh-cn:
+    languageName: "Chinese"
+    languageCode: "zh-cn"
+    weight: 1
+    menu:
+      main:
+        - name: "归档"
+          url: /archives/
+          identifier: archives
+          weight: 1
+        - name: "标签"
+          identifier: tags
+          url: /tags/
+          weight: 2
+        - name: "关于"
+          identifier: about
+          url: /about/
+          weight: 3
+        - name: "搜索"
+          identifier: search
+          url: /search/
+          weight: 4
+  en:
+    languageName: "English"
+    languageCode: "en-US"
+    weight: 2
+    menu:
+      main:
+        - name: "Archives"
+          identifier: archives
+          url: /archives/
+          weight: 5
+        - name: "Tags"
+          identifier: tags
+          url: /tags/
+          weight: 6
+        - name: "About"
+          identifier: about
+          url: /about/
+          weight: 7
+        - name: "Search"
+          identifier: search
+          url: /search/
+          weight: 8
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  homeInfoParams:
+    Title: "Hi, I'm River"
+    Content: >
+      👋 Welcome to my blog
+
+      - I'm a software engineer and I write about programming, software development, and other tech-related topics.
+
+      - Feel free to reach out to me via email at rivertsuiwork@gmail.com or on [GitHub](https://github.com/RiverCui).
+  
+  socialIcons:
+    - name: "GitHub"
+      icon: "github"
+      url: "https://github.com/RiverCui"
+    - name: "Twitter"
+      icon: "twitter"
+      url: "https://x.com/tree172194471"
+    - name: "LinkedIn"
+      icon: "linkedin"
+      url: "https://www.linkedin.com/in/river-tsui-411aab242"
+    - name: "Email"
+      icon: "email"
+      url: "mailto:rivertsuiwork@gmail.com"
+  ShowReadingTime: true
+  ShowCodeCopyButtons: true
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+module:
+  hugoVersion:
+    extended: false
+    min: "0.87.0"

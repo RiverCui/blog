@@ -10,7 +10,7 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://moon-odyssey.com/en/categories/"
                 />
   </url><url>
@@ -22,7 +22,7 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://moon-odyssey.com/en/"
                 />
   </url><url>
@@ -34,7 +34,7 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://moon-odyssey.com/en/search/"
                 />
   </url><url>
@@ -46,7 +46,7 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://moon-odyssey.com/en/tags/"
                 />
   </url>
