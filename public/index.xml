@@ -62,9 +62,9 @@
       <link>https://moon-odyssey.com/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://moon-odyssey.com/about/</guid>
-      <description>Hi 我是 River，我是一个全栈工程师。我喜欢编程，喜欢认知输入与输出，喜欢挑战。
-建博客是想有个独立的空间存放文章，阅读、写作是我想要一直坚持下去的事情。
-非典型 INTJ，有一只猫，在学游泳，阅片量即将迈入900大关。</description>
+      <description>我是 River，我是一个全栈工程师。我喜欢编程，喜欢认知输入与输出，喜欢挑战。你可以通过邮件联系我 rivertsuiwork@gmail.com。
+搭建博客是因为需要一个独立空间存放文章，阅读、写作是我想要一直坚持下去的事情。非典型 INTJ，有一只猫，在学游泳，阅片量即将迈入900大关。
+本网站使用 Hugo 构建，使用 papermod 主题, 使用 Vercel 部署，域名由 Cloudflare 托管。本博客源代码已上传至 GitHub。</description>
     </item>
   </channel>
 </rss>

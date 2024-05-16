@@ -7,6 +7,7 @@ enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 enableEmoji: true
+keywords: "River, River 的个人博客, River's Blog, River Tsui, River Cui, Software Engineer, Software Development, Programming, Tech"
 
 defaultContentLanguage: "zh-cn"
 languages:
@@ -14,19 +15,20 @@ languages:
     languageName: "Chinese"
     languageCode: "zh-cn"
     weight: 1
+    DateFormat: "2006-01-02"
     menu:
       main:
-        - name: "归档"
-          url: /archives/
-          identifier: archives
-          weight: 1
-        - name: "标签"
-          identifier: tags
-          url: /tags/
-          weight: 2
         - name: "关于"
           identifier: about
           url: /about/
+          weight: 1
+        - name: "归档"
+          url: /archives/
+          identifier: archives
+          weight: 2
+        - name: "标签"
+          identifier: tags
+          url: /tags/
           weight: 3
         - name: "搜索"
           identifier: search
@@ -36,24 +38,25 @@ languages:
     languageName: "English"
     languageCode: "en-US"
     weight: 2
+    DateFormat: "January 2, 2006"
     menu:
       main:
-        - name: "Archives"
-          identifier: archives
-          url: /archives/
-          weight: 5
-        - name: "Tags"
-          identifier: tags
-          url: /tags/
-          weight: 6
         - name: "About"
           identifier: about
           url: /about/
-          weight: 7
+          weight: 1
+        - name: "Archives"
+          identifier: archives
+          url: /archives/
+          weight: 2
+        - name: "Tags"
+          identifier: tags
+          url: /tags/
+          weight: 3
         - name: "Search"
           identifier: search
           url: /search/
-          weight: 8
+          weight: 4
 
 outputs:
   home:
@@ -67,7 +70,7 @@ params:
     Content: >
       👋 Welcome to my blog
 
-      - I'm a software engineer and I write about programming, software development, and other tech-related topics.
+      - I'm a full-stack software engineer based in Shenzhen, China. I'm passionate about building software that solves real-world problems.
 
       - Feel free to reach out to me via email at rivertsuiwork@gmail.com or on [GitHub](https://github.com/RiverCui).
   
