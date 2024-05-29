@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Next.js on River&#39;s Blog</title>
+    <link>http://localhost:1313/tags/next.js/</link>
+    <description>Recent content in Next.js on River&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/next.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Next.js CLI</title>
+      <link>http://localhost:1313/posts/nextjs-cli/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/nextjs-cli/</guid>
+      <description>Next.js 和 Next.js CLI 什么是 Next.js Next.js 是基于 Node.js 和 React 的 Web 开发框架，集成了基于 Rust 的 JavaScript 工具，可以快速创建全栈应用。
+什么是 Next.js CLI CLI (Command Line Interface) 即命令行界面，是一种用文本命令与计算机系统交互的方式，用户可以通过在终端输入特定命令来执行操作。
+Next.js CLI 是用来帮助用户启动、构建和导出应用程序的，是我们开发中常用到的命令行。
+不过在讲 Next.js CLI 之前，我们先来创建一个演示项目吧！
+创建一个 Next app 1. 自动创建 打开终端，执行下方命令：
+npx create-next-app@latest 执行上面这行命令后，需要去选择下方的这些配置，作为一个演示项目，全部选择默认选项即可。
+What is your project named? my-app Would you like to use TypeScript? No / Yes Would you like to use ESLint? No / Yes Would you like to use Tailwind CSS?</description>
+    </item>
+    <item>
+      <title>Next.js 路由 App Router</title>
+      <link>http://localhost:1313/posts/app-router/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/app-router/</guid>
+      <description>Next.js 目前有两种路由方案，一个是旧有的 Pages Router，另一个是 13 版本新推出的 App Router。在这篇文章中，我们将深入探讨 App Router 的核心概念、如何在 Next.js 项目中实现高效路由管理，以及 App Router 如何改变我们对 Web 应用路由的理解。无论你是一位经验丰富的 Next.js 开发者，还是刚刚开始接触这个框架的新手，本文都将为你揭示 App Router 的强大功能和潜力。
+App Router 和 Pages Router App Router 在 app 目录下工作，Pages Router 在 page 目录下工作。
+为了能够逐步采纳 App Router，两套方案是兼容的，也就是说 app 目录与 pages 目录可以同时存在，所以过去使用 Pages Router 范式的项目，在新增路由的时候也能选择用 App Router 或 Pages Router。
+tips: App Router 优先级高于 Pages Router，且跨目录的路由不能解析到相同的 URL 路径上，构建时会报错。
+app 目录下的页面默认使用 React Server Component，这是一项性能优化，不过你也可以通过声明 use client 使用 `Client Component</description>
+    </item>
+  </channel>
+</rss>
