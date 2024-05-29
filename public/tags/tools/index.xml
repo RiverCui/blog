@@ -16,14 +16,14 @@
       <description>在现代数据管理中，云存储已经成为不可或缺的一部分。无论是个人用户还是企业用户，云存储都提供了便捷的存储和访问方式。本文将介绍如何使用 Rclone 这个强大的命令行工具来管理阿里云 OSS(对象存储服务) 文件。</description>
     </item>
     <item>
-      <title>为本地开发服务器配置 HTTPS 协议</title>
+      <title>使用 mkcert/Vite 生成本地证书</title>
       <link>https://moon-odyssey.com/posts/https-for-local-development/</link>
       <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
       <guid>https://moon-odyssey.com/posts/https-for-local-development/</guid>
-      <description>介绍两种在本地运行 HTTPS 协议的方法</description>
+      <description>介绍两种在本地运行 HTTPS 协议的方法：mkcert 和 Vite</description>
     </item>
     <item>
-      <title>抓取移动设备的 HTTPS 请求</title>
+      <title>使用 Charles 抓取移动设备 HTTPS 请求</title>
       <link>https://moon-odyssey.com/posts/capture-https-request-with-mobile-device/</link>
       <pubDate>Fri, 10 Mar 2023 17:36:56 +0800</pubDate>
       <guid>https://moon-odyssey.com/posts/capture-https-request-with-mobile-device/</guid>

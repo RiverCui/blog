@@ -1,7 +1,7 @@
 ---
-title: '为本地开发服务器配置 HTTPS 协议'
+title: '使用 mkcert/Vite 生成本地证书'
 date: 2023-12-25
-description: "介绍两种在本地运行 HTTPS 协议的方法"
+description: "介绍两种在本地运行 HTTPS 协议的方法：mkcert 和 Vite"
 summary: "在前端开发过程中，本地运行调试时默认使用 HTTP 协议，而调用某些敏感的功能（比如相机、麦克风、地理位置等）时，浏览器出于安全考虑，只允许在 HTTPS 协议下调用，本文就讲述了如何在本地开发环境中配置 HTTPS。"
 tags: ["Tools", "HTTPS", "Vite"]
 ---

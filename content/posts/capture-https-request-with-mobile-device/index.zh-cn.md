@@ -1,5 +1,5 @@
 ---
-title: '抓取移动设备的 HTTPS 请求'
+title: '使用 Charles 抓取移动设备 HTTPS 请求'
 date: 2023-03-10T17:36:56+08:00
 description: "介绍了使用 Charles 抓包工具获取移动设备的 HTTPS 请求"
 summary: "详细讲解如何通过一台电脑和手机，利用 Charles 抓包工具获取移动端 App 的 HTTP、HTTPS请求。"
