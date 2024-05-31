@@ -13,7 +13,7 @@
       <link>https://moon-odyssey.com/posts/how-to-manage-files-on-cloud-storage-with-rclone/</link>
       <pubDate>Tue, 28 May 2024 16:36:10 +0800</pubDate>
       <guid>https://moon-odyssey.com/posts/how-to-manage-files-on-cloud-storage-with-rclone/</guid>
-      <description>在现代数据管理中，云存储已经成为不可或缺的一部分。无论是个人用户还是企业用户，云存储都提供了便捷的存储和访问方式。本文将介绍如何使用 Rclone 这个强大的命令行工具来管理阿里云 OSS(对象存储服务) 文件。</description>
+      <description>本文介绍了如何使用 Rclone 命令行工具来管理阿里云 OSS 或其他云存储服务。</description>
     </item>
   </channel>
 </rss>
