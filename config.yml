@@ -15,7 +15,6 @@ languages:
     languageName: "Chinese"
     languageCode: "zh-cn"
     weight: 1
-    DateFormat: "2006-01-02"
     menu:
       main:
         - name: "关于"
@@ -34,11 +33,13 @@ languages:
           identifier: search
           url: /search/
           weight: 4
+    params:
+      DateFormat: "2006-01-02"
+
   en:
     languageName: "English"
     languageCode: "en-US"
     weight: 2
-    DateFormat: "January 2, 2006"
     menu:
       main:
         - name: "About"
@@ -57,6 +58,8 @@ languages:
           identifier: search
           url: /search/
           weight: 4
+    params:
+      DateFormat: "January 2, 2006"
 
 outputs:
   home:
