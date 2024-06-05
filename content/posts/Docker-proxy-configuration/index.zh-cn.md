@@ -8,6 +8,8 @@ tags: ["Docker"]
 
 Docker Desktop 登录失败有很多原因，如果使用网页打开 [Docker Hub](https://hub.docker.com/) 登录没问题，但是 Docker Desktop 登录超时，大概率是因为代理问题，可以参考下面的方法进行配置。
 
+## 登录问题
+
 首先你要有一个代理（自行 Google），获取到代理的端口号。例如我使用的是 Clash，在设置中可以看到端口号为 7897。
 
 ![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202406051122307.png)
@@ -21,3 +23,9 @@ Docker Desktop 登录失败有很多原因，如果使用网页打开 [Docker Hu
 ![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202406051132566.png)
 
 重启 Docker Desktop 就可以正常登录了。
+
+## 镜像加速
+
+国内从 Docker Hub 拉去镜像有时会遇到困难，可以参考[国内的 Docker Hub 镜像加速器](https://gist.github.com/y0ngb1n/7e8f16af3242c7815e7ca2f0833d3ea6)配置镜像加速。
+
+![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202406051148187.png)

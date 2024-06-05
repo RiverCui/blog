@@ -100,8 +100,8 @@
   "keywords": [
     "Docker"
   ],
-  "articleBody": "Docker Desktop 登录失败有很多原因，如果使用网页打开 Docker Hub 登录没问题，但是 Docker Desktop 登录超时，大概率是因为代理问题，可以参考下面的方法进行配置。\n首先你要有一个代理（自行 Google），获取到代理的端口号。例如我使用的是 Clash，在设置中可以看到端口号为 7897。\n打开 Docker Desktop 设置，Resource -\u003e Proxies。\n打开 Manual Proxy configuration 状态，添加 Web Server(HTTP) 和 Web Server(HTTPS)，端口号为代理端口号。\n重启 Docker Desktop 就可以正常登录了。\n",
-  "wordCount" : "33",
+  "articleBody": "Docker Desktop 登录失败有很多原因，如果使用网页打开 Docker Hub 登录没问题，但是 Docker Desktop 登录超时，大概率是因为代理问题，可以参考下面的方法进行配置。\n登录问题 首先你要有一个代理（自行 Google），获取到代理的端口号。例如我使用的是 Clash，在设置中可以看到端口号为 7897。\n打开 Docker Desktop 设置，Resource -\u003e Proxies。\n打开 Manual Proxy configuration 状态，添加 Web Server(HTTP) 和 Web Server(HTTPS)，端口号为代理端口号。\n重启 Docker Desktop 就可以正常登录了。\n镜像加速 国内从 Docker Hub 拉去镜像有时会遇到困难，可以参考国内的 Docker Hub 镜像加速器配置镜像加速。\n",
+  "wordCount" : "42",
   "inLanguage": "zh-cn",
   "datePublished": "2024-06-05T00:00:00Z",
   "dateModified": "2024-06-05T00:00:00Z",
@@ -206,6 +206,7 @@
 </div>
   </header> 
   <div class="post-content"><p>Docker Desktop 登录失败有很多原因，如果使用网页打开 <a href="https://hub.docker.com/">Docker Hub</a> 登录没问题，但是 Docker Desktop 登录超时，大概率是因为代理问题，可以参考下面的方法进行配置。</p>
+<h2 id="登录问题">登录问题<a hidden class="anchor" aria-hidden="true" href="#登录问题">#</a></h2>
 <p>首先你要有一个代理（自行 Google），获取到代理的端口号。例如我使用的是 Clash，在设置中可以看到端口号为 7897。</p>
 <p><img loading="lazy" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202406051122307.png" alt=""  />
 </p>
@@ -216,6 +217,10 @@
 <p><img loading="lazy" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202406051132566.png" alt=""  />
 </p>
 <p>重启 Docker Desktop 就可以正常登录了。</p>
+<h2 id="镜像加速">镜像加速<a hidden class="anchor" aria-hidden="true" href="#镜像加速">#</a></h2>
+<p>国内从 Docker Hub 拉去镜像有时会遇到困难，可以参考<a href="https://gist.github.com/y0ngb1n/7e8f16af3242c7815e7ca2f0833d3ea6">国内的 Docker Hub 镜像加速器</a>配置镜像加速。</p>
+<p><img loading="lazy" src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202406051148187.png" alt=""  />
+</p>
 
 
   </div>
