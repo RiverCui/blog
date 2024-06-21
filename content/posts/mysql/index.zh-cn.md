@@ -222,6 +222,10 @@ orders 表：
 
 # 常见问题
 
+## 用 mysql workbench 新建 table 时没有 apply 按钮
+
+8.0.36 版本有问题，替换成 8.0.34 就正常使用了。
+
 ## ERROR 1819 (HY000): Your password does not satisfy the current policy requirements
 
 运行下方代码会报错
