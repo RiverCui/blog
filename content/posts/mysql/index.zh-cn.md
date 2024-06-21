@@ -10,41 +10,72 @@ tags: ["MySQL", "Database"]
 
 ## 安装
 
-[Database Guidebook 数据库安装](https://tsejx.github.io/database-guidebook/sql/overview/installation)
+### MySQL Community Server
+
+MySQL Community Server 是数据库服务器，它负责实际存储和管理数据。
+
+下载地址：https://dev.mysql.com/downloads/mysql/
+
+选择版本和操作系统，点击 Download 按钮下载。我是 macOS 14 系统，M1 芯片，这里就选择了 `macOS 14 (ARM, 64-bit), DMG Archive` 下载。
+
+![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202406220105311.png)
+
+安装完成后，打开系统设置，拉到最下方就能看到 MySQL，点击按钮运行 MySQL 服务。
+
+![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202406220209009.png)
+
+### MySQL Workbench
+
+MySQL Workbench 是一个客户端应用程序，你可以用它来连接到 MySQL Community Server，进行数据库设计、开发和管理等操作。
+
+要注意版本保持一致，下载地址：https://dev.mysql.com/downloads/workbench/
+
+安装后打开，点击 Connection 或者新建一个，输入密码就OK了。
+
+![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202406220214784.png)
 
 ## 环境变量
 
-方便以后每次的开启、停止和重启，就不用像上面命令一样每次都要加路径。
+查看当前 shell
+```zsh
+echo $SHELL
+```
+
+如果是 `/bin/bash`，说明用的是 bash，如果是 `/bin/zsh`，说明用的是 zsh。
+
+如果是 bash:
 
 ```bash
-# 打开 .bash_profile 添加 mysql.server 路径
+# 1. 更改
 vim ~/.bash_profile
 
-# 添加以下变量：
-export MYSQL_HOME=/usr/local/mysql
-export PATH=${PATH}:${MYSQL_HOME}/support-files
+# 2. 添加
+export PATH=${PATH}:/usr/local/mysql/bin
 
-# 保存 .bash_profile 文件后使用 source 命令让刚才的改动生效
-source !/.bash_profile
-
-# 最后使用 sudo /usr/local/mysql/support-files/mysql.server start 验证是否配置成功即可
+# 3. 更新
+source ~/.bash_profile
 ```
 
-## 启动、停止
-```bash
-# 启动 MySQL 服务器
-mysql.server start
-# 停止 MySQL 服务器
-mysql.server stop
-# 重新启动 MySQL 服务器
-mysql.server restart
-# 重新加载 MySQL 服务器的配置
-mysql.server reload
-# 强制重新加载 MySQL 服务器的配置
-mysql.server force-reload
-# 检查 MySQL 服务器的当前状态
-mysql.server status
+如果是 zsh：
+```zsh
+# 1. 更改
+vim ~/.zshrc
+
+# 2. 添加
+export PATH=${PATH}:/usr/local/mysql/bin
+
+# 3. 更新
+source ~/.zshrc
 ```
+
+## 进入 MySQL CLI
+
+```zsh
+mysql -u root -p
+```
+
+输入安装时密码，即可成功进入 MySQL CLI。
+
 
 ## 命令行工具
 
@@ -198,7 +229,7 @@ orders 表：
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'admin'
 ```
 
-错误信息：ERROR 1819 (HY000): Your password does not satisfy the current policy requirements。密码不符合安全要求，解决办法：
+错误信息：ERROR 1819 (HY000): Your password does not satisfy the current policy requirements。密码不符合安全要求，改下密码的安全要求就可以了。解决步骤：
 
 登录 MySQL
 ```
