@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – MySQL</title>
-    <link>http://localhost:1313/tags/mysql/</link>
+    <link>https://moon-odyssey.com/tags/mysql/</link>
     <description>Recent content in MySQL on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 15 Jun 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://moon-odyssey.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>MySQL 安装和基础使用</title>
-      <link>http://localhost:1313/blog/mysql/</link>
+      <link>https://moon-odyssey.com/blog/mysql/</link>
       <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/blog/mysql/</guid>
+      <guid>https://moon-odyssey.com/blog/mysql/</guid>
       <description>
         
         
