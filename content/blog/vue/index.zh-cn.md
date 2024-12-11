@@ -1,3 +1,11 @@
++++
+title = 'title'
+date = 2024-11-27T14:36:46+08:00
+description = ""
+tags = ["Vue"]
+draft = true
++++
+
 # Vue 内部运行机制
 本文梳理 Vue 的内部运行机制，重点着眼于响应式系统。
 

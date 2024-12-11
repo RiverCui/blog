@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – RSS</title>
-    <link>https://moon-odyssey.com/tags/rss/</link>
+    <link>http://localhost:1313/tags/rss/</link>
     <description>Recent content in RSS on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 14 May 2024 18:45:10 +0800</lastBuildDate>
     
-	  <atom:link href="https://moon-odyssey.com/tags/rss/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/tags/rss/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>个人向的 RSS 订阅推荐</title>
-      <link>https://moon-odyssey.com/blog/personal-rss-feed-recommendations/</link>
+      <link>http://localhost:1313/blog/personal-rss-feed-recommendations/</link>
       <pubDate>Tue, 14 May 2024 18:45:10 +0800</pubDate>
       
-      <guid>https://moon-odyssey.com/blog/personal-rss-feed-recommendations/</guid>
+      <guid>http://localhost:1313/blog/personal-rss-feed-recommendations/</guid>
       <description>
         
         
