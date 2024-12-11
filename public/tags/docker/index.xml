@@ -1,19 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docker on River&#39;s Blog</title>
+    <title>River&#39;s Blog – Docker</title>
     <link>https://moon-odyssey.com/tags/docker/</link>
     <description>Recent content in Docker on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 05 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://moon-odyssey.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+	  <atom:link href="https://moon-odyssey.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
     <item>
       <title>Docker 代理配置（解决登录失败问题）</title>
-      <link>https://moon-odyssey.com/posts/docker-proxy-configuration/</link>
+      <link>https://moon-odyssey.com/blog/docker-proxy-configuration/</link>
       <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://moon-odyssey.com/posts/docker-proxy-configuration/</guid>
-      <description>解决 Docker Desktop 登录失败的问题</description>
+      
+      <guid>https://moon-odyssey.com/blog/docker-proxy-configuration/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Docker Desktop 登录失败有很多原因，如果使用网页打开 &lt;a href=&#34;https://hub.docker.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker Hub&lt;/a&gt; 登录没问题，但是 Docker Desktop 登录超时，大概率是因为代理问题，可以参考下面的方法进行配置。&lt;/p&gt;
+&lt;h2&gt;登录问题&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;登录问题&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e7%99%bb%e5%bd%95%e9%97%ae%e9%a2%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;首先你要有一个代理（自行 Google），获取到代理的端口号。例如我使用的是 Clash，在设置中可以看到端口号为 7897。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202406051122307.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;打开 Docker Desktop 设置，Resource -&amp;gt; Proxies。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202406051130481.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;打开 &lt;code&gt;Manual Proxy configuration&lt;/code&gt; 状态，添加 Web Server(HTTP) 和 Web Server(HTTPS)，端口号为代理端口号。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202406051132566.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;重启 Docker Desktop 就可以正常登录了。&lt;/p&gt;
+&lt;h2&gt;镜像加速&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;镜像加速&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e9%95%9c%e5%83%8f%e5%8a%a0%e9%80%9f&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;国内从 Docker Hub 拉去镜像有时会遇到困难，可以参考&lt;a href=&#34;https://gist.github.com/y0ngb1n/7e8f16af3242c7815e7ca2f0833d3ea6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;国内的 Docker Hub 镜像加速器&lt;/a&gt;配置镜像加速。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202406051148187.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+
+      </description>
     </item>
+    
   </channel>
 </rss>

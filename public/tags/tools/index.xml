@@ -1,33 +1,395 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tools on River&#39;s Blog</title>
+    <title>River&#39;s Blog – Tools</title>
     <link>https://moon-odyssey.com/tags/tools/</link>
     <description>Recent content in Tools on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 28 May 2024 16:36:10 +0800</lastBuildDate>
-    <atom:link href="https://moon-odyssey.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+	  <atom:link href="https://moon-odyssey.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
     <item>
       <title>如何使用 Rclone 高效管理云存储文件</title>
-      <link>https://moon-odyssey.com/posts/how-to-manage-files-on-cloud-storage-with-rclone/</link>
+      <link>https://moon-odyssey.com/blog/how-to-manage-files-on-cloud-storage-with-rclone/</link>
       <pubDate>Tue, 28 May 2024 16:36:10 +0800</pubDate>
-      <guid>https://moon-odyssey.com/posts/how-to-manage-files-on-cloud-storage-with-rclone/</guid>
-      <description>本文介绍了如何使用 Rclone 命令行工具来管理阿里云 OSS 或其他云存储服务。</description>
+      
+      <guid>https://moon-odyssey.com/blog/how-to-manage-files-on-cloud-storage-with-rclone/</guid>
+      <description>
+        
+        
+        &lt;p&gt;在现代数据管理中，云存储已经成为不可或缺的一部分。无论是个人用户还是企业用户，云存储都提供了便捷的存储和访问方式。&lt;strong&gt;本文将介绍如何使用 Rclone 这个强大的命令行工具来管理阿里云 OSS(对象存储服务) 文件&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2&gt;什么是 Rclone？&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;什么是-rclone&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%bb%80%e4%b9%88%e6%98%af-rclone&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/rclone/rclone&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rclone&lt;/a&gt; 是一个开源&lt;strong&gt;命令行程序&lt;/strong&gt;，支持多种云存储服务，包括 Google Drive、Amazon S3(阿里云OSS、腾讯COS、华为OBS等)、Dropbox。他可以用于同步文件、备份数据、迁移存储，以及其他文件管理任务。Rclone 提供了丰富的功能，如加密、压缩、多线程下载等，非常适合高效管理云存储文件。&lt;/p&gt;
+&lt;p&gt;它支持以下功能：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;按需复制，每次仅仅复制更改的文件&lt;/li&gt;
+&lt;li&gt;断电续传&lt;/li&gt;
+&lt;li&gt;压缩传输&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;安装 Rclone&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;安装-rclone&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%ae%89%e8%a3%85-rclone&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;首先，我们需要安装 Rclone。可以从 &lt;a href=&#34;https://rclone.org/install/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rclone 官网&lt;/a&gt; 下载适合你操作系统的安装包，并按照响应的安装步骤进行安装。&lt;/p&gt;
+&lt;p&gt;对于 macOS 用户，可以通过 brew 进行安装：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install rclone&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;如果你是 Windows 用户，可以&lt;a href=&#34;https://rclone.org/install/#windows-precompiled&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;下载 &lt;code&gt;.exe&lt;/code&gt; 文件&lt;/a&gt;并运行安装程序。&lt;/p&gt;
+&lt;h2&gt;配置 Rclone 连接阿里云 OSS&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;配置-rclone-连接阿里云-oss&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e9%85%8d%e7%bd%ae-rclone-%e8%bf%9e%e6%8e%a5%e9%98%bf%e9%87%8c%e4%ba%91-oss&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;安装完成后，我们需要配置 Rclone 以链接阿里云 OSS。打开终端(Terminal)，输入以下命令启动配置向导：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone config&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;接下来，你会看到一个交互式的配置界面：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;No remotes found - make a new one
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;n&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; New remote
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;s&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; Set configuration password
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;q&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; Quit config
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;n/s/q&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;输入 &lt;code&gt;n&lt;/code&gt; 并按回车，开始创建一个新的 remote。然后按照提示输入以下信息：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;remote 名称：例如&lt;code&gt;alioss&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;存储类型：输入 &lt;code&gt;4&lt;/code&gt;，即 Amazon S3 Compliant Storage Providers&lt;/li&gt;
+&lt;li&gt;服务提供商：输入 &lt;code&gt;2&lt;/code&gt;，即 Alibaba Cloud Object Storage System (OSS) formerly Aliyun&lt;/li&gt;
+&lt;li&gt;Access Key ID 和 ACCESS Key Secret：从阿里云 OSS 控制台获取&lt;/li&gt;
+&lt;li&gt;Endpoint：选择你的 OSS 终端节点，例如 &lt;code&gt;oss-cn-shenzhen.aliyuncs.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;其他选项：根据需要配置，通常可以使用默认值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;配置完成后，保存并退出。&lt;/p&gt;
+&lt;h2&gt;常用操作示例&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;常用操作示例&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%b8%b8%e7%94%a8%e6%93%8d%e4%bd%9c%e7%a4%ba%e4%be%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;列出存储桶(bucket)中的文件&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;列出存储桶bucket中的文件&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%88%97%e5%87%ba%e5%ad%98%e5%82%a8%e6%a1%b6bucket%e4%b8%ad%e7%9a%84%e6%96%87%e4%bb%b6&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone ls alioss:your-bucket-name&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h3&gt;上传文件到bucket&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;上传文件到bucket&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%8a%e4%bc%a0%e6%96%87%e4%bb%b6%e5%88%b0bucket&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone copy /path/to/local/file alioss:your-bucket-name&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h3&gt;下载文件到本地&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;下载文件到本地&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%8b%e8%bd%bd%e6%96%87%e4%bb%b6%e5%88%b0%e6%9c%ac%e5%9c%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone copy alioss:your-bucket-name /path/to/local/dir&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h3&gt;同步本地目录和存储桶&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;同步本地目录和存储桶&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%90%8c%e6%ad%a5%e6%9c%ac%e5%9c%b0%e7%9b%ae%e5%bd%95%e5%92%8c%e5%ad%98%e5%82%a8%e6%a1%b6&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone sync /path/to/local/dir alioss:your-bucket-name&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h2&gt;总结&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;总结&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%80%bb%e7%bb%93&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Rclone 是一个功能强大的工具，能够帮助你高效地管理阿里云 OSS 或是其他云服务的文件，通过简单的配置和命令行操作，你可以轻松实现文件的上传
+、下载和同步等任务。希望本文能够帮助你快速上手 Rclone，并充分利用其强大的功能来管理你的云存储文件。&lt;/p&gt;
+
+      </description>
     </item>
+    
     <item>
       <title>使用 mkcert/Vite 生成本地证书</title>
-      <link>https://moon-odyssey.com/posts/https-for-local-development/</link>
+      <link>https://moon-odyssey.com/blog/https-for-local-development/</link>
       <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://moon-odyssey.com/posts/https-for-local-development/</guid>
-      <description>介绍两种在本地运行 HTTPS 协议的方法：mkcert 和 Vite</description>
+      
+      <guid>https://moon-odyssey.com/blog/https-for-local-development/</guid>
+      <description>
+        
+        
+        &lt;p&gt;我最近在开发一个能够提供扫码功能的网页，但是扫码功能需要调用相机权限，浏览器出于安全考虑只在 HTTPS 环境下允许。所以想要在本地调试这些功能，需要为本地开发服务器配置 HTTPS。解决这个问题的本质就是&lt;strong&gt;生成本地证书和自签名&lt;/strong&gt;，网上能找到很多方法，在这里我会介绍两种，看到这篇博客的朋友可以跟着下面的步骤实践，足够你在简单基础的开发中去使用。&lt;/p&gt;
+&lt;h2&gt;mkcert&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;mkcert&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#mkcert&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/FiloSottile/mkcert&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mkcert&lt;/a&gt; 是一个简化了的本地 CA 工具，用来生成有效的本地 HTTPS 证书。&lt;code&gt;mkcert&lt;/code&gt; 的使用和证书配置步骤如下：&lt;/p&gt;
+&lt;h3&gt;1.安装&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1安装&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1%e5%ae%89%e8%a3%85&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;如果你也是 macOS 系统且安装了 homebrew，可以按照下面这个方式进行安装：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew instal mkcert
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install nss &lt;span class=&#34;c1&#34;&gt;# 如果电脑中有 Firefox，还需要这一步骤，否则会报错&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;如果你是 Windows，可以&lt;a href=&#34;https://github.com/FiloSottile/mkcert?tab=readme-ov-file#windows&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击此处&lt;/a&gt;查看安装步骤。&lt;/p&gt;
+&lt;h3&gt;2.安装本地 CA&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2安装本地-ca&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2%e5%ae%89%e8%a3%85%e6%9c%ac%e5%9c%b0-ca&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkcert -install&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h3&gt;3.为 localhost 创建证书&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3为-localhost-创建证书&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3%e4%b8%ba-localhost-%e5%88%9b%e5%bb%ba%e8%af%81%e4%b9%a6&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkcert localhost 127.0.0.1 ::1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;创建成功后，Terminal 会显示证书的存放位置和过期时间，如下：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;The certificate is at &lt;span class=&#34;s2&#34;&gt;&amp;#34;./localhost+2.pem&amp;#34;&lt;/span&gt; and the key at &lt;span class=&#34;s2&#34;&gt;&amp;#34;./localhost+2-key.pem&amp;#34;&lt;/span&gt; ✅
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;It will expire on &lt;span class=&#34;m&#34;&gt;25&lt;/span&gt; March &lt;span class=&#34;m&#34;&gt;2026&lt;/span&gt; 🗓&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h3&gt;4.将证书存放在项目中&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4将证书存放在项目中&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4%e5%b0%86%e8%af%81%e4%b9%a6%e5%ad%98%e6%94%be%e5%9c%a8%e9%a1%b9%e7%9b%ae%e4%b8%ad&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;在项目目录下新建一个文件夹，方便管理证书。&lt;/p&gt;
+&lt;p&gt;例如我在我的项目目录下新建了一个 &lt;code&gt;cert&lt;/code&gt; 的文件夹，并将刚才生成的 &lt;code&gt;localhost+2.pem&lt;/code&gt; 和 &lt;code&gt;localhost+2-key.pem&lt;/code&gt; 移动到该目录下。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202312252213449.png&#34; alt=&#34;存放证书&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h3&gt;5.配置 vite 以使用 HTTPS&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;5配置-vite-以使用-https&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5%e9%85%8d%e7%bd%ae-vite-%e4%bb%a5%e4%bd%bf%e7%94%a8-https&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;我的项目技术栈是 &lt;code&gt;vue3 + vite&lt;/code&gt;，所以这里配置的是 &lt;code&gt;vite.config.js&lt;/code&gt; 文件，如果你使用其他构建工具(比如&lt;code&gt;vue-cli + webpack&lt;/code&gt;)，配置方法也都大同小异，只需查阅官方文档做出相应调整即可。
+注意：修改配置后记得重新运行服务。&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// vite.config.js
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fs&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;fs&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;path&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;defineConfig&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;nx&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;readFileSync&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;resolve&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;__dirname&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;cert/localhost+2-key.pem&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;cert&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;readFileSync&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;resolve&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;__dirname&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;cert/localhost+2.pem&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h2&gt;Vue / React 自带选项&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;vue--react-自带选项&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#vue--react-%e8%87%aa%e5%b8%a6%e9%80%89%e9%a1%b9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;不管是 React 还是 Vue，都自带了开启 HTTPS 的选项，这也使得我们在本地使用 HTTPS 协议更加简单。&lt;/p&gt;
+&lt;p&gt;也以 vite 为例，&lt;a href=&#34;https://vitejs.dev/config/server-options.html#server-https&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;官方文档&lt;/a&gt;中有提到，如果需要合法证书，可以使用它们提供的插件 &lt;a href=&#34;https://www.npmjs.com/package/@vitejs/plugin-basic-ssl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@vitejs/plugin-basic-ssl&lt;/a&gt;，这个插件会自动创建和缓存一个自签名的证书。&lt;/p&gt;
+&lt;h3&gt;1.安装插件 &lt;code&gt;@vitejs/plugin-basic-ssl&lt;/code&gt;：&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1安装插件-vitejsplugin-basic-ssl&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6-vitejsplugin-basic-ssl&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pnpm add @vitejs/plugin-basic/ssl -D&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h3&gt;2.配置 vite&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2配置-vite&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2%e9%85%8d%e7%bd%ae-vite&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;配置 vite 后运行即可，需要注意浏览器可能会有安全警告，这是因为我们生成的自签名证书不是受信任的证书颁发机构签发的，但不妨碍我们开发使用，只要不投入生产环境使用就没问题。&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// vite.config.js
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;defineConfig&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;nx&#34;&gt;plugins&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;basicSsl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+
+      </description>
     </item>
+    
     <item>
       <title>使用 Charles 抓取移动设备 HTTPS 请求</title>
-      <link>https://moon-odyssey.com/posts/capture-https-request-with-mobile-device/</link>
+      <link>https://moon-odyssey.com/blog/capture-https-request-with-mobile-device/</link>
       <pubDate>Fri, 10 Mar 2023 17:36:56 +0800</pubDate>
-      <guid>https://moon-odyssey.com/posts/capture-https-request-with-mobile-device/</guid>
-      <description>介绍了使用 Charles 抓包工具获取移动设备的 HTTPS 请求</description>
+      
+      <guid>https://moon-odyssey.com/blog/capture-https-request-with-mobile-device/</guid>
+      <description>
+        
+        
+        &lt;p&gt;最近在为公司重构项目，因为原本是原生安卓和ios应用，所以为了快速了解业务逻辑和编写新代码，我决定一边用手机操作业务进行抓包，一边对照已有文档、代码进行重构。这篇文章介绍了我是&lt;strong&gt;如何用一台电脑和手机来实现抓包移动设备网络请求的&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;首先介绍一下使用的工具 —— &lt;strong&gt;Charles&lt;/strong&gt;，这是一款网络抓包工具，它允许开发者查看、监控发送和接收的HTTP/HTTPS通信数据，主要面向开发者对 Web应用、移动 App 等进行网络调试和分析。你可以点击进入 &lt;a href=&#34;https://www.charlesproxy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Charles 官网&lt;/a&gt;下载，支持 Windows、macOS 和 Linux。&lt;/p&gt;
+&lt;h3&gt;基本使用&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;基本使用&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;安装好 Charles 后，可以按照我下面给出的步骤进行使用：&lt;/p&gt;
+&lt;h4&gt;1. 让你的手机和电脑处在同一局域网&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-让你的手机和电脑处在同一局域网&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-%e8%ae%a9%e4%bd%a0%e7%9a%84%e6%89%8b%e6%9c%ba%e5%92%8c%e7%94%b5%e8%84%91%e5%a4%84%e5%9c%a8%e5%90%8c%e4%b8%80%e5%b1%80%e5%9f%9f%e7%bd%91&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;h4&gt;2. 电脑运行 Charles（默认端口号 8888）&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-电脑运行-charles默认端口号-8888&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-%e7%94%b5%e8%84%91%e8%bf%90%e8%a1%8c-charles%e9%bb%98%e8%ae%a4%e7%ab%af%e5%8f%a3%e5%8f%b7-8888&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;h4&gt;3. 打开手机的 WLAN 设置&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-打开手机的-wlan-设置&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-%e6%89%93%e5%bc%80%e6%89%8b%e6%9c%ba%e7%9a%84-wlan-%e8%ae%be%e7%bd%ae&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;修改以下三项，可参考下方小米手机截图：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;代理：改为&lt;strong&gt;手动&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;主机名：填写你的&lt;strong&gt;电脑 IP&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;端口号： &lt;strong&gt;8888&lt;/strong&gt;（8888 为 Charles 默认端口号，如有需要可以在 Charles 中的 Proxy Settings 修改）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405141801827.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h4&gt;4. 在手机中打开需要抓取的 App&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-在手机中打开需要抓取的-app&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-%e5%9c%a8%e6%89%8b%e6%9c%ba%e4%b8%ad%e6%89%93%e5%bc%80%e9%9c%80%e8%a6%81%e6%8a%93%e5%8f%96%e7%9a%84-app&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;现在你可以看到 Charles 已经开始正常运行，开始抓取 HTTP 请求了。&lt;/p&gt;
+&lt;p&gt;虽然 HTTP 请求抓取正常，但你也许会和我一样，有需要抓取 &lt;strong&gt;HTTPS 请求&lt;/strong&gt;的使用场景，但此时 Charles 抓包会出现乱码，这是&lt;strong&gt;由于 HTTPS 更高的安全性&lt;/strong&gt;，我们要提供证书才可以正常获取数据。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405141813564.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h3&gt;配置以抓包 HTTPS Request&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;配置以抓包-https-request&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e9%85%8d%e7%bd%ae%e4%bb%a5%e6%8a%93%e5%8c%85-https-request&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;在移动设备上安装证书：&lt;/p&gt;
+&lt;h4&gt;1. 配置 Charles 的 SSL&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-配置-charles-的-ssl&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-%e9%85%8d%e7%bd%ae-charles-%e7%9a%84-ssl&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Proxy -&amp;gt; SSL Proxying Settings&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405141820500.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;添加 &lt;code&gt;*:443&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405141818660.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h4&gt;2. 从 Charles 下载证书&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-从-charles-下载证书&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-%e4%bb%8e-charles-%e4%b8%8b%e8%bd%bd%e8%af%81%e4%b9%a6&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;打开 Charles，Help -&amp;gt; SSL Proxying，因为我们使用的是手机，所以这里就选择 Mobile Device。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405141824077.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Charles 会弹出提示，我们根据提示，用手机访问 &lt;code&gt;chls.pro/ssl&lt;/code&gt; 下载证书。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202405141826786.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h4&gt;3. 手机安装证书&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-手机安装证书&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-%e6%89%8b%e6%9c%ba%e5%ae%89%e8%a3%85%e8%af%81%e4%b9%a6&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;还是以小米手机为例，系统是 MUI 13.0.7，安装证书步骤如下：&lt;/p&gt;
+&lt;p&gt;安全 -&amp;gt; 更多安全设置 -&amp;gt; 加密与凭据 -&amp;gt; 安装证书 -&amp;gt; CA 证书，然后选择刚才下载好的 Charles 证书安装&lt;/p&gt;
+&lt;p&gt;现在再打开 Charles，可以看到抓到的 HTTPS 请求信息了。&lt;/p&gt;
+
+      </description>
     </item>
+    
   </channel>
 </rss>

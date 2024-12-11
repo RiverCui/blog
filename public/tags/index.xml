@@ -1,89 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on River&#39;s Blog</title>
+    <title>River&#39;s Blog – Tags</title>
     <link>https://moon-odyssey.com/tags/</link>
     <description>Recent content in Tags on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 15 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://moon-odyssey.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Database</title>
-      <link>https://moon-odyssey.com/tags/database/</link>
-      <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://moon-odyssey.com/tags/database/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MySQL</title>
-      <link>https://moon-odyssey.com/tags/mysql/</link>
-      <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://moon-odyssey.com/tags/mysql/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Docker</title>
-      <link>https://moon-odyssey.com/tags/docker/</link>
-      <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://moon-odyssey.com/tags/docker/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cloud</title>
-      <link>https://moon-odyssey.com/tags/cloud/</link>
-      <pubDate>Tue, 28 May 2024 16:36:10 +0800</pubDate>
-      <guid>https://moon-odyssey.com/tags/cloud/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tools</title>
-      <link>https://moon-odyssey.com/tags/tools/</link>
-      <pubDate>Tue, 28 May 2024 16:36:10 +0800</pubDate>
-      <guid>https://moon-odyssey.com/tags/tools/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Read</title>
-      <link>https://moon-odyssey.com/tags/read/</link>
-      <pubDate>Tue, 14 May 2024 18:45:10 +0800</pubDate>
-      <guid>https://moon-odyssey.com/tags/read/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>RSS</title>
-      <link>https://moon-odyssey.com/tags/rss/</link>
-      <pubDate>Tue, 14 May 2024 18:45:10 +0800</pubDate>
-      <guid>https://moon-odyssey.com/tags/rss/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CSS</title>
-      <link>https://moon-odyssey.com/tags/css/</link>
-      <pubDate>Mon, 13 May 2024 22:05:46 +0800</pubDate>
-      <guid>https://moon-odyssey.com/tags/css/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>HTTPS</title>
-      <link>https://moon-odyssey.com/tags/https/</link>
-      <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://moon-odyssey.com/tags/https/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Vite</title>
-      <link>https://moon-odyssey.com/tags/vite/</link>
-      <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://moon-odyssey.com/tags/vite/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Node.js</title>
-      <link>https://moon-odyssey.com/tags/node.js/</link>
-      <pubDate>Fri, 17 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://moon-odyssey.com/tags/node.js/</guid>
-      <description></description>
-    </item>
+    
+	  <atom:link href="https://moon-odyssey.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
   </channel>
 </rss>

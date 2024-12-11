@@ -26,18 +26,6 @@
                 href="https://moon-odyssey.com/en/"
                 />
   </url><url>
-    <loc>https://moon-odyssey.com/en/search/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://moon-odyssey.com/search/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://moon-odyssey.com/en/search/"
-                />
-  </url><url>
     <loc>https://moon-odyssey.com/en/tags/</loc>
     <xhtml:link
                 rel="alternate"

@@ -1,21 +1,21 @@
 ---
-title: 'Write a title'
+title: 'Docker 基础概念'
 date: 2024-06-07
-description: ""
-summary: ""
+description: "初上手 Docker 需要知道的概念"
 tags: ["Docker"]
 Draft: true
 ---
 
 在 Docker 中，挂载（mounting）是指将主机系统的文件或目录映射到 Docker 容器内的文件系统中的操作。这使得容器可以访问和使用主机系统上的文件和目录。挂载在 Docker 中有两种主要方式：**卷（volumes）**和**绑定挂载（bind mounts）**。
 
-### 卷（Volumes）
+## 卷（Volumes）
 
 卷是由 Docker 管理的文件系统，存储在 Docker 主机的文件系统上，但 Docker 本身负责管理其内容的位置。卷非常适合用于存储应用程序数据，因为它们可以在容器之间共享和重用，并且可以独立于容器的生命周期进行管理。
 
-示例 `docker-compose.yml` 文件中使用卷：
+示例：
 
-```yaml
+```yml
+# docker-compose.yml
 version: '3.8'
 
 services:
@@ -32,13 +32,15 @@ volumes:
 
 在这个示例中，`mydata` 卷被挂载到容器内的 `/data` 目录。卷 `mydata` 在 `volumes` 部分定义。
 
-### 绑定挂载（Bind Mounts）
+## 绑定挂载（Bind Mounts）
 
 绑定挂载是将主机系统上的特定文件或目录挂载到容器内的文件系统中的特定位置。绑定挂载提供了更大的灵活性，因为可以挂载任意主机系统上的文件和目录。
 
-示例 `docker-compose.yml` 文件中使用绑定挂载：
+示例：
 
-```yaml
+```yml
+# docker-compose.yml
+
 version: '3.8'
 
 services:
@@ -52,15 +54,15 @@ services:
 
 在这个示例中，主机系统上的 `./host_data` 目录被挂载到容器内的 `/data` 目录。这使得容器可以访问和使用主机系统上的 `./host_data` 目录中的文件。
 
-### 挂载的应用场景
+## 挂载的应用场景
 
 - **开发环境**：在开发环境中，绑定挂载非常有用，因为它可以将主机系统上的源代码目录挂载到容器中，便于实时更新代码并立即在容器中看到效果。
 - **持久化数据**：卷非常适合用于生产环境中的持久化数据存储，例如数据库的数据目录。即使容器删除或重建，数据仍然保存在卷中。
 - **共享数据**：当多个容器需要访问相同的数据时，可以使用卷来共享数据。
 
-### 具体示例
+## 具体示例
 
-假设有一个简单的 `docker-compose.yml` 文件，其中使用了绑定挂载和卷：
+例如下面这个 `docker-compose.yml` 文件就使用了绑定挂载和卷：
 
 ```yaml
 version: '3.8'

@@ -1,13 +1,10 @@
 +++
 title = 'Vue Reactivity Source Code Review'
 date = 2024-11-27T14:36:46+08:00
+description = "分析 Vue 源码的响应式系统部分"
+tags = ["Vue"]
 draft = true
 +++
-
-#TODO
-- Vue2 响应式原理
-- 缺点
-- Vue3 改进
 
 # Vue2响应式原理
 

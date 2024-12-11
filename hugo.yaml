@@ -1,108 +1,94 @@
+# Hugo configuration file
 title: River's Blog
 baseURL: https://moon-odyssey.com/
-paginate: 10
-enableInlineShortcodes: true
-enableRobotsTXT: true
-buildDrafts: false
-buildFuture: false
+
+# import hextra as module
+module:
+  hugoVersion:
+    extended: false
+    min: 0.87.0
+  imports:
+  - path: github.com/imfing/hextra
+
+markup:
+  # allow raw html
+  goldmark:
+    renderer:
+      unsafe: true
+
+  # enable hextra syntax highlight
+  highlight:
+    noClasses: false
+
+params:
+  navbar:
+    displayTitle: true
+    displayLogo: false
+
+  footer:
+    displayCopyright: false
+    displayPoweredBy: true
+
 enableEmoji: true
-keywords: River, River 的个人博客, River's Blog, River Tsui, River Cui, Front-End, FE, Software Engineer, Software Development, Programming, Tech
 
 defaultContentLanguage: zh-cn
 languages:
   zh-cn:
-    languageName: Chinese
     languageCode: zh-cn
+    languageName: 中文
     weight: 1
     menu:
       main:
-        - name: 关于
-          identifier: about
-          url: /about/
+        - name: Blog
+          pageRef: /blog
           weight: 1
-        - name: 归档
-          url: /archives/
-          identifier: archives
+        - name: About
+          pageRef: /about
           weight: 2
-        - name: 标签
-          identifier: tags
-          url: /tags/
+        - name: Contact ↗
+          url: mailto:rivertsuiwork@gmail.com
           weight: 3
-        - name: 搜索
-          identifier: search
-          url: /search/
+        - name: Search
           weight: 4
-    params:
-      DateFormat: 2006-01-02
+          params:
+            type: search
+        - name: GitHub
+          weight: 5
+          url: https://github.com/RiverCui
+          params:
+            icon: github
 
   en:
+    languageCode: en-US
     languageName: English
-    languageCode: "en-US"
     weight: 2
     menu:
       main:
-        - name: About
-          identifier: about
-          url: /about/
+        - name: Blog
+          pageRef: /blog
           weight: 1
-        - name: Archives
-          identifier: archives
-          url: /archives/
+        - name: About
+          pageRef: /about
           weight: 2
-        - name: Tags
-          identifier: tags
-          url: /tags/
+        - name: Contact ↗
+          url: mailto:rivertsuiwork@gmail.com
           weight: 3
         - name: Search
-          identifier: search
-          url: /search/
           weight: 4
-    params:
-      DateFormat: January 2, 2006
-
-outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON
-
-params:
-  homeInfoParams:
-    Title: Hi, I'm River
-    Content: >
-      👋 Welcome to my blog
-
-      - I'm a full-stack software engineer based in Shenzhen, China. I'm passionate about building software that solves real-world problems.
-
-      - Feel free to reach out to me via email at rivertsuiwork@gmail.com or on [GitHub](https://github.com/RiverCui).
-  
-  socialIcons:
-    - name: GitHub
-      icon: github
-      url: https://github.com/RiverCui
-    - name: Twitter
-      icon: twitter
-      url: https://x.com/tree172194471
-    - name: LinkedIn
-      icon: linkedin
-      url: https://www.linkedin.com/in/river-tsui-411aab242
-    - name: Email
-      icon: email
-      url: mailto:rivertsuiwork@gmail.com
-  ShowReadingTime: true
-  ShowCodeCopyButtons: true
-  fuseOpts:
-    isCaseSensitive: false
-    shouldSort: true
-    location: 0
-    distance: 1000
-    threshold: 0.4
-    minMatchCharLength: 0
-    keys: [title, permalink, summary, content]
-
-module:
-  imports:
-    path: github.com/imfing/hextra
-  hugoVersion:
-    extended: false
-    min: "0.87.0"
+          params:
+            type: search
+        - name: GitHub
+          weight: 5
+          url: https://github.com/RiverCui
+          params:
+            icon: github
+        - name: LinkedIn
+          weight: 6
+          url: https://www.linkedin.com/in/river-tsui-411aab242
+          params:
+            icon: linkedin
+        - name: X
+          weight: 7
+          url: https://x.com/tree172194471
+          params:
+            icon: x-twitter
