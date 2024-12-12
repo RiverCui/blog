@@ -15,6 +15,45 @@
                 href="https://moon-odyssey.com/"
                 />
   </url><url>
+    <loc>https://moon-odyssey.com/tags/</loc>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://moon-odyssey.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://moon-odyssey.com/tags/"
+                />
+  </url><url>
+    <loc>https://moon-odyssey.com/tags/vue/</loc>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://moon-odyssey.com/en/tags/vue/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://moon-odyssey.com/tags/vue/"
+                />
+  </url><url>
+    <loc>https://moon-odyssey.com/vue-reactivity-source-code-review/</loc>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://moon-odyssey.com/en/vue-reactivity-source-code-review/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://moon-odyssey.com/vue-reactivity-source-code-review/"
+                />
+  </url><url>
     <loc>https://moon-odyssey.com/tags/database/</loc>
     <lastmod>2024-06-15T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -52,19 +91,6 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://moon-odyssey.com/mysql/"
-                />
-  </url><url>
-    <loc>https://moon-odyssey.com/tags/</loc>
-    <lastmod>2024-06-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://moon-odyssey.com/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://moon-odyssey.com/tags/"
                 />
   </url><url>
     <loc>https://moon-odyssey.com/tags/docker/</loc>

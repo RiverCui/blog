@@ -1,18 +1,17 @@
-+++
-title = 'Vue Reactivity Source Code Review'
-date = 2024-11-27T14:36:46+08:00
-description = "分析 Vue 源码的响应式系统部分"
-tags = ["Vue"]
-draft = true
-+++
+---
+title: 'Vue 响应式源码分析'
+date: 2024-06-20
+description: "分析 Vue 源码的响应式系统部分"
+tags: ["Vue"]
+---
 
-# Vue2响应式原理
+## Vue2 响应式原理
 
 在 Vue2 中，当一个 JavaScript 对象传入 Vue 实例作为 `data` 选项时，Vue 会遍历此对象所有的 `property`，并使用 **`Object.defineProperty()`** 把这些 `property` 转为 `getter/setter`。在 `getter` 中收集依赖，在 `setter` 中触发更新：每个组件实例都对应一个 `watcher` 实例，它会在组件的渲染过程中把接触过的数据 `property` 记录为依赖，当依赖项的 `setter` 触发时，会去通知 `watcher`，从而使他关联的组件重新渲染。这就是 Vue2 响应式实现的思路，至于具体是如何实现的，下文将会展开分析。
 
 ![](https://v2.cn.vuejs.org/images/data.png)
 
-## Object.defineProperty()
+### Object.defineProperty()
 
 `Object.defineProperty()` 是 Vue 实现响应式的基础，它允许精确地添加或修改对象上的属性，语法如下：
 
@@ -32,7 +31,7 @@ Object.defineProperty(obj, prop, descriptor)
 
 *参考：[MDN-Object.defineProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty#syntax)*
 
-## 实现响应式
+### 实现响应式
 在 Vue 源码中，通过 `defineReactive` 函数对 `Object.defineProperty` 进行封装,实现响应式。`get` 会触发 `reactiveGetter` 实现依赖收集，`set` 会触发 `reactiveSetter` 通知依赖更新。下面是这个函数的源码的简化版本，只需要看非注释部分：
 
 参数：
@@ -116,7 +115,7 @@ function observe(value) {
 }
 ```
 
-## 依赖收集
+### 依赖收集
 刚才 `defineReactive` 中被注释掉的几行代码，也就是下文中高亮的部分：在 `get` 时进行依赖收集，在 `set` 时通知所有依赖，这是实现响应式系统的另一个重要部分——**依赖收集**。
 
 ```javascript {linenos=table, hl_lines=["2-3" "9-12" "18-19"]}
@@ -144,7 +143,7 @@ function defineReactive(obj, key, val) {
 }
 ```
 
-### 为什么需要依赖收集
+#### 为什么需要依赖收集
 举个例子，现在有这么个 Vue 对象：
 ```javascript
 new Vue({
@@ -198,13 +197,12 @@ globalObj.text1 = 'text1 modify'
 在响应式系统中，当 `globalObj.text1` 的值变化，应该通知 `o1`、`o2` 这两个 vm 实例去更新视图。**依赖收集**就是来实现这个的：依赖收集会让这个数据(`globalObj.text1`)知道，有两个地方(`o1`、`o2`)依赖自身，所以当这个数据(`globalObj.text1`)变化时，会去通知依赖自身的 `o1`、`o2`。
 
 
-### 依赖收集的核心 —— Dep 和 Watcher
+#### 依赖收集的核心 —— Dep 和 Watcher
 
 让我们回归代码，看看具体是如何实现依赖收集的。
 
 首先需要一个 `Dep`，每个 `Dep` 实例有一个数组去存放 watchers，当数据变化时会通知 watchers 更新。同样的，每个 `Watcher` 实例也有一个数组去存放它依赖的 deps。也就是说，**依赖收集是双向的**，Dep 记录 Watcher，Watcher 也记录 Dep，这个很重要。
 
-思维导图.png
 多对多，响应式对象 Object 中存在 Dep，Dep 中存放多个 Watcher，Watcher 负责通知依赖更新。
 
 先看看 `Dep`：
@@ -491,7 +489,7 @@ export function popTarget() {
    - 通过 `nextTick()` 调用 `flushSchedulerQueue()`，在下一个**微任务**中执行 `flushSchedulerQueue()`，这样多次修改数据，只会触发一次更新。
 
 
-## Vue 响应式系统
+### Vue 响应式系统
 
 通过上面的章节我们知道，Vue 的响应式系统的实现，靠的是**数据响应式化**以及**依赖收集**。数据响应式化的核心/原理是 `Object.defineProperty`，它会注册 `get` 和 `set` 进行依赖收集，具体是在响应式对象中 new 一个 Dep 实例来进行依赖收集的处理，将当前的 Watcher 添加到 Dep 实例的订阅者列表(subs)中。那么其实到这里，对于整个响应式系统构建的流程还是有一些模糊的，尤其是 `new Watcher()`的时机，所以当新建一个 Vue 实例时，上面所述的这些处理都是何时进行的呢？
 
@@ -548,7 +546,7 @@ function initMixin(Vue) {
 
 我们主要关注 `initState` 和 `$mount`。
 
-### initState
+#### initState
 
 `initState` 会依次初始化 `props` -> `methods` -> `data` -> `computed` -> `watch`：
 
@@ -597,7 +595,7 @@ function initWatch() {
 }
 ```
 
-### $mount
+#### $mount
 
 Render Watcher 会在组件挂载时(`$mount`)创建。
 
@@ -606,11 +604,11 @@ Render Watcher 会在组件挂载时(`$mount`)创建。
 Vue.prototype.$mount = new Watcher(vm, updateComponent, null, options)
 ```
 
-# Vue2 响应式系统的缺陷
+## Vue2 响应式系统的缺陷
 
 Vue2 的响应式并不是完美的，`Object.defineProperty` 这种实现方式自带一些缺陷，所以在使用 Vue2 时需要注意这些问题。
 
-## 对象
+### 对象
 
 Vue2 无法检测**对象属性的添加和删除**。
 
@@ -636,7 +634,7 @@ function initData(vm) {
 }
 ```
 
-### 解决方案1 `Vue.set`
+#### 解决方案1 `Vue.set`
 
 对于已经创建的实例，虽然 Vue 不允许动态添加**根级别**的响应式 property。但是可以使用 `Vue.set(object, propertyName, value)` 的方法向嵌套对象添加响应式 property。
 
@@ -662,7 +660,7 @@ Vue.set(vm.someObject, 'b', 2)
 this.$set(this.someObject, 'b', 2)
 ```
 
-### 解决方案2 `Object.assign`
+#### 解决方案2 `Object.assign`
 
 有时需要为已存在的对象赋值多个新 property，可以使用 `Object.assign`。
 
@@ -687,7 +685,7 @@ this.someObject.b = 2  // b 仍为非响应式
 而 `Object.assign({},this.someObject,{a:1,b:2})` 这种写法可以触发 `someObject` 的 `setter`，会递归遍历 `someObject` 上的所有属性，进行响应式转换。
 
 
-## 数组
+### 数组
 
 Vue2 无法检测**数组索引**和**长度变化**。
 
@@ -717,20 +715,20 @@ vm.items.splice(indexOfItem, 1, newValue)
 vm.items.splice(2)
 ```
 
-## 性能
+### 性能
 
 Vue2 的响应式实现需要**递归遍历**对象的所有属性，本身性能开销就比较大，这也是 Vue3 改为通过 `proxy` 来实现响应式的原因。
 
 
-# Vue3做了哪些改进
+## Vue3 针对响应式做的改进
+
+### proxy 实现响应式
 
 Vue3 的响应式系统基于 ES6 的 `proxy`，是对于 Vue2 中 `Object.defineProperty` 的重大升级，优点有：
 1. 可以检测对象属性的添加和删除
 2. 可以监听数组变化而无需额外处理
 3. 不需要深度递归遍历，性能更好
 4. 支持 Map、Set 等数据结构
-
-## proxy 实现响应式
 
 ```javascript
 function reactive(target) {
@@ -757,7 +755,7 @@ Reflect.set(target, key, value)  // 设置属性
 Reflect.has(target, key)  // 检查属性
 Reflect.deleteProperty(target, key)  // 删除属性
 ```
-Reflect 提供统一的操作对象 API，在 proxy 中使用有很多好处：
+Reflect 是提供统一的操作对象 API，为 proxy 提供便利：
 
 ```javascript {linenos=table, hl_lines=["4-5" "10-11"]}
 function reactive(target) {
@@ -769,7 +767,7 @@ function reactive(target) {
       return res
     },
     set(target, key, value, receiver) {
-      // 返回布尔值表示操作是否成功
+      // 返回布尔值判断操作是否成功
       const res = Reflect.set(target, key, value, receiver)
       trigger(target, key)
       return res
@@ -778,14 +776,298 @@ function reactive(target) {
 }
 ```
 
-## 响应式 API
+### 新增响应式 API
 
-### ref 和 reactive
+#### ref 和 reactive
 
-### computed
+`ref` 和 `reactive` 都是 Vue3 新增的响应式 API，可以用来处理响应式数据，二者在使用上有些不同：
 
-### watch 和 watchEffect
+| 特性         | ref                                                             | reactive                                               |
+| ------------ | --------------------------------------------------------------- | ------------------------------------------------------ |
+| 访问方式     | `.value` 访问                                                   | 直接访问                                               |
+| 自动解包     | 在 `<template>` 和 `reactive` 中自动解包                        | 不需要解包                                             |
+| 数据类型支持 | 支持所有数据类型                                                | 仅支持对象类型                                         |
+| 解构行为     | 解构后失去响应式，需要用 `toRef` / `toRefs`                     | 解构后失去响应式，需要用 `toRef` / `toRefs`            |
+| 赋值特点     | 可以直接替换整个值 `ref.value = newValue`                       | 不能直接替换整个对象，只能修改属性                     |
+| 嵌套数据     | 内部自动调用 `reactive` 处理对象                                | 深层响应式转换                                         |
+| 使用场景     | 基本数据类型 / 单一数据源 / 组合函数返回值 / 需要重新赋值的数据 | 有关联的数据集合 / 引用数据类型 / 不需要重新赋值的数据 |
 
+- 访问方式
 
-# 源码
-本文对源码做了精简处理，只保留了最核心的部分，其实在阅读源码的过程还学到了很多，比如对 removeDep 的优化，提升性能。这些细节不能在此篇文章中一一列举，如果感兴趣可以。
+`ref` 对象通过 `.value` 访问，`reactive` 直接访问。
+
+```js
+const count = ref(0)
+console.log(count.value)  // 需要 .value 访问
+
+const obj = reactive({
+  count: 0
+})
+console.log(obj.count)  // 直接访问，无需 .value
+```
+
+- 自动解包
+
+`ref` 对象在 `template`、`reactive` 中自动解包
+```html
+<template>
+  <div>
+    <!-- 已自动解包，直接访问，无需 .value --->
+    {{ count }}
+  </div>
+</template>
+
+<script setup>
+const count = ref(0)
+// 在 reactive 对象中 ref 会自动解包
+const state = reactive({
+  count, // 自动解包
+  double: computed(() => state.count*2),
+})
+</script>
+```
+- 数据类型支持
+```js
+// ref 支持所有数据类型
+const num = ref(0)
+const str = ref('XD')
+const boo = ref(true)
+const obj = ref({a:1, b:2})
+const arr = ref([1,2])
+
+// reactive 只支持引用数据类型(对象/数组)
+const obj2 = reactive({a:1, b:2})
+const arr2 = reactive([1,2])
+```
+
+- 使用 `toRef` / `toRefs` 解构
+
+```js
+const obj = reactive({name: 'River', age: 18})
+
+const { age } = obj  // 直接解构会失去响应式
+
+// 使用 toRef
+const age = toRef(obj, 'age')
+// 或者 toRefs
+const { name, age } = toRefs(obj)
+
+// 这样做的好处是可以使对象保持响应式
+// 修改 ref 会更新源对象
+age.value++
+console.log(obj.age) // 19
+// 修改源对象会更新 ref
+obj.age++
+console.log(age.value) // 20
+```
+- 赋值特点
+
+`ref` 对象可以直接替换，`reactive` 不可直接替换，只能修改属性
+```js
+const foo = ref([1,2])
+foo.value = [3,4]  // 可以
+
+const foo = reactive([1,2])
+foo = [3,4]  // 不行
+```
+
+- 嵌套数据
+
+`ref` 处理嵌套数据
+```js
+const user = ref({
+  name: 'Zhang',
+  profile: {
+    age: 25,
+    address: {
+      city: 'Beijing'
+    }
+  }
+})
+
+// ref 内部会用 reactive 深层转换对象
+user.value.profile.age = 26      // 触发响应式更新
+user.value.profile.address.city = 'Shanghai' // 触发响应式更新
+```
+
+`reactive` 处理嵌套数据
+```js
+const user = reactive({
+  name: 'Zhang',
+  profile: {
+    age: 25,
+    address: {
+      city: 'Beijing'
+    }
+  }
+})
+
+// reactive 会深层转换所有嵌套对象
+user.profile.age = 26           // 触发响应式更新
+user.profile.address.city = 'Shanghai' // 触发响应式更新
+```
+
+- 使用场景
+  
+组合是函数的返回值使用 `ref` 更佳，如需 `reactive`，要通过 `toRefs` 来维持数据响应式
+```js
+function useCount() {
+  const count = ref(0)
+  return count
+}
+
+function useUser() {
+  const state = reactive({name: 'River', age: 18})
+  return toRefs(state)
+}
+```
+
+#### watchEffect
+
+`watchEffect` 自动跟踪响应式依赖，并在响应式依赖更新时重新运行副作用函数。简单来说，它会做这些事情：
+- 立即执行一次回调函数
+- 自动跟踪回调函数内使用的响应式依赖
+- 在依赖变化时，重新执行回调函数
+
+##### 基础用法
+```js
+import { ref, watchEffect } from 'vue'
+
+const count = ref(0)
+const message = ref('Hello')
+
+watchEffect(() => {
+  console.log(`Count: ${count.value}, Message: ${message.value}`)
+})
+
+// 修改任何依赖都会触发回调
+count.value++  // 输出：Count: 1, Message: Hello
+message.value = 'Hi'  // 输出：Count: 1, Message: Hi
+```
+##### 暂停/恢复/停止 监听
+
+`watchEffect` 还会返回一个停止函数，执行它就会停止监听
+
+```js
+const stop = watchEffect(() => {})
+
+// 当不再需要监听时
+stop()
+```
+
+当需要暂停/恢复的时候
+```js
+const { stop, pause, resume } = watchEffect(() => {})
+
+// 暂停
+pause()
+
+// 恢复
+resume()
+
+// 停止
+stop()
+```
+
+##### 清理副作用
+
+为什么要清理副作用：
+- 防止内存泄漏（比如定时器）
+- 避免事件重复监听
+- 取消不需要的网络请求
+- 清理可能产生冲突的旧状态
+
+`watchEffect` 回调函数中的 `onCleanup` 这个入参就是用来清理副作用的，它的执行时机有：
+- `watchEffect` 即将重新执行时
+- `watchEffect` 被停止时
+
+我们拿一个网络请求举例，创建了一个网络请求的控制器 `controller`，并且在 `onCleanup` 函数中调用了取消网络请求的方法。
+
+```js
+const userId = ref('1')
+const userData = ref(null)
+
+watchEffect((onCleanup) => {
+  // 创建一个取消控制器
+  const controller = new AbortController()
+
+  // 网络请求
+  fetch(`/api/user/${userId.value}`, {
+    signal: controller.signal,
+  }).then(data => userData.value = JSON.parse(data))
+
+  // 清理函数：如果 userId 改变，则取消之前的请求
+  onCleanup(() => {
+    controller.abort()
+  })
+})
+
+setTimeout(() => {
+  userId.value = '2'
+}, 100)
+```
+
+执行顺序是这样的：
+```markdown {filename=Markdown}
+初始执行：
+1. 开始请求，userId: 1
+
+100 ms后修改 userId：
+2. 执行清理，取消之前的网络请求 (清理之前的副作用`onCleanup`)
+3. 请求被取消 (之前的请求被 `abort`)
+4. 开始请求，userId: 2 (重新执行 `watchEffect`)
+```
+
+3.5+ 后的副作用清理
+```js
+import { onWatcherCleanup } from 'vue'
+
+// ...
+
+watchEffect(() => {
+  // ...
+
+  onWatcherCleanup(() => {
+    controller.abort()
+  })
+
+  // ...
+})
+
+// ...
+```
+
+##### 执行时机
+
+`watchEffect` 还提供第二个参数，可以用来控制副作用函数的执行时机。
+
+```js {linenos=table, hl_lines=["7" "12"]}
+// 默认：组件更新前执行, flush: 'pre'
+watchEffect(() => {})
+
+// 组件更新后执行
+watchEffect(() => {
+  // ...
+}, flush: 'post')
+
+// 同步执行
+watchEffect(() => {
+  // ...
+}, flush: 'sync')
+```
+
+##### watchEffect 和 watch
+
+- `watchEffect` 自动追踪依赖，`watch` 需要明确指定监听的源
+```js
+watchEffect(() => console.log(count.value))  // 自动追踪依赖
+
+watch(count, newVal => console.log(count.value))  // 明确执行依赖
+```
+
+- `watchEffect` 默认立即执行，`watch` 需要设置 `immediate: true`
+```js
+watchEffect(() => {})  // 默认立即执行
+
+watch(source, () => {}, { immediate: true })  // 默认不会立即执行，需设置 immediate 为 true
+```
