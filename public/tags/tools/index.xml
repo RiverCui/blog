@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – Tools</title>
-    <link>https://moon-odyssey.com/tags/tools/</link>
+    <link>http://localhost:1313/tags/tools/</link>
     <description>Recent content in Tools on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 28 May 2024 16:36:10 +0800</lastBuildDate>
     
-	  <atom:link href="https://moon-odyssey.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/tags/tools/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>如何使用 Rclone 高效管理云存储文件</title>
-      <link>https://moon-odyssey.com/blog/how-to-manage-files-on-cloud-storage-with-rclone/</link>
+      <link>http://localhost:1313/how-to-manage-files-on-cloud-storage-with-rclone/</link>
       <pubDate>Tue, 28 May 2024 16:36:10 +0800</pubDate>
       
-      <guid>https://moon-odyssey.com/blog/how-to-manage-files-on-cloud-storage-with-rclone/</guid>
+      <guid>http://localhost:1313/how-to-manage-files-on-cloud-storage-with-rclone/</guid>
       <description>
         
         
@@ -173,10 +173,10 @@
     
     <item>
       <title>使用 mkcert/Vite 生成本地证书</title>
-      <link>https://moon-odyssey.com/blog/https-for-local-development/</link>
+      <link>http://localhost:1313/https-for-local-development/</link>
       <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/blog/https-for-local-development/</guid>
+      <guid>http://localhost:1313/https-for-local-development/</guid>
       <description>
         
         
@@ -340,10 +340,10 @@
     
     <item>
       <title>使用 Charles 抓取移动设备 HTTPS 请求</title>
-      <link>https://moon-odyssey.com/blog/capture-https-request-with-mobile-device/</link>
+      <link>http://localhost:1313/capture-https-request-with-mobile-device/</link>
       <pubDate>Fri, 10 Mar 2023 17:36:56 +0800</pubDate>
       
-      <guid>https://moon-odyssey.com/blog/capture-https-request-with-mobile-device/</guid>
+      <guid>http://localhost:1313/capture-https-request-with-mobile-device/</guid>
       <description>
         
         

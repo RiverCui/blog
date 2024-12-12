@@ -9,6 +9,12 @@ module:
     min: 0.87.0
   imports:
   - path: github.com/imfing/hextra
+  mounts:
+    # 根目录替换为 content/blog
+    - source: content/blog
+      target: content
+    - source: content/about
+      target: content/about
 
 markup:
   # allow raw html

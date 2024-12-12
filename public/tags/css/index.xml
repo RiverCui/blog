@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – CSS</title>
-    <link>https://moon-odyssey.com/tags/css/</link>
+    <link>http://localhost:1313/tags/css/</link>
     <description>Recent content in CSS on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 13 May 2024 22:05:46 +0800</lastBuildDate>
     
-	  <atom:link href="https://moon-odyssey.com/tags/css/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/tags/css/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>CSS Masonry</title>
-      <link>https://moon-odyssey.com/blog/css-masonry/</link>
+      <link>http://localhost:1313/css-masonry/</link>
       <pubDate>Mon, 13 May 2024 22:05:46 +0800</pubDate>
       
-      <guid>https://moon-odyssey.com/blog/css-masonry/</guid>
+      <guid>http://localhost:1313/css-masonry/</guid>
       <description>
         
         
