@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – Docker</title>
-    <link>http://localhost:1313/tags/docker/</link>
+    <link>https://moon-odyssey.com/tags/docker/</link>
     <description>Recent content in Docker on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 05 Jun 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://moon-odyssey.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Docker 代理配置（解决登录失败问题）</title>
-      <link>http://localhost:1313/docker-proxy-configuration/</link>
+      <link>https://moon-odyssey.com/docker-proxy-configuration/</link>
       <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/docker-proxy-configuration/</guid>
+      <guid>https://moon-odyssey.com/docker-proxy-configuration/</guid>
       <description>
         
         

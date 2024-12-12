@@ -1,9 +1,7 @@
 ---
 title: '模块管理'
 date: 2023-11-16
-draft: false
-description: "Node.js 学习笔记"
-summary: "`CommonJS` 和 `ES Modules` 是 JavaScript 中两种主要的模块系统。"
+description: "JavaScript 中两种主要的模块系统：`CommonJS` 和 `ES Modules`"
 tags: ["Node.js"]
 series: ["Node.js"]
 series_order: 2

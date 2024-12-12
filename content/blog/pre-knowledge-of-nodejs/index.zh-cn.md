@@ -1,9 +1,7 @@
 ---
 title: 'Node.js 前置知识'
 date: 2023-11-06
-draft: false
-description: "Node.js 学习笔记"
-summary: "Node.js 并不是一种语言而是一个平台，是 JavaScript 的**运行时环境**。"
+description: "Node.js 并不是一种语言而是一个平台，是 JavaScript 的运行时环境。"
 tags: ["Node.js"]
 series: ["Node.js"]
 series_order: 1

@@ -2,6 +2,7 @@
 title: 'Next.js 路由 App Router'
 date: 2024-01-15
 draft: true
+description: '目前 Next.js 的路由方案有两种—— pages router 和 app router，本篇文章介绍了两种路由的使用方式'
 tags: ["Next.js", "React"]
 series: ["Next.js"]
 series_order: 2

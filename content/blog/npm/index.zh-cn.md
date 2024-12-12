@@ -1,9 +1,7 @@
 ---
 title: 'NPM'
 date: 2023-11-17
-draft: false
-description: "Node.js 学习笔记"
-summary: "npm 是 JavaScript 的包管理工具。"
+description: "npm 是 JavaScript 的包管理工具。"
 tags: ["Node.js"]
 series: ["Node.js"]
 series_order: 3

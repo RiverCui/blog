@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – CSS</title>
-    <link>http://localhost:1313/tags/css/</link>
+    <link>https://moon-odyssey.com/tags/css/</link>
     <description>Recent content in CSS on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 13 May 2024 22:05:46 +0800</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/tags/css/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://moon-odyssey.com/tags/css/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>CSS Masonry</title>
-      <link>http://localhost:1313/css-masonry/</link>
+      <link>https://moon-odyssey.com/css-masonry/</link>
       <pubDate>Mon, 13 May 2024 22:05:46 +0800</pubDate>
       
-      <guid>http://localhost:1313/css-masonry/</guid>
+      <guid>https://moon-odyssey.com/css-masonry/</guid>
       <description>
         
         
@@ -105,7 +105,7 @@
 &lt;p&gt;得益于 &lt;code&gt;masonry&lt;/code&gt;，整个实现过程非常简单。附上完整代码：&lt;a href=&#34;https://github.com/RiverCui/waterfall-demo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;waterfall-demo&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;我的观点&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;我的观点&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#%e6%88%91%e7%9a%84%e8%a7%82%e7%82%b9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;首次使用这个新功能的时候，有些地方是很迷惑的。&lt;/p&gt;
-&lt;p&gt;首先，作为一个 nonnative English speaker，masonry 这个词对我来说非常陌生，并不像 CSS 中常见的 &lt;code&gt;border&lt;/code&gt;、&lt;code&gt;center&lt;/code&gt;、&lt;code&gt;none&lt;/code&gt; 让人一目了然，是有语言门槛的。&lt;/p&gt;
+&lt;p&gt;首先，作为一个 non-native English speaker，masonry 这个词对我来说非常陌生，并不像 CSS 中常见的 &lt;code&gt;border&lt;/code&gt;、&lt;code&gt;center&lt;/code&gt;、&lt;code&gt;none&lt;/code&gt; 让人一目了然，是有语言门槛的。&lt;/p&gt;
 &lt;p&gt;其次，对于 &lt;code&gt;grid-template-columns&lt;/code&gt;/&lt;code&gt;grid-template-rows&lt;/code&gt; 搭配 &lt;code&gt;masonry&lt;/code&gt; 使用，与我的思维习惯相悖，简单来说就是，要想实现纵向的瀑布流，需要使用 &lt;code&gt;grid-template-rows: masonry&lt;/code&gt;，而我潜意识认为是 &lt;code&gt;grid-template-columns&lt;/code&gt;。这里有点像一个习惯使用 windows 的人，第一次用 macos 浏览网页对于上下滚动的无所适从。&lt;/p&gt;
 &lt;p&gt;总结一下，我对 &lt;code&gt;Masonry&lt;/code&gt; 的建议有两点：&lt;/p&gt;
 &lt;ol&gt;

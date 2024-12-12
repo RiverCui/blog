@@ -1,0 +1,129 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>River&#39;s Blog – React</title>
+    <link>http://localhost:1313/tags/react/</link>
+    <description>Recent content in React on River&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://localhost:1313/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Next.js 路由 App Router</title>
+      <link>http://localhost:1313/app-router/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/app-router/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Next.js 目前有两种路由方案，一个是旧有的 &lt;a href=&#34;https://nextjs.org/docs/pages&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pages Router&lt;/a&gt;，另一个是 13 版本新推出的 &lt;a href=&#34;https://nextjs.org/docs/app&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;App Router&lt;/a&gt;。在这篇文章中，我们将深入探讨 &lt;strong&gt;App Router 的核心概念、如何在 Next.js 项目中实现高效路由管理，以及 App Router 如何改变我们对 Web 应用路由的理解&lt;/strong&gt;。无论你是一位经验丰富的 Next.js 开发者，还是刚刚开始接触这个框架的新手，本文都将为你揭示 App Router 的强大功能和潜力。&lt;/p&gt;
+&lt;h2&gt;App Router 和 Pages Router&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;app-router-和-pages-router&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#app-router-%e5%92%8c-pages-router&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;App Router 在 &lt;code&gt;app&lt;/code&gt; 目录下工作，Pages Router 在 &lt;code&gt;page&lt;/code&gt; 目录下工作。&lt;/p&gt;
+&lt;p&gt;为了能够逐步采纳 App Router，两套方案是兼容的，也就是说 &lt;code&gt;app&lt;/code&gt; 目录与 &lt;code&gt;pages&lt;/code&gt; 目录可以同时存在，所以过去使用 Pages Router 范式的项目，在新增路由的时候也能选择用 App Router 或 Pages Router。&lt;/p&gt;
+&lt;p&gt;tips: &lt;strong&gt;App Router 优先级高于 Pages Router&lt;/strong&gt;，且跨目录的路由不能解析到相同的 URL 路径上，构建时会报错。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;app&lt;/code&gt; 目录下的页面默认使用 &lt;code&gt;React Server Component&lt;/code&gt;，这是一项性能优化，不过你也可以通过声明 &lt;code&gt;use client&lt;/code&gt; 使用 `Client Component&lt;/p&gt;
+&lt;p&gt;相较之下，App Router 功能更强、性能更好、代码组织更灵活，对于新应用官方更推荐使用 App Router。&lt;/p&gt;
+&lt;h2&gt;使用 App Router&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;使用-app-router&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%bd%bf%e7%94%a8-app-router&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Next. js 使用基于 file-system (文件系统)的路由器，所以我们要关注两个元素：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;folders 文件夹&lt;/li&gt;
+&lt;li&gt;file 文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;定义路由&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;定义路由&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%ae%9a%e4%b9%89%e8%b7%af%e7%94%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;文件夹用来定义路由，每个文件夹都代表一个对应 URL 片段的路由片段。&lt;/p&gt;
+&lt;p&gt;如下图所示，要创建一个嵌套路由，就可以通过嵌套文件夹来实现，&lt;code&gt;app/dashboard/settings&lt;/code&gt; 目录对应的路由地址就是 &lt;code&gt;dashboard/settings&lt;/code&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221134740.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h3&gt;定义页面 Pages&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;定义页面-pages&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%ae%9a%e4%b9%89%e9%a1%b5%e9%9d%a2-pages&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;page.js&lt;/code&gt; 文件用来定义页面。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221135459.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;比如这个例子中，&lt;code&gt;dashboard/analytics&lt;/code&gt; 的 URL 路径就不能被访问，因为它没有相应的 &lt;code&gt;page.js&lt;/code&gt; 文件。这个文件夹可以用来存储组件、样式表、图像或其他托管文件。&lt;/p&gt;
+&lt;p&gt;现在我们来创建第一个 &lt;code&gt;page.js&lt;/code&gt; 页面吧：
+&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221146387.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// app/page.js
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Page&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;h1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Hello&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Home&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Page&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&amp;lt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/h1&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// app/dashboard/page.js
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Page&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;h1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Hello&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Dashboard&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Page&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&amp;lt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/h1&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;npm run dev&lt;/code&gt; 运行项目，访问 &lt;code&gt;http://localhost:3000/&lt;/code&gt;，效果如下：
+&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221149969.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;访问 &lt;code&gt;http://localhost:3000/dashboard/&lt;/code&gt;：
+&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221149725.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;tips: 不止 &lt;code&gt;.js&lt;/code&gt; 文件，Next.js 默认支持 React、TypeScript，所以 &lt;code&gt;.js&lt;/code&gt;、&lt;code&gt;.jsx&lt;/code&gt;、&lt;code&gt;.tsx&lt;/code&gt; 文件都是可以的。&lt;/p&gt;
+&lt;h3&gt;定义布局 Layouts&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;定义布局-layouts&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%ae%9a%e4%b9%89%e5%b8%83%e5%b1%80-layouts&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;布局是在多个页面之间&lt;strong&gt;共享&lt;/strong&gt;的UI。在导航中，布局保留状态，保持交互式，并且&lt;strong&gt;不会重新渲染&lt;/strong&gt;。布局也可以嵌套。&lt;/p&gt;
+&lt;p&gt;现在新建一个 &lt;code&gt;layout.js&lt;/code&gt; 的文件，该文件会默认导出一个 React 组件，这个组件接收一个 &lt;code&gt;children&lt;/code&gt; prop，&lt;code&gt;children&lt;/code&gt; 用来表示子布局（如果有的话）或者子页面。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221157258.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// app/dashboard/layout.js
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DashboardLayout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;children&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;section&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nav&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;NAV&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/nav&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;children&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/section&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;效果如图所示：
+&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221200578.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;其中，&lt;code&gt;NAV&lt;/code&gt; 来自于 &lt;code&gt;app/dashboard/layout.js&lt;/code&gt;，&lt;code&gt;Hello, Dashboard Page!&lt;/code&gt; 来自于 &lt;code&gt;app/dashboard/page.js&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;**在同一文件夹下，如果有 &lt;code&gt;layout.js&lt;/code&gt; 和 &lt;code&gt;page.js&lt;/code&gt;，&lt;code&gt;page.js&lt;/code&gt; 会自动作为 &lt;code&gt;children&lt;/code&gt; 参数传入 &lt;code&gt;layout.js&lt;/code&gt;。**也就是说，&lt;strong&gt;layout 会包裹同层级的 page&lt;/strong&gt;。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

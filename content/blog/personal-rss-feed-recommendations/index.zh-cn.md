@@ -1,8 +1,7 @@
 ---
 title: '个人向的 RSS 订阅推荐'
 date: 2024-05-14T18:45:10+08:00
-description: "分享我的 RSS 订阅单，希望看到这篇文章的你能用到"
-summary: "分享我的 RSS 订阅单，希望看到这篇文章的你能用到"
+description: "分享我的 RSS 订阅单"
 tags: ["Read", "RSS"]
 ---
 

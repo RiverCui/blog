@@ -2,7 +2,6 @@
 title: 'MySQL 安装和基础使用'
 date: 2024-06-15
 description: "MySQL 的安装、环境变量配置以及基础命令行使用"
-summary: "MySQL 的安装、环境变量配置以及基础命令行使用"
 tags: ["MySQL", "Database"]
 ---
 
