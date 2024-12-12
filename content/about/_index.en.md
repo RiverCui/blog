@@ -1,6 +1,9 @@
 ---
 title: About
 toc: false
+_build:
+  list: false  # 不在列表中显示
+  render: true # 但允许渲染页面
 ---
 
 Hey there! I'm thrilled you've found your way to my little space on the web. As a frontend developer venturing into the full-stack world, I share my thoughts on technology, life's adventures, and the occasional random musings that keep me up at night. Whether you're a fellow tech enthusiast, a curious wanderer, or someone who just stumbled upon this page – welcome!

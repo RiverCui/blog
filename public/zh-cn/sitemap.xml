@@ -271,18 +271,6 @@
                 href="https://moon-odyssey.com/capture-https-request-with-mobile-device/"
                 />
   </url><url>
-    <loc>https://moon-odyssey.com/about/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://moon-odyssey.com/en/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://moon-odyssey.com/about/"
-                />
-  </url><url>
     <loc>https://moon-odyssey.com/categories/</loc>
     <xhtml:link
                 rel="alternate"

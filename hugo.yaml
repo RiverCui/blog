@@ -46,7 +46,7 @@ languages:
     menu:
       main:
         - name: Blog
-          pageRef: /blog
+          pageRef: /
           weight: 1
         - name: About
           pageRef: /about
@@ -71,7 +71,7 @@ languages:
     menu:
       main:
         - name: Blog
-          pageRef: /blog
+          pageRef: /
           weight: 1
         - name: About
           pageRef: /about
