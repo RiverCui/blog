@@ -205,8 +205,6 @@ Let's return to the code to see how dependency collection is implemented.
 
 First, we need a `Dep`. Each `Dep` instance has an array to store watchers, which will notify watchers to update when data changes. Similarly, each `Watcher` instance also has an array to store its dependent deps. In other words, **dependency collection is bidirectional** - Dep records Watcher, and Watcher also records Dep, this is very important.
 
-Many-to-many relationship, reactive Object contains Dep, Dep contains multiple Watchers, Watcher is responsible for notifying dependencies to update.
-
 Let's look at `Dep` first:
 ```javascript
 class Dep {

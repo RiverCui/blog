@@ -203,8 +203,6 @@ globalObj.text1 = 'text1 modify'
 
 首先需要一个 `Dep`，每个 `Dep` 实例有一个数组去存放 watchers，当数据变化时会通知 watchers 更新。同样的，每个 `Watcher` 实例也有一个数组去存放它依赖的 deps。也就是说，**依赖收集是双向的**，Dep 记录 Watcher，Watcher 也记录 Dep，这个很重要。
 
-多对多，响应式对象 Object 中存在 Dep，Dep 中存放多个 Watcher，Watcher 负责通知依赖更新。
-
 先看看 `Dep`：
 ```javascript
 class Dep {

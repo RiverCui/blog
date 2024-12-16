@@ -32,7 +32,7 @@
   <meta itemprop="description" content="分析 Vue 源码的响应式系统部分">
   <meta itemprop="datePublished" content="2024-06-20T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-06-20T00:00:00+00:00">
-  <meta itemprop="wordCount" content="2544">
+  <meta itemprop="wordCount" content="2537">
   <meta itemprop="keywords" content="Vue">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Vue 响应式源码分析">
@@ -763,7 +763,6 @@
 <h4>依赖收集的核心 —— Dep 和 Watcher<span class="hx-absolute -hx-mt-20" id="依赖收集的核心--dep-和-watcher"></span>
     <a href="#%e4%be%9d%e8%b5%96%e6%94%b6%e9%9b%86%e7%9a%84%e6%a0%b8%e5%bf%83--dep-%e5%92%8c-watcher" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>让我们回归代码，看看具体是如何实现依赖收集的。</p>
 <p>首先需要一个 <code>Dep</code>，每个 <code>Dep</code> 实例有一个数组去存放 watchers，当数据变化时会通知 watchers 更新。同样的，每个 <code>Watcher</code> 实例也有一个数组去存放它依赖的 deps。也就是说，<strong>依赖收集是双向的</strong>，Dep 记录 Watcher，Watcher 也记录 Dep，这个很重要。</p>
-<p>多对多，响应式对象 Object 中存在 Dep，Dep 中存放多个 Watcher，Watcher 负责通知依赖更新。</p>
 <p>先看看 <code>Dep</code>：</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   

@@ -32,7 +32,7 @@
   <meta itemprop="description" content="Analysis of Vue&#39;s reactivity system source code">
   <meta itemprop="datePublished" content="2024-06-20T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-06-20T00:00:00+00:00">
-  <meta itemprop="wordCount" content="4414">
+  <meta itemprop="wordCount" content="4396">
   <meta itemprop="keywords" content="Vue">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Vue Reactivity Source Code Review">
@@ -764,7 +764,6 @@
 <h4>Core of Dependency Collection - Dep and Watcher<span class="hx-absolute -hx-mt-20" id="core-of-dependency-collection---dep-and-watcher"></span>
     <a href="#core-of-dependency-collection---dep-and-watcher" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Let&rsquo;s return to the code to see how dependency collection is implemented.</p>
 <p>First, we need a <code>Dep</code>. Each <code>Dep</code> instance has an array to store watchers, which will notify watchers to update when data changes. Similarly, each <code>Watcher</code> instance also has an array to store its dependent deps. In other words, <strong>dependency collection is bidirectional</strong> - Dep records Watcher, and Watcher also records Dep, this is very important.</p>
-<p>Many-to-many relationship, reactive Object contains Dep, Dep contains multiple Watchers, Watcher is responsible for notifying dependencies to update.</p>
 <p>Let&rsquo;s look at <code>Dep</code> first:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
