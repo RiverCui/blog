@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – Blog</title>
-    <link>https://moon-odyssey.com/</link>
+    <link>http://localhost:62858/</link>
     <description>Recent content in Blog on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 27 Nov 2024 14:36:46 +0800</lastBuildDate>
     
-	  <atom:link href="https://moon-odyssey.com/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:62858/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,27 +16,61 @@
     
     <item>
       <title>JavaScript 中的 Event Loop</title>
-      <link>https://moon-odyssey.com/event-loop-in-javascript/</link>
+      <link>http://localhost:62858/event-loop-in-javascript/</link>
       <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/event-loop-in-javascript/</guid>
+      <guid>http://localhost:62858/event-loop-in-javascript/</guid>
       <description>
         
         
         &lt;h2&gt;Event Loop 是什么&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;event-loop-是什么&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#event-loop-%e6%98%af%e4%bb%80%e4%b9%88&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Event Loop 是 JavaScript 实现&lt;strong&gt;异步&lt;/strong&gt;的核心机制，解决 JavaScript &lt;strong&gt;单线程&lt;/strong&gt;带来的&lt;strong&gt;运行阻塞&lt;/strong&gt;的问题。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;JavaScript 之所以是单线程，是因为最初被用来设计处理网页交互时，需要操作 DOM，如果是多线程，比如一个线程正在修改 DOM，而另一个线程也在修改同一个 DOM，会导致冲突和复杂的并发问题。&lt;/p&gt;
+&lt;p&gt;JavaScript 之所以是单线程，是因为最初被用来设计处理网页交互时，需要操作 DOM，如果是多线程，一个线程正在修改 DOM，另一个线程也在修改同一个 DOM，会导致冲突和复杂的并发问题。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;我们先了解下 JavaScript 的执行栈(Call Stack)和任务队列(Callback Queue/Task Queue)，如下图所示：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;同步代码都会推入到 Call Stack 栈中，代码执行完毕后从栈中弹出。&lt;/li&gt;
-&lt;li&gt;浏览器中的 JavaScript 提供 WebAPIs 例如 setTimeout、DOM、fetch等，这些方法执行后，会将它们的回调添加到 Callback Queue，等待执行。&lt;/li&gt;
+&lt;h3&gt;宏任务和微任务&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;宏任务和微任务&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%ae%8f%e4%bb%bb%e5%8a%a1%e5%92%8c%e5%be%ae%e4%bb%bb%e5%8a%a1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;首先看下 &lt;a href=&#34;https://html.spec.whatwg.org/multipage/webappapis.html#event-loops&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HTML 规范&lt;/a&gt;，从中可得知关于 Event Loop 的几个要点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;task queue 宏任务队列
+&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202412231636588.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;每个 event loop 中有一个或多个 task queue，task queue 是一个集合而不是队列。&lt;/p&gt;
+&lt;p&gt;这里说 task queue 是一个集合(set)，而不是队列(list)，是因为 event loop 会从 task queue 中抓取第一个可运行的任务，而不是按照队列顺序一个个地出队。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;microtask queue 微任务队列
+&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202412231643045.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;
+&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202412231644002.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;每个 event loop 有一个 microtask queue，用于存放微任务，microtask 不是 task queue&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;在浏览器中，常见的宏任务、微任务如下：&lt;/p&gt;
+&lt;h4&gt;宏任务&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;宏任务&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%ae%8f%e4%bb%bb%e5%8a%a1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;setTimeout&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;setInterval&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;setImmediate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;I/O&lt;/code&gt; 事件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MessageChannel&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;而 Event Loop 事件循环就是用来监控调用栈(Call Stack)，检查任务队列(Callback Queue)的，来安排执行这些&lt;strong&gt;异步回调代码&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202412210005052.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h4&gt;微任务&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;微任务&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%be%ae%e4%bb%bb%e5%8a%a1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Promise.then/catch/finally&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;process.nextTick&lt;/code&gt; (Node.js 环境，优先级高于 Promise)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MutationObserver&lt;/code&gt; (监视 DOM 变化)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;queueMicroTask&lt;/code&gt; (直接创建微任务的方法)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;一图了解 Event Loop&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;一图了解-event-loop&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%80%e5%9b%be%e4%ba%86%e8%a7%a3-event-loop&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;了解完宏任务、微任务，我们可以看下这张图，在 JavaScript 实际运行的过程中，代码被一行行执行，任务会被加入到执行栈中(call stack)，执行完毕后从栈中弹出。JavaScript 提供的 WebAPIs (例如 &lt;code&gt;setTimeout&lt;/code&gt;、&lt;code&gt;DOM&lt;/code&gt;、&lt;code&gt;fetch&lt;/code&gt; 等)方法会将它们的回调添加到 task queue 中，等待执行。&lt;code&gt;queueMicrotask&lt;/code&gt;、&lt;code&gt;Promise&lt;/code&gt;、&lt;code&gt;MutationObserver&lt;/code&gt; 等方法会创建微任务，添加到 microtask queue 中等待执行。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202412231540040.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Event Loop 事件循环在其中负责这几件事：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;监控调用栈(call stack)&lt;/li&gt;
+&lt;li&gt;管理任务队列(task queue/microtask queue)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Event Loop 事件循环机制保证 JavaScript 能够在单线程环境中有效地进行异步编程，从而提高应用程序的响应性和性能，让我们来看看它的机制具体是怎样的。&lt;/p&gt;
 &lt;h2&gt;Event Loop 执行流程&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;event-loop-执行流程&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#event-loop-%e6%89%a7%e8%a1%8c%e6%b5%81%e7%a8%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+    &lt;a href=&#34;#event-loop-%e6%89%a7%e8%a1%8c%e6%b5%81%e7%a8%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Event Loop 的执行流程可以分为以下几个步骤：&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;执行同步代码&lt;/p&gt;
 &lt;p&gt;执行当前宏任务中的所有&lt;strong&gt;同步代码&lt;/strong&gt;&lt;/p&gt;
@@ -56,24 +90,34 @@
 &lt;p&gt;从宏任务队列中取出&lt;strong&gt;一个&lt;/strong&gt;任务执行，重复2-4的步骤&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3&gt;宏任务和微任务&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;宏任务和微任务&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#%e5%ae%8f%e4%bb%bb%e5%8a%a1%e5%92%8c%e5%be%ae%e4%bb%bb%e5%8a%a1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;实际上，js 中的异步任务分为两类：宏任务(Macro task) 和微任务(Micro tasks)。&lt;/p&gt;
-&lt;p&gt;微任务的优先级比宏任务高，在 DOM 渲染前执行，且会一次性执行完毕。宏任务在 DOM 渲染后执行，一次只执行一个宏任务，然后进入下一次事件循环。&lt;/p&gt;
-&lt;p&gt;宏任务：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;setTimeout&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;setInterval&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;setImmediate&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;I/O&lt;/code&gt; 事件&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;MessageChannel&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;微任务：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Promise.then/catch/finally&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;process.nextTick&lt;/code&gt; (Node.js 环境，优先级高于 Promise)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;MutationObserver&lt;/code&gt; (监视 DOM 变化)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;queueMicroTask&lt;/code&gt; (直接创建微任务的方法)&lt;/li&gt;
-&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-orange-100 hx-bg-orange-50 hx-text-orange-800 dark:hx-border-orange-400/30 dark:hx-bg-orange-400/20 dark:hx-text-orange-300&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        🔥
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      微任务的优先级比宏任务高，在 DOM 渲染前执行，且会一次性执行完毕。宏任务在 DOM 渲染后执行，一次只执行一个宏任务，然后进入下一次事件循环。
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;h3&gt;例子&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;例子&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#%e4%be%8b%e5%ad%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;理解 Event Loop 最好的方法就是实践，让我们来举个例子，下面这段代码会如何执行：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
@@ -133,16 +177,18 @@
 &lt;li&gt;执行所有微任务，print &lt;code&gt;promise1&lt;/code&gt;、&lt;code&gt;promise2&lt;/code&gt;，微任务队列清空&lt;/li&gt;
 &lt;li&gt;取宏任务队列中的第一个执行，print &lt;code&gt;setTimeout&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h2&gt;See Also&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;see-also&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#see-also&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://html.spec.whatwg.org/multipage/webappapis.html#event-loops&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HTML standard - event loops&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>Vue 响应式源码分析</title>
-      <link>https://moon-odyssey.com/vue-reactivity-source-code-review/</link>
+      <link>http://localhost:62858/vue-reactivity-source-code-review/</link>
       <pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/vue-reactivity-source-code-review/</guid>
+      <guid>http://localhost:62858/vue-reactivity-source-code-review/</guid>
       <description>
         
         
@@ -1978,10 +2024,10 @@
     
     <item>
       <title>MySQL 安装和基础使用</title>
-      <link>https://moon-odyssey.com/mysql/</link>
+      <link>http://localhost:62858/mysql/</link>
       <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/mysql/</guid>
+      <guid>http://localhost:62858/mysql/</guid>
       <description>
         
         
@@ -2600,10 +2646,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>Docker 代理配置（解决登录失败问题）</title>
-      <link>https://moon-odyssey.com/docker-proxy-configuration/</link>
+      <link>http://localhost:62858/docker-proxy-configuration/</link>
       <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/docker-proxy-configuration/</guid>
+      <guid>http://localhost:62858/docker-proxy-configuration/</guid>
       <description>
         
         
@@ -2625,10 +2671,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>如何使用 Rclone 高效管理云存储文件</title>
-      <link>https://moon-odyssey.com/how-to-manage-files-on-cloud-storage-with-rclone/</link>
+      <link>http://localhost:62858/how-to-manage-files-on-cloud-storage-with-rclone/</link>
       <pubDate>Tue, 28 May 2024 16:36:10 +0800</pubDate>
       
-      <guid>https://moon-odyssey.com/how-to-manage-files-on-cloud-storage-with-rclone/</guid>
+      <guid>http://localhost:62858/how-to-manage-files-on-cloud-storage-with-rclone/</guid>
       <description>
         
         
@@ -2781,10 +2827,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>个人向的 RSS 订阅推荐</title>
-      <link>https://moon-odyssey.com/personal-rss-feed-recommendations/</link>
+      <link>http://localhost:62858/personal-rss-feed-recommendations/</link>
       <pubDate>Tue, 14 May 2024 18:45:10 +0800</pubDate>
       
-      <guid>https://moon-odyssey.com/personal-rss-feed-recommendations/</guid>
+      <guid>http://localhost:62858/personal-rss-feed-recommendations/</guid>
       <description>
         
         
@@ -2821,10 +2867,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>CSS Masonry</title>
-      <link>https://moon-odyssey.com/css-masonry/</link>
+      <link>http://localhost:62858/css-masonry/</link>
       <pubDate>Mon, 13 May 2024 22:05:46 +0800</pubDate>
       
-      <guid>https://moon-odyssey.com/css-masonry/</guid>
+      <guid>http://localhost:62858/css-masonry/</guid>
       <description>
         
         
@@ -2922,10 +2968,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>使用 mkcert/Vite 生成本地证书</title>
-      <link>https://moon-odyssey.com/https-for-local-development/</link>
+      <link>http://localhost:62858/https-for-local-development/</link>
       <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/https-for-local-development/</guid>
+      <guid>http://localhost:62858/https-for-local-development/</guid>
       <description>
         
         
@@ -3089,10 +3135,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>NPM</title>
-      <link>https://moon-odyssey.com/npm/</link>
+      <link>http://localhost:62858/npm/</link>
       <pubDate>Fri, 17 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/npm/</guid>
+      <guid>http://localhost:62858/npm/</guid>
       <description>
         
         
@@ -3202,10 +3248,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>模块管理</title>
-      <link>https://moon-odyssey.com/module-management/</link>
+      <link>http://localhost:62858/module-management/</link>
       <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/module-management/</guid>
+      <guid>http://localhost:62858/module-management/</guid>
       <description>
         
         
@@ -3615,10 +3661,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>Node.js 前置知识</title>
-      <link>https://moon-odyssey.com/pre-knowledge-of-nodejs/</link>
+      <link>http://localhost:62858/pre-knowledge-of-nodejs/</link>
       <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/pre-knowledge-of-nodejs/</guid>
+      <guid>http://localhost:62858/pre-knowledge-of-nodejs/</guid>
       <description>
         
         
@@ -3670,10 +3716,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>使用 Charles 抓取移动设备 HTTPS 请求</title>
-      <link>https://moon-odyssey.com/capture-https-request-with-mobile-device/</link>
+      <link>http://localhost:62858/capture-https-request-with-mobile-device/</link>
       <pubDate>Fri, 10 Mar 2023 17:36:56 +0800</pubDate>
       
-      <guid>https://moon-odyssey.com/capture-https-request-with-mobile-device/</guid>
+      <guid>http://localhost:62858/capture-https-request-with-mobile-device/</guid>
       <description>
         
         

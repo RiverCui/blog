@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – Tags</title>
-    <link>https://moon-odyssey.com/tags/</link>
+    <link>http://localhost:62858/tags/</link>
     <description>Recent content in Tags on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 12 Aug 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://moon-odyssey.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:62858/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
       

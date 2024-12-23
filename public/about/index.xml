@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – About</title>
-    <link>https://moon-odyssey.com/about/</link>
+    <link>http://localhost:62858/about/</link>
     <description>Recent content in About on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     
-	  <atom:link href="https://moon-odyssey.com/about/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:62858/about/index.xml" rel="self" type="application/rss+xml" />
     
     
       
