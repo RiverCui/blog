@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – Node.js</title>
-    <link>http://localhost:62858/en/tags/node.js/</link>
+    <link>https://moon-odyssey.com/en/tags/node.js/</link>
     <description>Recent content in Node.js on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Fri, 17 Nov 2023 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="http://localhost:62858/en/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://moon-odyssey.com/en/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>NPM</title>
-      <link>http://localhost:62858/en/npm/</link>
+      <link>https://moon-odyssey.com/en/npm/</link>
       <pubDate>Fri, 17 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:62858/en/npm/</guid>
+      <guid>https://moon-odyssey.com/en/npm/</guid>
       <description>
         
         
@@ -133,10 +133,10 @@
     
     <item>
       <title>Module Management</title>
-      <link>http://localhost:62858/en/module-management/</link>
+      <link>https://moon-odyssey.com/en/module-management/</link>
       <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:62858/en/module-management/</guid>
+      <guid>https://moon-odyssey.com/en/module-management/</guid>
       <description>
         
         
@@ -549,10 +549,10 @@ For example:&lt;/li&gt;
     
     <item>
       <title>Node.js Prerequisites</title>
-      <link>http://localhost:62858/en/pre-knowledge-of-nodejs/</link>
+      <link>https://moon-odyssey.com/en/pre-knowledge-of-nodejs/</link>
       <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:62858/en/pre-knowledge-of-nodejs/</guid>
+      <guid>https://moon-odyssey.com/en/pre-knowledge-of-nodejs/</guid>
       <description>
         
         
