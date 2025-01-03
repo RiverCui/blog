@@ -25,7 +25,8 @@
         
         
         &lt;blockquote&gt;
-&lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
+  &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
+
 &lt;/blockquote&gt;
 &lt;p&gt;Next.js currently offers two routing solutions: the legacy &lt;a href=&#34;https://nextjs.org/docs/pages&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pages Router&lt;/a&gt; and the new &lt;a href=&#34;https://nextjs.org/docs/app&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;App Router&lt;/a&gt; introduced in version 13. In this article, we will &lt;strong&gt;dive deep into the core concepts of App Router, explore how to implement efficient routing management in Next.js projects, and understand how App Router transforms our approach to Web application routing&lt;/strong&gt;. Whether you&amp;rsquo;re an experienced Next.js developer or just starting with this framework, this article will reveal the powerful features and potential of App Router.&lt;/p&gt;
 &lt;h2&gt;App Router vs Pages Router&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;app-router-vs-pages-router&#34;&gt;&lt;/span&gt;
@@ -51,7 +52,6 @@
 &lt;p&gt;Let&amp;rsquo;s create our first &lt;code&gt;page.js&lt;/code&gt; pages:
 &lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221146387.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// app/page.js
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Page&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -65,11 +65,8 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// app/dashboard/page.js
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Page&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -83,8 +80,6 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;Run &lt;code&gt;npm run dev&lt;/code&gt; and visit &lt;code&gt;http://localhost:3000/&lt;/code&gt;, you&amp;rsquo;ll see:
 &lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221149969.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
@@ -96,7 +91,6 @@
 &lt;p&gt;Let&amp;rsquo;s create a &lt;code&gt;layout.js&lt;/code&gt; file. This file exports a default React component that accepts a &lt;code&gt;children&lt;/code&gt; prop. The &lt;code&gt;children&lt;/code&gt; prop represents child layouts (if any) or child pages.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221157258.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// app/dashboard/layout.js
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DashboardLayout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
@@ -117,8 +111,6 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;The result looks like this:
 &lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221200578.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;

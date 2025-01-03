@@ -10,15 +10,8 @@
 <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
-
-  <title>Vue Reactivity Source Code Review – River&#39;s Blog</title>
-  <meta name="description" content="Analysis of Vue&#39;s reactivity system source code" />
-
-  
-    <link rel="canonical" href="https://moon-odyssey.com/en/vue-reactivity-source-code-review/" itemprop="url" />
-  
-
-  
+<title>Vue Reactivity Source Code Review – River&#39;s Blog</title>
+  <meta name="description" content="Analysis of Vue&#39;s reactivity system source code" /><link rel="canonical" href="https://moon-odyssey.com/en/vue-reactivity-source-code-review/" itemprop="url" />
 
 <meta property="og:title" content="Vue Reactivity Source Code Review" />
 <meta property="og:description" content="Analysis of Vue&#39;s reactivity system source code" />
@@ -27,7 +20,6 @@
 <meta property="article:published_time" content="2024-06-20T00:00:00+00:00" />
 <meta property="article:modified_time" content="2024-06-20T00:00:00+00:00" />
 
-  
   <meta itemprop="name" content="Vue Reactivity Source Code Review">
   <meta itemprop="description" content="Analysis of Vue&#39;s reactivity system source code">
   <meta itemprop="datePublished" content="2024-06-20T00:00:00+00:00">
@@ -38,15 +30,12 @@
   <meta name="twitter:title" content="Vue Reactivity Source Code Review">
   <meta name="twitter:description" content="Analysis of Vue&#39;s reactivity system source code">
 
-    <link rel="preload" href="/css/compiled/main.min.23a12191daf50c320fcb5ce50e8c895a47f37ce361f66be7c771e19f254b32b2.css" as="style" integrity="sha256-I6Ehkdr1DDIPy1zlDoyJWkfzfONh9mvnx3HhnyVLMrI=" />
-    <link href="/css/compiled/main.min.23a12191daf50c320fcb5ce50e8c895a47f37ce361f66be7c771e19f254b32b2.css" rel="stylesheet" integrity="sha256-I6Ehkdr1DDIPy1zlDoyJWkfzfONh9mvnx3HhnyVLMrI=" />
+    <link rel="preload" href="/css/compiled/main.min.c697307cafa791c9b405fe69f29b2345d58146c0293709ed7261c913cec724ba.css" as="style" integrity="sha256-xpcwfK&#43;nkcm0Bf5p8psjRdWBRsApNwntcmHJE87HJLo=" />
+    <link href="/css/compiled/main.min.c697307cafa791c9b405fe69f29b2345d58146c0293709ed7261c913cec724ba.css" rel="stylesheet" integrity="sha256-xpcwfK&#43;nkcm0Bf5p8psjRdWBRsApNwntcmHJE87HJLo=" />
 
 
 
   <link href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" rel="stylesheet" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU=" />
-
-
-
 
 
   <script>
@@ -125,14 +114,14 @@
   </div>
 </div>
 
-          <a class="hx-p-2 hx-text-current" target="_blank" rel="noreferer" href="https://github.com/RiverCui" title="GitHub"><svg height=24 fill="currentColor" viewBox="3 3 18 18">
+          <a class="hx-p-2 hx-text-current" target="_blank" rel="noreferrer" href="https://github.com/RiverCui" title="GitHub"><svg height=24 fill="currentColor" viewBox="3 3 18 18">
   <path d="M12 3C7.0275 3 3 7.12937 3 12.2276C3 16.3109 5.57625 19.7597 9.15374 20.9824C9.60374 21.0631 9.77249 20.7863 9.77249 20.5441C9.77249 20.3249 9.76125 19.5982 9.76125 18.8254C7.5 19.2522 6.915 18.2602 6.735 17.7412C6.63375 17.4759 6.19499 16.6569 5.8125 16.4378C5.4975 16.2647 5.0475 15.838 5.80124 15.8264C6.51 15.8149 7.01625 16.4954 7.18499 16.7723C7.99499 18.1679 9.28875 17.7758 9.80625 17.5335C9.885 16.9337 10.1212 16.53 10.38 16.2993C8.3775 16.0687 6.285 15.2728 6.285 11.7432C6.285 10.7397 6.63375 9.9092 7.20749 9.26326C7.1175 9.03257 6.8025 8.08674 7.2975 6.81794C7.2975 6.81794 8.05125 6.57571 9.77249 7.76377C10.4925 7.55615 11.2575 7.45234 12.0225 7.45234C12.7875 7.45234 13.5525 7.55615 14.2725 7.76377C15.9937 6.56418 16.7475 6.81794 16.7475 6.81794C17.2424 8.08674 16.9275 9.03257 16.8375 9.26326C17.4113 9.9092 17.76 10.7281 17.76 11.7432C17.76 15.2843 15.6563 16.0687 13.6537 16.2993C13.98 16.5877 14.2613 17.1414 14.2613 18.0065C14.2613 19.2407 14.25 20.2326 14.25 20.5441C14.25 20.7863 14.4188 21.0746 14.8688 20.9824C16.6554 20.364 18.2079 19.1866 19.3078 17.6162C20.4077 16.0457 20.9995 14.1611 21 12.2276C21 7.12937 16.9725 3 12 3Z"></path>
 </svg>
 <span class="hx-sr-only">GitHub</span>
           </a>
-          <a class="hx-p-2 hx-text-current" target="_blank" rel="noreferer" href="https://www.linkedin.com/in/river-tsui-411aab242" title="LinkedIn"><svg height=24 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037c-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85c3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065a2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span class="hx-sr-only">LinkedIn</span>
+          <a class="hx-p-2 hx-text-current" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/river-tsui-411aab242" title="LinkedIn"><svg height=24 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037c-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85c3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065a2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span class="hx-sr-only">LinkedIn</span>
           </a>
-          <a class="hx-p-2 hx-text-current" target="_blank" rel="noreferer" href="https://x.com/tree172194471" title="X"><svg height=24 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg><span class="hx-sr-only">X</span>
+          <a class="hx-p-2 hx-text-current" target="_blank" rel="noreferrer" href="https://x.com/tree172194471" title="X"><svg height=24 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg><span class="hx-sr-only">X</span>
           </a><button type="button" aria-label="Menu" class="hamburger-menu -hx-mr-2 hx-rounded hx-p-2 active:hx-bg-gray-400/20 md:hx-hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
   </nav>
 </div>
@@ -433,7 +422,8 @@
         <div class="hx-mt-4 hx-mb-16 hx-text-gray-500 hx-text-sm hx-flex hx-items-center hx-flex-wrap hx-gap-y-2"><span class="hx-mr-1">June 20, 2024</span></div>
         <div class="content">
           <blockquote>
-<p>Note: This article was translated from Chinese to English by Claude AI (Anthropic).</p>
+  <p>Note: This article was translated from Chinese to English by Claude AI (Anthropic).</p>
+
 </blockquote>
 <h2>Vue 2 Reactivity Principles<span class="hx-absolute -hx-mt-20" id="vue-2-reactivity-principles"></span>
     <a href="#vue-2-reactivity-principles" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>In Vue 2, when a JavaScript object is passed into a Vue instance as a <code>data</code> option, Vue will traverse all <code>properties</code> of this object and use <strong><code>Object.defineProperty()</code></strong> to convert these properties into <code>getters/setters</code>. Dependencies are collected in the <code>getter</code> and updates are triggered in the <code>setter</code>: each component instance corresponds to a <code>watcher</code> instance, which records data <code>properties</code> accessed during component rendering as dependencies. When a dependency&rsquo;s <code>setter</code> is triggered, it notifies the <code>watcher</code>, causing its associated component to re-render. This is the approach behind Vue 2&rsquo;s reactivity implementation. As for how it is specifically implemented, we&rsquo;ll analyze this in detail below.</p>
@@ -441,7 +431,6 @@
 <h3>Object.defineProperty()<span class="hx-absolute -hx-mt-20" id="objectdefineproperty"></span>
     <a href="#objectdefineproperty" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><code>Object.defineProperty()</code> is the foundation of Vue&rsquo;s reactivity implementation. It allows precise addition or modification of properties on an object. The syntax is as follows:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">prop</span><span class="p">,</span> <span class="nx">descriptor</span><span class="p">)</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
@@ -452,8 +441,6 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>Parameters:
 <code>obj</code>: The object on which to define the property
@@ -477,7 +464,6 @@
 <li><code>val</code> (specific value)</li>
 </ul>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">defineReactive</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// Create dependency collector
@@ -509,12 +495,9 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>As mentioned at the beginning of this article, Vue traverses all properties of an object, so we need to wrap another layer called <code>Observer</code> to traverse the object and convert all properties of a regular JavaScript object into reactive ones. Here&rsquo;s a simplified version:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">Observer</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">constructor</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
@@ -548,12 +531,9 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>Here, <code>def()</code> is a utility function used to add properties to an object:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kd">function</span> <span class="nx">def</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="p">{</span>
@@ -568,12 +548,9 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p><code>observe()</code> is the entry function that returns an Observer instance:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">observe</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">value</span> <span class="o">!==</span> <span class="s1">&#39;object&#39;</span><span class="p">)</span> <span class="k">return</span>
@@ -593,13 +570,10 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <h3>Dependency Collection<span class="hx-absolute -hx-mt-20" id="dependency-collection"></span>
     <a href="#dependency-collection" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>The previously commented out lines in <code>defineReactive</code>, highlighted below, are for dependency collection in <code>get</code> and notification of all dependencies in <code>set</code> - this is another important part of implementing the reactivity system - <strong>dependency collection</strong>.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -659,13 +633,10 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <h4>Why Dependency Collection is Needed<span class="hx-absolute -hx-mt-20" id="why-dependency-collection-is-needed"></span>
     <a href="#why-dependency-collection-is-needed" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Let&rsquo;s look at an example. Here&rsquo;s a Vue object:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">template</span><span class="o">:</span><span class="sb">`
@@ -688,12 +659,9 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>If we modify <code>text3</code>:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">data</span><span class="p">.</span><span class="nx">text3</span> <span class="o">=</span> <span class="s1">&#39;text3 modify&#39;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
@@ -704,13 +672,10 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>Although we modified the value of <code>text3</code> in <code>data</code>, since <code>text3</code> isn&rsquo;t used in the template rendering, it won&rsquo;t trigger <code>dep.notify()</code> to notify dependencies and update the view.</p>
 <p>Here&rsquo;s another example. Suppose we have a global object that we use in two Vue objects.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">globalObj</span> <span class="o">=</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">text1</span><span class="o">:</span> <span class="s1">&#39;text1&#39;</span>
@@ -741,12 +706,9 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>When we modify the value of <code>globalObj.text1</code>:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">globalObj</span><span class="p">.</span><span class="nx">text1</span> <span class="o">=</span> <span class="s1">&#39;text1 modify&#39;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
@@ -757,8 +719,6 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>In the reactivity system, when <code>globalObj.text1</code> changes, it should notify both <code>o1</code> and <code>o2</code> vm instances to update their views. <strong>Dependency collection</strong> implements this: it lets this data (<code>globalObj.text1</code>) know that two places (<code>o1</code> and <code>o2</code>) depend on it, so when this data (<code>globalObj.text1</code>) changes, it will notify the <code>o1</code> and <code>o2</code> that depend on it.</p>
 <h4>Core of Dependency Collection - Dep and Watcher<span class="hx-absolute -hx-mt-20" id="core-of-dependency-collection---dep-and-watcher"></span>
@@ -766,7 +726,6 @@
 <p>First, we need a <code>Dep</code>. Each <code>Dep</code> instance has an array to store watchers, which will notify watchers to update when data changes. Similarly, each <code>Watcher</code> instance also has an array to store its dependent deps. In other words, <strong>dependency collection is bidirectional</strong> - Dep records Watcher, and Watcher also records Dep, this is very important.</p>
 <p>Let&rsquo;s look at <code>Dep</code> first:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">Dep</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">static</span> <span class="nx">target</span>  <span class="c1">// Static property, globally unique currently executing Watcher
@@ -812,13 +771,10 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>As mentioned above, <code>class Dep</code>&rsquo;s target is a static property used to record the currently unique executing Watcher, <code>id</code> is used to give Dep instances unique identifiers, and <code>subs</code> is used to store all subscribers. <code>addSub()</code> and <code>removeSub()</code> are used to add and remove subscribers, <code>depend()</code> is used to establish dependency relationships, and <code>notify()</code> is used to notify all subscribers.</p>
 <p><code>Watcher</code> is a bit more complex, let&rsquo;s take a look:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">Watcher</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">constructor</span> <span class="p">(</span><span class="nx">vm</span><span class="p">,</span> <span class="nx">expOrFn</span><span class="p">,</span> <span class="nx">cb</span><span class="p">,</span> <span class="nx">options</span><span class="o">=</span><span class="p">{})</span> <span class="p">{</span>
@@ -931,13 +887,10 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>In <code>Watcher</code>&rsquo;s <code>constructor</code>, it first processes the passed <code>expOrFn</code>. When it&rsquo;s a function, it&rsquo;s directly assigned to <code>getter</code>. If it&rsquo;s a string, it needs <code>parsePath</code> to convert it to an access function. For example, <code>parsePath('user.name')</code> would return a function: <code>(obj) =&gt; obj['user']['name']</code>. Note that <code>obj</code> here is the <code>vm</code> called in <code>getter.call</code>, which is the current Vue instance. Additionally, it will immediately execute <code>getter()</code> once for initialization and dependency collection.</p>
 <p>Looking at the code below, to handle nested Watcher scenarios, at the start of <code>getter()</code>, the current <code>Watcher</code> (target) is pushed onto the targetStack stack, and <code>Dep.target</code> is pointed to the current <code>Watcher</code>. When <code>getter()</code> finishes, this <code>Watcher</code> is popped from the stack, and <code>Dep.target</code>&rsquo;s pointer is modified to the previous <code>Watcher</code>.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">targetStack</span> <span class="o">=</span> <span class="p">[]</span>
 </span></span><span class="line"><span class="cl">
@@ -958,8 +911,6 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>The <code>addDep</code> method of <code>Watcher</code> and the <code>addSub</code> method in <code>Dep</code> call each other for bidirectional dependency collection. Don&rsquo;t worry about infinite loops, as <code>Watcher</code> also has a <code>cleanupDeps</code> to clean up dependencies in a timely manner.</p>
 <p><code>update()</code> and <code>run()</code> are responsible for update handling when data changes. Let&rsquo;s first look at <code>update()</code>, which has three ways of handling when data changes:</p>
@@ -967,7 +918,6 @@
 <li>
 <p><code>lazy</code> mode</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">lazy</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl"> <span class="k">this</span><span class="p">.</span><span class="nx">dirty</span> <span class="o">=</span> <span class="kc">true</span>
@@ -980,12 +930,9 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>Searching for <code>dirty</code> in the source code, we can find the <code>evaluate()</code> method:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="cm">/**
 </span></span></span><span class="line"><span class="cl"><span class="cm">* Evaluate the value of the watcher.
@@ -1003,13 +950,10 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>When <code>evaluate()</code> is called, it calls the <code>get()</code> method and sets <code>dirty</code> to <code>false</code>. So where is <code>evaluate()</code> used?
 After a global search, we can see it being called in the <code>state.ts</code> file:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">createComputedGetter</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="kd">function</span> <span class="nx">computedGetter</span><span class="p">()</span> <span class="p">{</span>
@@ -1034,8 +978,6 @@ After a global search, we can see it being called in the <code>state.ts</code> f
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 </li>
 </ol>
@@ -1045,7 +987,6 @@ The computed property uses this mode.</p>
 <li>
 <p><code>sync</code> mode</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sync</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl"> <span class="k">this</span><span class="p">.</span><span class="nx">run</span><span class="p">()</span>
@@ -1058,12 +999,9 @@ The computed property uses this mode.</p>
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>If in <code>sync</code> mode, it will call <code>run()</code>:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">run</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>  <span class="c1">// Get new value
@@ -1081,8 +1019,6 @@ The computed property uses this mode.</p>
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>We can see that the <code>run</code> method immediately executes <code>get()</code>, and when the new and old values are not equal or the new value is an object or deep watching is enabled, it executes the callback function, passing both new and old values.
 So <code>sync</code> mode is mainly used for scenarios that need immediate response to data changes, but <code>sync</code> is <code>false</code> by default, and most cases use <code>async</code> asynchronous updates.</p>
@@ -1090,7 +1026,6 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
 <li>
 <p><code>queue</code> asynchronous updates</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="k">else</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl"> <span class="nx">queueWatcher</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
@@ -1103,12 +1038,9 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>Let&rsquo;s see what <code>queueWatcher()</code> does:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">has</span> <span class="o">=</span> <span class="p">{}</span>
 </span></span><span class="line"><span class="cl"><span class="cm">/**
@@ -1155,8 +1087,6 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <ul>
 <li>When <code>flushSchedulerQueue</code> is executed, <code>flushing</code> will be set to <code>true</code></li>
@@ -1168,7 +1098,6 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <a href="#vue-reactivity-system" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Through the above sections, we know that Vue&rsquo;s reactivity system implementation relies on <strong>data reactivity</strong> and <strong>dependency collection</strong>. The core/principle of data reactivity is <code>Object.defineProperty</code>, which registers <code>get</code> and <code>set</code> for dependency collection. Specifically, it creates a new Dep instance in the reactive object to handle dependency collection, adding the current Watcher to the Dep instance&rsquo;s subscriber list (subs). At this point, the process of building the entire reactivity system is still somewhat unclear, especially when <code>new Watcher()</code> happens, so when we create a new Vue instance, when are all these processes performed?</p>
 <p>First, we need to know what Watchers exist in a Vue instance. As Vue users, we commonly encounter three types: Render Watcher, Computed Watcher, and User Watcher:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// Template rendering - Render Watcher
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">message</span> <span class="p">}}</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
@@ -1194,12 +1123,9 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>Now, let&rsquo;s not rush to focus on when <code>new Watcher</code> happens, let&rsquo;s first understand the overall flow of <code>new Vue()</code>:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1265,14 +1191,11 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>We mainly focus on <code>initState</code> and <code>$mount</code>.</p>
 <h4>initState<span class="hx-absolute -hx-mt-20" id="initstate"></span>
     <a href="#initstate" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p><code>initState</code> initializes <code>props</code> -&gt; <code>methods</code> -&gt; <code>data</code> -&gt; <code>computed</code> -&gt; <code>watch</code> in sequence:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1332,12 +1255,9 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>The process of <strong>generating reactive objects</strong>, which we mentioned earlier using <code>Object.defineProperty</code>, is implemented in <code>initData</code>:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">initData</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">observe</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>  <span class="c1">// Entry function for generating reactive objects mentioned earlier
@@ -1350,12 +1270,9 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p><code>initComputed</code> and <code>initWatch</code> create Computed Watcher and User Watcher respectively:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">initComputed</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// Create computed watcher for each computed property
@@ -1373,13 +1290,10 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <h4>$mount<span class="hx-absolute -hx-mt-20" id="mount"></span>
     <a href="#mount" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Render Watcher is created during component mounting (<code>$mount</code>).</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// Create render watcher (during mount phase)
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">Vue</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">$mount</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Watcher</span><span class="p">(</span><span class="nx">vm</span><span class="p">,</span> <span class="nx">updateComponent</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
@@ -1391,8 +1305,6 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <h2>Vue2 Reactivity System Limitations<span class="hx-absolute -hx-mt-20" id="vue2-reactivity-system-limitations"></span>
     <a href="#vue2-reactivity-system-limitations" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Vue2&rsquo;s reactivity isn&rsquo;t perfect. The implementation using <code>Object.defineProperty</code> comes with inherent limitations, so when using Vue2, we need to be aware of these issues.</p>
@@ -1400,7 +1312,6 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <a href="#objects" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Vue2 cannot detect <strong>object property additions and deletions</strong>.</p>
 <p>For example:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl"> <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
@@ -1419,12 +1330,9 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>This is because Vue converts properties to reactive ones during instance initialization, so properties must exist on the <code>data</code> object for Vue to make them reactive.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">initData</span><span class="p">(</span><span class="nx">vm</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">vm</span><span class="p">.</span><span class="nx">$options</span><span class="p">.</span><span class="nx">data</span>
@@ -1438,14 +1346,11 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <h4>Solution 1: <code>Vue.set</code><span class="hx-absolute -hx-mt-20" id="solution-1-vueset"></span>
     <a href="#solution-1-vueset" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>For already created instances, while Vue doesn&rsquo;t allow adding reactive properties at the <strong>root level</strong>, you can use <code>Vue.set(object, propertyName, value)</code> to add reactive properties to nested objects.</p>
 <p>For example, if you have an object in data:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
@@ -1462,12 +1367,9 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>Use <code>Vue.set</code> to add a new reactive property <code>b</code> to <code>someObject</code>:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">Vue</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">vm</span><span class="p">.</span><span class="nx">someObject</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
@@ -1478,12 +1380,9 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>or</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">$set</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">someObject</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
@@ -1494,13 +1393,10 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <h4>Solution 2: <code>Object.assign</code><span class="hx-absolute -hx-mt-20" id="solution-2-objectassign"></span>
     <a href="#solution-2-objectassign" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>When you need to assign multiple new properties to an existing object, you can use <code>Object.assign</code>.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">someObject</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="k">this</span><span class="p">.</span><span class="nx">someObject</span><span class="p">,</span> <span class="p">{</span><span class="nx">a</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span> <span class="mi">2</span><span class="p">})</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
@@ -1511,12 +1407,9 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>However, note that new properties added like this aren&rsquo;t reactive:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">someObject</span><span class="p">,</span> <span class="p">{</span><span class="nx">a</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span> <span class="mi">2</span><span class="p">})</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
@@ -1527,12 +1420,9 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>The reason is simple - <code>Object.assign(this.someObject,{a:1,b:2})</code> is equivalent to directly modifying/adding properties:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// Equivalent to
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">this</span><span class="p">.</span><span class="nx">someObject</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">// Triggers a&#39;s setter
@@ -1546,8 +1436,6 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>While <code>Object.assign({},this.someObject,{a:1,b:2})</code> triggers <code>someObject</code>&rsquo;s setter, recursively traversing all properties on <code>someObject</code> for reactive conversion.</p>
 <h3>Arrays<span class="hx-absolute -hx-mt-20" id="arrays"></span>
@@ -1559,7 +1447,6 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
 <p>These two types of changes won&rsquo;t trigger reactive updates because array indices are essentially object properties. While theoretically Vue could handle array indices like object properties, for arrays with large lengths, like an array of 10000 elements, setting getter/setter for each index would cause serious <strong>performance issues</strong>. Similarly, the <code>length</code> property of arrays isn&rsquo;t made reactive because it could trigger chain reactions (modifying <code>length</code> could affect many elements).</p>
 <p>To solve this problem, Vue2 rewrote seven array methods that can trigger reactive updates:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">push</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="nx">pop</span><span class="p">()</span>
@@ -1576,12 +1463,9 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>So to trigger array reactivity, you should do this:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// Modify array index
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">vm</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">indexOfItem</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">)</span>
@@ -1595,8 +1479,6 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <h3>Performance<span class="hx-absolute -hx-mt-20" id="performance"></span>
     <a href="#performance" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Vue2&rsquo;s reactive implementation requires <strong>recursive traversal</strong> of all object properties, which itself has significant performance overhead. This is also why Vue3 switched to using <code>proxy</code> to implement reactivity.</p>
@@ -1610,7 +1492,6 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
 <li>Supports data structures like Map, Set</li>
 </ol>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">reactive</span><span class="p">(</span><span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="k">new</span> <span class="nb">Proxy</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="p">{</span>
@@ -1634,12 +1515,9 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>Here <code>Reflect</code> is a built-in object that provides methods for intercepting JavaScript operations.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">Reflect</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span>  <span class="c1">// Get property
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">Reflect</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>  <span class="c1">// Set property
@@ -1654,12 +1532,9 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>Reflect provides unified APIs for object operations, making it convenient for proxy:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1707,64 +1582,61 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <h3>New Reactive APIs<span class="hx-absolute -hx-mt-20" id="new-reactive-apis"></span>
     <a href="#new-reactive-apis" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h4>ref and reactive<span class="hx-absolute -hx-mt-20" id="ref-and-reactive"></span>
     <a href="#ref-and-reactive" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p><code>ref</code> and <code>reactive</code> are both new reactive APIs in Vue3 for handling reactive data, with some differences in usage:</p>
 <table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>ref</th>
-<th>reactive</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Access method</td>
-<td>Access via <code>.value</code></td>
-<td>Direct access</td>
-</tr>
-<tr>
-<td>Auto-unwrapping</td>
-<td>Auto-unwraps in <code>&lt;template&gt;</code> and <code>reactive</code></td>
-<td>No unwrapping needed</td>
-</tr>
-<tr>
-<td>Data type support</td>
-<td>Supports all data types</td>
-<td>Only supports object types</td>
-</tr>
-<tr>
-<td>Destructuring behavior</td>
-<td>Loses reactivity after destructuring, need <code>toRef</code>/<code>toRefs</code></td>
-<td>Loses reactivity after destructuring, need <code>toRef</code>/<code>toRefs</code></td>
-</tr>
-<tr>
-<td>Assignment characteristic</td>
-<td>Can directly replace entire value <code>ref.value = newValue</code></td>
-<td>Can&rsquo;t directly replace entire object, can only modify properties</td>
-</tr>
-<tr>
-<td>Nested data</td>
-<td>Internally uses <code>reactive</code> to handle objects</td>
-<td>Deep reactive conversion</td>
-</tr>
-<tr>
-<td>Use cases</td>
-<td>Basic data types / Single data source / Composition function return values / Data needing reassignment</td>
-<td>Related data collections / Reference data types / Data not needing reassignment</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>ref</th>
+          <th>reactive</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Access method</td>
+          <td>Access via <code>.value</code></td>
+          <td>Direct access</td>
+      </tr>
+      <tr>
+          <td>Auto-unwrapping</td>
+          <td>Auto-unwraps in <code>&lt;template&gt;</code> and <code>reactive</code></td>
+          <td>No unwrapping needed</td>
+      </tr>
+      <tr>
+          <td>Data type support</td>
+          <td>Supports all data types</td>
+          <td>Only supports object types</td>
+      </tr>
+      <tr>
+          <td>Destructuring behavior</td>
+          <td>Loses reactivity after destructuring, need <code>toRef</code>/<code>toRefs</code></td>
+          <td>Loses reactivity after destructuring, need <code>toRef</code>/<code>toRefs</code></td>
+      </tr>
+      <tr>
+          <td>Assignment characteristic</td>
+          <td>Can directly replace entire value <code>ref.value = newValue</code></td>
+          <td>Can&rsquo;t directly replace entire object, can only modify properties</td>
+      </tr>
+      <tr>
+          <td>Nested data</td>
+          <td>Internally uses <code>reactive</code> to handle objects</td>
+          <td>Deep reactive conversion</td>
+      </tr>
+      <tr>
+          <td>Use cases</td>
+          <td>Basic data types / Single data source / Composition function return values / Data needing reassignment</td>
+          <td>Related data collections / Reference data types / Data not needing reassignment</td>
+      </tr>
+  </tbody>
 </table>
 <ul>
 <li>Access Method</li>
 </ul>
 <p><code>ref</code> objects are accessed via <code>.value</code>, <code>reactive</code> accessed directly.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>  <span class="c1">// needs .value to access
@@ -1782,15 +1654,12 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <ul>
 <li>Auto-unwrapping</li>
 </ul>
 <p><code>ref</code> objects auto-unwrap in <code>template</code>, <code>reactive</code></p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1815,14 +1684,11 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <ul>
 <li>Data Type Support</li>
 </ul>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// ref supports all data types
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">num</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -1842,14 +1708,11 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <ul>
 <li>Using <code>toRef</code> / <code>toRefs</code> for Destructuring</li>
 </ul>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;River&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">18</span><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
@@ -1876,15 +1739,12 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <ul>
 <li>Assignment Characteristics</li>
 </ul>
 <p><code>ref</code> objects can be directly replaced, <code>reactive</code> cannot be directly replaced, only properties can be modified</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl"><span class="nx">foo</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>  <span class="c1">// allowed
@@ -1900,15 +1760,12 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <ul>
 <li>Nested Data</li>
 </ul>
 <p><code>ref</code> handling nested data</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Zhang&#39;</span><span class="p">,</span>
@@ -1932,12 +1789,9 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p><code>reactive</code> handling nested data</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Zhang&#39;</span><span class="p">,</span>
@@ -1961,15 +1815,12 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <ul>
 <li>Use Cases</li>
 </ul>
 <p>For composition function return values, using <code>ref</code> is better. If <code>reactive</code> is needed, maintain data reactivity through <code>toRefs</code></p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">useCount</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -1988,8 +1839,6 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <h4>watchEffect<span class="hx-absolute -hx-mt-20" id="watcheffect"></span>
     <a href="#watcheffect" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p><code>watchEffect</code> automatically tracks reactive dependencies and reruns the effect function when reactive dependencies update. Simply put, it does these things:</p>
@@ -2000,7 +1849,6 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
 </ul>
 <h5>Basic Usage<span class="hx-absolute -hx-mt-20" id="basic-usage"></span>
     <a href="#basic-usage" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">watchEffect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
@@ -2023,13 +1871,10 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <h5>Pause/Resume/Stop Watching<span class="hx-absolute -hx-mt-20" id="pauseresumestop-watching"></span>
     <a href="#pauseresumestop-watching" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p><code>watchEffect</code> also returns a stop function, executing it will stop watching</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">stop</span> <span class="o">=</span> <span class="nx">watchEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{})</span>
 </span></span><span class="line"><span class="cl">
@@ -2043,12 +1888,9 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>When pausing/resuming is needed</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">stop</span><span class="p">,</span> <span class="nx">pause</span><span class="p">,</span> <span class="nx">resume</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">watchEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{})</span>
 </span></span><span class="line"><span class="cl">
@@ -2068,8 +1910,6 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <h5>Cleanup Effects<span class="hx-absolute -hx-mt-20" id="cleanup-effects"></span>
     <a href="#cleanup-effects" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p>Why cleanup effects are needed:</p>
@@ -2086,7 +1926,6 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
 </ul>
 <p>Let&rsquo;s take a network request as an example, creating a network request controller <code>controller</code> and calling the cancel network request method in the <code>onCleanup</code> function.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">userId</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">userData</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
@@ -2117,14 +1956,11 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>The execution sequence is like this:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
-<div class="filename" dir="auto">Markdown</div><div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">Initial execution:
+<div class="filename not-prose" dir="auto">Markdown</div><div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">Initial execution:
 </span></span><span class="line"><span class="cl"><span class="k">1.</span> Start request, userId: 1
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">100 ms later when userId changes:
@@ -2139,12 +1975,9 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <p>Cleanup after 3.5+</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">onWatcherCleanup</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
@@ -2170,13 +2003,10 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <h5>Execution Timing<span class="hx-absolute -hx-mt-20" id="execution-timing"></span>
     <a href="#execution-timing" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p><code>watchEffect</code> also provides a second parameter that can control when the effect function executes.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2216,15 +2046,12 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <h5>watchEffect vs watch<span class="hx-absolute -hx-mt-20" id="watcheffect-vs-watch"></span>
     <a href="#watcheffect-vs-watch" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><ul>
 <li><code>watchEffect</code> automatically tracks dependencies, <code>watch</code> needs explicitly specified source to monitor</li>
 </ul>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">watchEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="p">))</span>  <span class="c1">// automatically tracks dependencies
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
@@ -2238,14 +2065,11 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 <ul>
 <li><code>watchEffect</code> executes immediately by default, <code>watch</code> needs <code>immediate: true</code> setting</li>
 </ul>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-  
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">watchEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{})</span>  <span class="c1">// executes immediately by default
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
@@ -2259,8 +2083,6 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-
-  
 </div>
 
         </div>
@@ -2317,14 +2139,14 @@ So <code>sync</code> mode is mainly used for scenarios that need immediate respo
   <div class="hx-flex hx-items-center hx-gap-2 hx-capitalize"><svg height=12 class="group-data-[theme=light]:hx-hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="group-data-[theme=light]:hx-hidden">Light</span><svg height=12 class="group-data-[theme=dark]:hx-hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="group-data-[theme=dark]:hx-hidden">Dark</span></div>
 </button>
 </div><hr class="dark:hx-border-neutral-800" /><div
-    class="hx-max-w-screen-xl hx-mx-auto hx-flex hx-justify-center hx-py-12 hx-pl-[max(env(safe-area-inset-left),1.5rem)] hx-pr-[max(env(safe-area-inset-right),1.5rem)] hx-text-gray-600 dark:hx-text-gray-400 md:hx-justify-start"
-  >
-    <div class="hx-flex hx-w-full hx-flex-col hx-items-center sm:hx-items-start"><div class="hx-font-semibold"><a class="hx-flex hx-text-sm hx-items-center hx-gap-1 hx-text-current" target="_blank" rel="noopener noreferrer" title="Hextra GitHub Homepage" href="https://github.com/imfing/hextra">
+      class="hextra-custom-footer hx-max-w-screen-xl hx-pl-[max(env(safe-area-inset-left),1.5rem)] hx-pr-[max(env(safe-area-inset-right),1.5rem)] hx-text-gray-600 dark:hx-text-gray-400"
+    ></div><div
+        class="hx-max-w-screen-xl hx-mx-auto hx-flex hx-justify-center hx-py-12 hx-pl-[max(env(safe-area-inset-left),1.5rem)] hx-pr-[max(env(safe-area-inset-right),1.5rem)] hx-text-gray-600 dark:hx-text-gray-400 md:hx-justify-start"
+      >
+        <div class="hx-flex hx-w-full hx-flex-col hx-items-center sm:hx-items-start"><div class="hx-font-semibold"><a class="hx-flex hx-text-sm hx-items-center hx-gap-1 hx-text-current" target="_blank" rel="noopener noreferrer" title="Hextra GitHub Homepage" href="https://github.com/imfing/hextra">
     <span>Powered by Hextra<svg height=1em class="hx-inline-block ltr:hx-ml-1 rtl:hx-mr-1 hx-align-[-2.5px]" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="m 105.50024,22.224647 c -9.59169,-5.537563 -21.40871,-5.537563 -31.000093,0 L 39.054693,42.689119 C 29.463353,48.226675 23.55484,58.460531 23.55484,69.535642 v 40.928918 c 0,11.07542 5.908513,21.3092 15.499853,26.84652 l 35.445453,20.46446 c 9.591313,5.53732 21.408404,5.53732 31.000094,0 l 35.44507,-20.46446 c 9.59131,-5.53732 15.49985,-15.7711 15.49985,-26.84652 V 69.535642 c 0,-11.075111 -5.90854,-21.308967 -15.49985,-26.846523 z M 34.112797,85.737639 c -1.384445,2.397827 -1.384445,5.352099 0,7.749927 l 24.781554,42.922974 c 1.38437,2.39783 3.942853,3.87496 6.711592,3.87496 h 49.563107 c 2.76905,0 5.3273,-1.47713 6.71144,-3.87496 l 24.78194,-42.922974 c 1.38414,-2.397828 1.38414,-5.3521 0,-7.749927 L 121.88049,42.814746 c -1.38414,-2.397828 -3.94239,-3.874964 -6.71144,-3.874964 H 65.605944 c -2.768739,0 -5.327223,1.477059 -6.711592,3.874964 z" style="stroke-width:0.774993" /></svg></span>
-  </a></div>
-    </div>
-  </div>
-</footer>
+  </a></div></div>
+      </div></footer>
     
     <script defer src="/js/main.min.d0f0346255ba9418db8fcf7f9440ca4e532e06276d8df17497e19e1045ee360b.js" integrity="sha256-0PA0YlW6lBjbj89/lEDKTlMuBidtjfF0l&#43;GeEEXuNgs="></script>
 

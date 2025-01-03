@@ -25,7 +25,8 @@
         
         
         &lt;blockquote&gt;
-&lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
+  &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
+
 &lt;/blockquote&gt;
 &lt;p&gt;I recently developed a webpage with QR code scanning functionality, but the scanning feature requires camera access, which browsers only allow in HTTPS environments for security reasons. Therefore, to debug these features locally, we need to configure HTTPS for the local development server. The core solution to this problem is &lt;strong&gt;generating local certificates and self-signing them&lt;/strong&gt;. While there are many methods available online, I&amp;rsquo;ll introduce two approaches here that you can follow along with - they should be sufficient for basic development needs.&lt;/p&gt;
 &lt;h2&gt;mkcert&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;mkcert&#34;&gt;&lt;/span&gt;
@@ -33,7 +34,6 @@
 &lt;h3&gt;1. Installation&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-installation&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#1-installation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you&amp;rsquo;re using macOS and have homebrew installed, you can install it this way:&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew instal mkcert
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install nss &lt;span class=&#34;c1&#34;&gt;# This step is needed if you have Firefox installed, otherwise you&amp;#39;ll get an error&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
@@ -45,13 +45,10 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;If you&amp;rsquo;re using Windows, you can &lt;a href=&#34;https://github.com/FiloSottile/mkcert?tab=readme-ov-file#windows&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;click here&lt;/a&gt; to view installation steps.&lt;/p&gt;
 &lt;h3&gt;2. Install Local CA&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-install-local-ca&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#2-install-local-ca&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkcert -install&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
   &lt;button
@@ -62,12 +59,9 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;h3&gt;3. Create Certificate for localhost&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-create-certificate-for-localhost&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#3-create-certificate-for-localhost&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkcert localhost 127.0.0.1 ::1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
   &lt;button
@@ -78,12 +72,9 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;After successful creation, the Terminal will display the certificate location and expiration date:&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;The certificate is at &lt;span class=&#34;s2&#34;&gt;&amp;#34;./localhost+2.pem&amp;#34;&lt;/span&gt; and the key at &lt;span class=&#34;s2&#34;&gt;&amp;#34;./localhost+2-key.pem&amp;#34;&lt;/span&gt; ✅
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
@@ -96,8 +87,6 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;h3&gt;4. Store Certificates in Your Project&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-store-certificates-in-your-project&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#4-store-certificates-in-your-project&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Create a new folder in your project directory to manage certificates.&lt;/p&gt;
@@ -107,7 +96,6 @@
     &lt;a href=&#34;#5-configure-vite-to-use-https&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;My project stack is &lt;code&gt;vue3 + vite&lt;/code&gt;, so I&amp;rsquo;m configuring the &lt;code&gt;vite.config.js&lt;/code&gt; file. If you&amp;rsquo;re using other build tools (like &lt;code&gt;vue-cli + webpack&lt;/code&gt;), the configuration method is similar - just refer to the official documentation for appropriate adjustments.
 Note: Remember to restart the service after modifying the configuration.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// vite.config.js
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fs&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;fs&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
@@ -131,15 +119,12 @@ Note: Remember to restart the service after modifying the configuration.&lt;/p&g
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;h2&gt;Built-in Options for Vue / React&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;built-in-options-for-vue--react&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#built-in-options-for-vue--react&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Both React and Vue come with built-in options for enabling HTTPS, making it even simpler to use HTTPS protocol locally.&lt;/p&gt;
 &lt;p&gt;Taking vite as an example again, the &lt;a href=&#34;https://vitejs.dev/config/server-options.html#server-https&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;official documentation&lt;/a&gt; mentions that if you need valid certificates, you can use their plugin &lt;a href=&#34;https://www.npmjs.com/package/@vitejs/plugin-basic-ssl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@vitejs/plugin-basic-ssl&lt;/a&gt;, which automatically creates and caches a self-signed certificate.&lt;/p&gt;
 &lt;h3&gt;1. Install Plugin &lt;code&gt;@vitejs/plugin-basic-ssl&lt;/code&gt;:&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-install-plugin-vitejsplugin-basic-ssl&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#1-install-plugin-vitejsplugin-basic-ssl&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pnpm add @vitejs/plugin-basic/ssl -D&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
   &lt;button
@@ -150,13 +135,10 @@ Note: Remember to restart the service after modifying the configuration.&lt;/p&g
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;h3&gt;2. Configure vite&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-configure-vite&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#2-configure-vite&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After configuring vite, you can run it directly. Note that browsers might show security warnings because our self-signed certificates aren&amp;rsquo;t issued by a trusted certificate authority, but this won&amp;rsquo;t affect development use - just don&amp;rsquo;t use it in production environments.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// vite.config.js
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;defineConfig&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
@@ -178,8 +160,6 @@ Note: Remember to restart the service after modifying the configuration.&lt;/p&g
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 
       </description>
@@ -195,7 +175,8 @@ Note: Remember to restart the service after modifying the configuration.&lt;/p&g
         
         
         &lt;blockquote&gt;
-&lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
+  &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
+
 &lt;/blockquote&gt;
 &lt;p&gt;Recently, while working on a project reconstruction for my company, which originally had native Android and iOS applications, I decided to understand the business logic and write new code by capturing network packets while operating the business on a mobile phone, referencing existing documentation and code for reconstruction. This article explains &lt;strong&gt;how I used a computer and a mobile phone to capture network requests from mobile devices&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;First, let me introduce the tool — &lt;strong&gt;Charles&lt;/strong&gt;, a network packet capture tool that allows developers to view and monitor HTTP/HTTPS communication data, primarily designed for developers to debug and analyze web applications and mobile apps. You can visit the &lt;a href=&#34;https://www.charlesproxy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Charles website&lt;/a&gt; to download it, which supports Windows, macOS, and Linux.&lt;/p&gt;

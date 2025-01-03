@@ -35,7 +35,6 @@
     &lt;a href=&#34;#%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa-next-app&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. 自动创建&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-自动创建&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#1-%e8%87%aa%e5%8a%a8%e5%88%9b%e5%bb%ba&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;打开终端，执行下方命令：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npx create-next-app@latest&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
   &lt;button
@@ -46,12 +45,9 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;执行上面这行命令后，需要去选择下方的这些配置，作为一个演示项目，全部选择默认选项即可。&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;What is your project named?  my-app
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Would you like to use TypeScript?  No / Yes
@@ -68,14 +64,11 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;回答完上面这些 prompts，就会根据你刚刚的配置自动的生成一个新的项目。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;除了上面这种&lt;strong&gt;交互式&lt;/strong&gt;的选择方式，我们也可以通过传递命令行参数，从而以&lt;strong&gt;非交互式&lt;/strong&gt;的途径去创建一个新项目。&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;// 查看构建项目时可用的命令行参数
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npx create-next-app --help
@@ -155,14 +148,11 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;以 &lt;code&gt;-e, --example&lt;/code&gt; 参数为例说一下如何使用：&lt;/p&gt;
 &lt;p&gt;Next.js 提供了丰富的&lt;a href=&#34;https://github.com/vercel/next.js/tree/canary/examples&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;示例代码&lt;/a&gt;，例如 &lt;code&gt;with-redux&lt;/code&gt;、&lt;code&gt;api-routers-cors&lt;/code&gt;、&lt;code&gt;with-electron&lt;/code&gt;、&lt;code&gt;with-jest&lt;/code&gt;、&lt;code&gt;with-markdown&lt;/code&gt;、&lt;code&gt;with-material-ui&lt;/code&gt;、&lt;code&gt;with-mobx&lt;/code&gt;，这些代码演示了 Next.js 的各种使用场景，能够让我们快速学习上手。&lt;/p&gt;
 &lt;p&gt;比如你想查看 &lt;code&gt;with-redux&lt;/code&gt; 的使用方法，无需去 clone 代码，直接在创建项目的时候使用 &lt;code&gt;--example&lt;/code&gt; 即可：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npx create-next-app --example with-redux your-app-name&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
   &lt;button
@@ -173,14 +163,11 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401092224194.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;h3&gt;2. 手动创建&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-手动创建&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#2-%e6%89%8b%e5%8a%a8%e5%88%9b%e5%bb%ba&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;你也可以选择手动创建项目：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install next@latest react@latest react-dom@latest&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
   &lt;button
@@ -191,12 +178,9 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;npm 会自动创建 &lt;code&gt;package.json&lt;/code&gt; 文件并且安装依赖项，但你还需要手动添加 &lt;code&gt;scripts&lt;/code&gt;：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// package.json
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -217,14 +201,11 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;tips: 如果是全新的项目，推荐&lt;strong&gt;自动创建方式&lt;/strong&gt;。如果是项目中引入 Next.js，可以参考手动创建方式。&lt;/p&gt;
 &lt;h2&gt;Next.js CLI&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;nextjs-cli&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#nextjs-cli&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;我们在文章的开头讲过了 Next.js CLI 是什么，至于 Next.js CLI 到底有哪些命令，可以通过 &lt;code&gt;npx next --help&lt;/code&gt; 快速查看命令列表：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Usage
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      $ next &amp;lt;command&amp;gt;
@@ -246,14 +227,11 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;h3&gt;Build 构建&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;build-构建&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#build-%e6%9e%84%e5%bb%ba&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;&lt;code&gt;next build&lt;/code&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;next-build&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#next-build&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;执行 &lt;code&gt;next build&lt;/code&gt; 会创建项目&lt;strong&gt;生产优化版本&lt;/strong&gt;。&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npx next build&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
   &lt;button
@@ -264,8 +242,6 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;构建时会输出每条路由的信息，如下图所示：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401101552921.png&#34; alt=&#34;next build output&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
@@ -279,11 +255,11 @@
 &lt;h4&gt;&lt;code&gt;next build --profile&lt;/code&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;next-build---profile&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#next-build---profile&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;这个命令用于开启 React 的&lt;strong&gt;生产性能分析&lt;/strong&gt;（需要 Next.js v9.5 以上）。在使用这个功能前，先为你的浏览器安装 &lt;a href=&#34;https://chromewebstore.google.com/detail/react-developer-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;React 开发者工具&lt;/a&gt;。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;Profiler&lt;/code&gt; 是 React 中测量渲染性能的 API，你可以&lt;a href=&#34;https://react.dev/reference/react/Profiler&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击此处&lt;/a&gt;了解更多。&lt;/p&gt;
+  &lt;p&gt;&lt;code&gt;Profiler&lt;/code&gt; 是 React 中测量渲染性能的 API，你可以&lt;a href=&#34;https://react.dev/reference/react/Profiler&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击此处&lt;/a&gt;了解更多。&lt;/p&gt;
+
 &lt;/blockquote&gt;
 &lt;p&gt;修改 &lt;code&gt;page.js&lt;/code&gt; 添加 Profiler Component:&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;React&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;react&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
@@ -302,8 +278,6 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;在终端执行 &lt;code&gt;npm run dev&lt;/code&gt;，可以在浏览器控制台看到：
 &lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401131005879.png&#34; alt=&#34;React Developer Tools Profiler&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
@@ -316,7 +290,6 @@
     &lt;a href=&#34;#next-build---debug&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;使用这个参数获取更详细的构建输出，比如 &lt;code&gt;rewrites&lt;/code&gt;、&lt;code&gt;redirect&lt;/code&gt;、&lt;code&gt;headers&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;修改 &lt;code&gt;next.config.js&lt;/code&gt;，添加 &lt;code&gt;redirects&lt;/code&gt; 重定向和 &lt;code&gt;rewrites&lt;/code&gt; 重写：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/** @type {import(&amp;#39;next&amp;#39;).NextConfig} */&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;nextConfig&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -348,8 +321,6 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;执行 &lt;code&gt;npx next build --debug&lt;/code&gt;，输出结果如下：
 &lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401161159531.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
@@ -359,7 +330,6 @@
     &lt;a href=&#34;#next-dev&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;code&gt;next dev&lt;/code&gt; 在开发模式下启动应用程序，包括热加载、错误报告等功能。&lt;/p&gt;
 &lt;p&gt;应用默认在 http://localhost:3000 启动，也可以使用 &lt;code&gt;-p&lt;/code&gt; 来修改默认端口，例如：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npx next dev -p &lt;span class=&#34;m&#34;&gt;4000&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
   &lt;button
@@ -370,12 +340,9 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;你也可以修改主机名(hostname)取代默认的 &lt;code&gt;0.0.0.0&lt;/code&gt;，以便其他设备访问，使用 &lt;code&gt;-H&lt;/code&gt; 来修改 hostname，例如：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npx next dev -H 192.168.1.2&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
   &lt;button
@@ -386,13 +353,10 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;h4&gt;本地开发配置 HTTPS&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;本地开发配置-https&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#%e6%9c%ac%e5%9c%b0%e5%bc%80%e5%8f%91%e9%85%8d%e7%bd%ae-https&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;有某些用例比如 webhooks 或者身份验证，浏览器出于安全考虑要求使用 HTTPS，&lt;code&gt;next.js&lt;/code&gt; 可以使用 &lt;code&gt;next dev&lt;/code&gt; 生成自签名证书，如下所示：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;next dev --experimental-https&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
   &lt;button
@@ -403,12 +367,9 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;也可以提供自定义证书和密钥：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;next dev --experimental-https --experimental-https-key ./certificates/localhost-key.pem --experimental-https-cert ./certificates/localhost.pem&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
   &lt;button
@@ -419,8 +380,6 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;&lt;code&gt;next dev --experimental-https&lt;/code&gt; 只是用 &lt;code&gt;mkcert&lt;/code&gt; 创建一个用于开发模式的本地受信任证书，在生产环境中，需要使用受信任机构办法的证书。当然如果你在 &lt;code&gt;Vercel&lt;/code&gt; 上部署，&lt;code&gt;Vercel&lt;/code&gt; 会自动为你配置 Next.js 应用。&lt;/p&gt;
 &lt;p&gt;在写这篇文章之前，我也遇到过要求 HTTPS 的场景（浏览器需要调用相机权限），并且专门写了文章介绍如何 &lt;a href=&#34;../https-for-local-development/&#34; &gt;为本地开发服务器配置 HTTPS&lt;/a&gt;。&lt;/p&gt;
@@ -428,7 +387,6 @@
     &lt;a href=&#34;#production-%e7%94%9f%e4%ba%a7%e6%a8%a1%e5%bc%8f&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;next start&lt;/code&gt; 以生产模式启动应用程序，应用需要先使用 &lt;code&gt;next build&lt;/code&gt; 编译。&lt;/p&gt;
 &lt;p&gt;应用默认在 http://localhost:3000 启动，可以通过 &lt;code&gt;-p&lt;/code&gt; 修改端口号，例如：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npx next start -p &lt;span class=&#34;m&#34;&gt;4000&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
   &lt;button
@@ -439,14 +397,11 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;h3&gt;Lint 代码质量检查&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;lint-代码质量检查&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#lint-%e4%bb%a3%e7%a0%81%e8%b4%a8%e9%87%8f%e6%a3%80%e6%9f%a5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;next lint&lt;/code&gt; 为&lt;code&gt;pages/&lt;/code&gt;、&lt;code&gt;app/&lt;/code&gt;、&lt;code&gt;components/&lt;/code&gt;、&lt;code&gt;lib/&lt;/code&gt;和&lt;code&gt;src/&lt;/code&gt; 目录下的所有的文件运行 ESlint。&lt;/p&gt;
 &lt;p&gt;如果你还有其他文件夹要进行代码检查，可以通过 &lt;code&gt;--dir&lt;/code&gt; 指定文件夹：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npx next lint --dir utils&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
   &lt;button
@@ -457,14 +412,11 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;h3&gt;Info 系统信息&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;info-系统信息&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#info-%e7%b3%bb%e7%bb%9f%e4%bf%a1%e6%81%af&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;next info&lt;/code&gt; 打印关于当前系统的相关详情，用于报告 Next.js 的 bug。&lt;/p&gt;
 &lt;p&gt;在项目根目录运行：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;next info&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
   &lt;button
@@ -475,12 +427,9 @@
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;会得到类似的信息：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;pre&gt;&lt;code&gt;Operating System:
   Platform: linux
@@ -503,8 +452,6 @@ Relevant packages:
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;然后将此信息粘贴到GitHub问题中，以供官方人员进行问题排查。&lt;/p&gt;
 
@@ -544,7 +491,6 @@ Relevant packages:
 &lt;p&gt;现在我们来创建第一个 &lt;code&gt;page.js&lt;/code&gt; 页面吧：
 &lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221146387.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// app/page.js
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Page&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -558,11 +504,8 @@ Relevant packages:
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// app/dashboard/page.js
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Page&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -576,8 +519,6 @@ Relevant packages:
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;&lt;code&gt;npm run dev&lt;/code&gt; 运行项目，访问 &lt;code&gt;http://localhost:3000/&lt;/code&gt;，效果如下：
 &lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221149969.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
@@ -589,7 +530,6 @@ Relevant packages:
 &lt;p&gt;现在新建一个 &lt;code&gt;layout.js&lt;/code&gt; 的文件，该文件会默认导出一个 React 组件，这个组件接收一个 &lt;code&gt;children&lt;/code&gt; prop，&lt;code&gt;children&lt;/code&gt; 用来表示子布局（如果有的话）或者子页面。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221157258.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-  
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// app/dashboard/layout.js
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DashboardLayout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
@@ -610,8 +550,6 @@ Relevant packages:
     &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-  
 &lt;/div&gt;
 &lt;p&gt;效果如图所示：
 &lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202401221200578.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;

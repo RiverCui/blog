@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://moon-odyssey.com/</loc>
-    <lastmod>2024-11-27T14:36:46+08:00</lastmod>
+    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://moon-odyssey.com/tags/</loc>
-    <lastmod>2024-08-16T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -28,8 +28,11 @@
                 href="https://moon-odyssey.com/tags/"
                 />
   </url><url>
+    <loc>https://moon-odyssey.com/the-principle-and-usage-of-tree-shaking/</loc>
+    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://moon-odyssey.com/tags/vue/</loc>
-    <lastmod>2024-08-16T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
