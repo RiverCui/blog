@@ -13,6 +13,8 @@ module:
     # 根目录替换为 content/blog
     - source: content/blog
       target: content
+    - source: content/read
+      target: content/read
     - source: content/about
       target: content/about
 
@@ -48,18 +50,21 @@ languages:
         - name: Blog
           pageRef: /
           weight: 1
+        - name: Read
+          pageRef: /read
+          weight: 2
         - name: About
           pageRef: /about
-          weight: 2
+          weight: 3
         - name: Contact ↗
           url: mailto:rivertsuiwork@gmail.com
-          weight: 3
-        - name: Search
           weight: 4
+        - name: Search
+          weight: 5
           params:
             type: search
         - name: GitHub
-          weight: 5
+          weight: 6
           url: https://github.com/RiverCui
           params:
             icon: github
@@ -74,28 +79,31 @@ languages:
         - name: Blog
           pageRef: /
           weight: 1
+        - name: Read
+          pageRef: /read
+          weight: 2
         - name: About
           pageRef: /about
-          weight: 2
+          weight: 3
         - name: Contact ↗
           url: mailto:rivertsuiwork@gmail.com
-          weight: 3
-        - name: Search
           weight: 4
+        - name: Search
+          weight: 5
           params:
             type: search
         - name: GitHub
-          weight: 5
+          weight: 6
           url: https://github.com/RiverCui
           params:
             icon: github
         - name: LinkedIn
-          weight: 6
+          weight: 7
           url: https://www.linkedin.com/in/river-tsui-411aab242
           params:
             icon: linkedin
         - name: X
-          weight: 7
+          weight: 8
           url: https://x.com/tree172194471
           params:
             icon: x-twitter

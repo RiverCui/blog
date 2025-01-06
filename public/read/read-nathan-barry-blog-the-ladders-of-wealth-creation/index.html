@@ -10,25 +10,24 @@
 <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
-<title>Tree Shaking 的原理和使用方法 – River&#39;s Blog</title>
-  <meta name="description" content="Tree Shaking 依赖于 ES6 Module 的静态特性，通过分析代码来剔除实际没有被使用的代码，从而实现前端构建优化。" /><link rel="canonical" href="https://moon-odyssey.com/tree-shaking/" itemprop="url" />
+<title>读 Nathan Barry 的博客 《The ladders of wealth creation: a step-by-step roadmap to building wealth》 – River&#39;s Blog</title>
+  <meta name="description" content=" " /><link rel="canonical" href="https://moon-odyssey.com/read/read-nathan-barry-blog-the-ladders-of-wealth-creation/" itemprop="url" />
 
-<meta property="og:title" content="Tree Shaking 的原理和使用方法" />
-<meta property="og:description" content="Tree Shaking 依赖于 ES6 Module 的静态特性，通过分析代码来剔除实际没有被使用的代码，从而实现前端构建优化。" />
+<meta property="og:title" content="读 Nathan Barry 的博客 《The ladders of wealth creation: a step-by-step roadmap to building wealth》" />
+<meta property="og:description" content=" " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://moon-odyssey.com/tree-shaking/" /><meta property="article:section" content="" />
-<meta property="article:published_time" content="2024-12-20T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-12-20T00:00:00+00:00" />
+<meta property="og:url" content="https://moon-odyssey.com/read/read-nathan-barry-blog-the-ladders-of-wealth-creation/" /><meta property="article:section" content="read" />
+<meta property="article:published_time" content="2025-01-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-01-03T00:00:00+00:00" />
 
-  <meta itemprop="name" content="Tree Shaking 的原理和使用方法">
-  <meta itemprop="description" content="Tree Shaking 依赖于 ES6 Module 的静态特性，通过分析代码来剔除实际没有被使用的代码，从而实现前端构建优化。">
-  <meta itemprop="datePublished" content="2024-12-20T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2024-12-20T00:00:00+00:00">
-  <meta itemprop="wordCount" content="168">
-  <meta itemprop="keywords" content="Vue">
+  <meta itemprop="name" content="读 Nathan Barry 的博客 《The ladders of wealth creation: a step-by-step roadmap to building wealth》">
+  <meta itemprop="description" content="">
+  <meta itemprop="datePublished" content="2025-01-03T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-01-03T00:00:00+00:00">
+  <meta itemprop="wordCount" content="57">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Tree Shaking 的原理和使用方法">
-  <meta name="twitter:description" content="Tree Shaking 依赖于 ES6 Module 的静态特性，通过分析代码来剔除实际没有被使用的代码，从而实现前端构建优化。">
+  <meta name="twitter:title" content="读 Nathan Barry 的博客 《The ladders of wealth creation: a step-by-step roadmap to building wealth》">
+  <meta name="twitter:description" content="">
 
     <link rel="preload" href="/css/compiled/main.min.c697307cafa791c9b405fe69f29b2345d58146c0293709ed7261c913cec724ba.css" as="style" integrity="sha256-xpcwfK&#43;nkcm0Bf5p8psjRdWBRsApNwntcmHJE87HJLo=" />
     <link href="/css/compiled/main.min.c697307cafa791c9b405fe69f29b2345d58146c0293709ed7261c913cec724ba.css" rel="stylesheet" integrity="sha256-xpcwfK&#43;nkcm0Bf5p8psjRdWBRsApNwntcmHJE87HJLo=" />
@@ -76,6 +75,13 @@
             class="hx-text-sm contrast-more:hx-text-gray-700 contrast-more:dark:hx-text-gray-100 hx-relative -hx-ml-2 hx-hidden hx-whitespace-nowrap hx-p-2 md:hx-inline-block hx-text-gray-600 hover:hx-text-gray-800 dark:hx-text-gray-400 dark:hover:hx-text-gray-200"
           >
             <span class="hx-text-center">Blog</span>
+          </a><a
+            title="Read"
+            href="/read"
+            
+            class="hx-text-sm contrast-more:hx-text-gray-700 contrast-more:dark:hx-text-gray-100 hx-relative -hx-ml-2 hx-hidden hx-whitespace-nowrap hx-p-2 md:hx-inline-block hx-font-medium"
+          >
+            <span class="hx-text-center">Read</span>
           </a><a
             title="About"
             href="/about"
@@ -156,40 +162,13 @@
     <ul class="hx-flex hx-flex-col hx-gap-1 md:hx-hidden">
       
       
-          <li class="open"><a
+          <li class=""><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
-    href="/tree-shaking/"
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/the-principle-and-usage-of-tree-shaking/"
     
   >Tree Shaking 的原理和使用方法
-    </a>
-  
-    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
-              <a
-                href="#%e6%98%af%e4%bb%80%e4%b9%88"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >是什么</a>
-            </li>
-          <li>
-              <a
-                href="#%e5%8e%9f%e7%90%86"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >原理</a>
-            </li>
-          <li>
-              <a
-                href="#%e6%9e%84%e5%bb%ba%e5%b7%a5%e5%85%b7%e9%85%8d%e7%bd%ae-tree-shaking"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >构建工具配置 Tree Shaking</a>
-            </li>
-          <li>
-              <a
-                href="#css-tree-shaking"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >CSS Tree Shaking</a>
-            </li>
-          </ul>
-  </li>
+    </a></li>
           <li class=""><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
@@ -304,7 +283,7 @@
         
         <li class="hx-flex hx-flex-col">
           <a
-            href="/tree-shaking/"
+            href="/read/read-nathan-barry-blog-the-ladders-of-wealth-creation/"
             class="hx-text-gray-800 dark:hx-text-gray-100 hover:hx-bg-primary-50 hover:hx-text-primary-600 hover:dark:hx-bg-primary-500/10 hover:dark:hx-text-primary-600 hx-relative hx-cursor-pointer hx-whitespace-nowrap hx-py-1.5 hx-transition-colors ltr:hx-pl-3 ltr:hx-pr-9 rtl:hx-pr-3 rtl:hx-pl-9"
           >中文<span class="hx-absolute hx-inset-y-0 hx-flex hx-items-center ltr:hx-right-3 rtl:hx-left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
         </li>
@@ -331,27 +310,19 @@
 <nav class="hextra-toc hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4" aria-label="table of contents">
     <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4"><p class="hx-mb-4 hx-font-semibold hx-tracking-tight">此页上</p><ul>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e6%98%af%e4%bb%80%e4%b9%88">是什么
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e8%b4%a2%e5%af%8c%e7%a7%af%e7%b4%af%e7%9a%844%e4%b8%aa%e9%98%b6%e6%ae%b5">财富积累的4个阶段
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e5%8e%9f%e7%90%86">原理
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e6%80%9d%e8%80%83">思考
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e6%9e%84%e5%bb%ba%e5%b7%a5%e5%85%b7%e9%85%8d%e7%bd%ae-tree-shaking">构建工具配置 Tree Shaking
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e8%b4%a2%e5%af%8c%e7%a7%af%e7%b4%af%e7%9a%848%e4%b8%aa%e5%8e%9f%e5%88%99">财富积累的8个原则
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#webpack">Webpack
-        </a>
-      </li>
-      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#vite-%e5%92%8c-rollup">Vite 和 Rollup
-        </a>
-      </li>
-      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#css-tree-shaking">CSS Tree Shaking
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e8%b4%a2%e5%af%8c%e9%98%b6%e6%a2%af%e7%9a%84%e7%89%b9%e7%82%b9">财富阶梯的特点
         </a>
       </li></ul>
       <div class="hx-mt-8 hx-border-t hx-bg-white hx-pt-8 hx-shadow-[0_-12px_16px_white] dark:hx-bg-dark dark:hx-shadow-[0_-12px_16px_#111] hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400">
@@ -369,147 +340,82 @@
     <article class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center hx-pb-8 hx-pr-[calc(env(safe-area-inset-right)-1.5rem)]">
       <main class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-px-6 hx-pt-4 md:hx-px-12">
         
-  <div class="hx-mt-1.5 hx-flex hx-items-center hx-gap-1 hx-overflow-hidden hx-text-sm hx-text-gray-500 dark:hx-text-gray-400 contrast-more:hx-text-current"><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Tree Shaking 的原理和使用方法</div>
+  <div class="hx-mt-1.5 hx-flex hx-items-center hx-gap-1 hx-overflow-hidden hx-text-sm hx-text-gray-500 dark:hx-text-gray-400 contrast-more:hx-text-current">
+        <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
+          <a href="/read/">Read</a>
+        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">读 Nathan Barry 的博客 《The ladders of wealth creation: a step-by-step roadmap to building wealth》</div>
   </div>
 
-        <h1 class="hx-mt-2 hx-text-4xl hx-font-bold hx-tracking-tight hx-text-slate-900 dark:hx-text-slate-100">Tree Shaking 的原理和使用方法</h1>
-        <div class="hx-mt-4 hx-mb-16 hx-text-gray-500 hx-text-sm hx-flex hx-items-center hx-flex-wrap hx-gap-y-2"><span class="hx-mr-1">December 20, 2024</span></div>
+        <h1 class="hx-mt-2 hx-text-4xl hx-font-bold hx-tracking-tight hx-text-slate-900 dark:hx-text-slate-100">读 Nathan Barry 的博客 《The ladders of wealth creation: a step-by-step roadmap to building wealth》</h1>
+        <div class="hx-mt-4 hx-mb-16 hx-text-gray-500 hx-text-sm hx-flex hx-items-center hx-flex-wrap hx-gap-y-2"><span class="hx-mr-1">January 3, 2025</span></div>
         <div class="content">
-          <h2>是什么<span class="hx-absolute -hx-mt-20" id="是什么"></span>
-    <a href="#%e6%98%af%e4%bb%80%e4%b9%88" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Tree Shaking 是 JS 的一项重要<strong>优化</strong>技术，通过分析代码，删掉那些实际没有被使用的代码，减小生产构建的体积，从而提升应用的加载速度和性能。</p>
-<h2>原理<span class="hx-absolute -hx-mt-20" id="原理"></span>
-    <a href="#%e5%8e%9f%e7%90%86" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Tree Shaking 依赖于 <strong>ES6 Module 语法的<a href="https://exploringjs.com/es6/ch_modules.html#static-module-structure" target="_blank" rel="noopener">静态特性</a></strong>，例如 <code>import</code> 和 <code>export</code>，通过静态分析来确定哪些模块和变量没有被使用，通常通过抽象语法树(AST)来实现。</p>
-<p>Tree Shaking 的概念最早由 Rollup 普及，现在已经成为 JS 优化的共识。对于打包工具(Webpack、Rollup等)，在编译阶段，构建工具(Webpack、Rollup 等)会<strong>分析并标记</strong>未被引用的模块和变量，在最终打包时将其<strong>剔除</strong>。Vue3 也引入了<strong>模块化设计</strong>，允许按需导入，从而实现更好的 Tree Shaking。</p>
-<h2>构建工具配置 Tree Shaking<span class="hx-absolute -hx-mt-20" id="构建工具配置-tree-shaking"></span>
-    <a href="#%e6%9e%84%e5%bb%ba%e5%b7%a5%e5%85%b7%e9%85%8d%e7%bd%ae-tree-shaking" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Webpack、Vite 和 Rollup 都支持 Tree Shaking，下面简单讲下如何配置以及注意事项。</p>
-<h3>Webpack<span class="hx-absolute -hx-mt-20" id="webpack"></span>
-    <a href="#webpack" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ol>
-<li>确保使用 ES6 模块语法，例如：</li>
+          <p>原文：<a href="https://nathanbarry.com/wealth-creation/" target="_blank" rel="noopener">The ladders of wealth creation: a step-by-step roadmap to building wealth | Nathan Barry</a></p>
+<p>作者介绍了财富积累的4个阶段、8个原则和财富阶梯的特点，并在文章的最后分享了自己的财富积累之路。</p>
+<h2>财富积累的4个阶段<span class="hx-absolute -hx-mt-20" id="财富积累的4个阶段"></span>
+    <a href="#%e8%b4%a2%e5%af%8c%e7%a7%af%e7%b4%af%e7%9a%844%e4%b8%aa%e9%98%b6%e6%ae%b5" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>财富积累的4个阶段 思维导图：
+<img src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202501061022269.png" alt="财富积累的4个阶段 思维导图" loading="lazy" /></p>
+<h3>思考<span class="hx-absolute -hx-mt-20" id="思考"></span>
+    <a href="#%e6%80%9d%e8%80%83" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>我目前处于第1阶段，出售自己的时间换取金钱。第2阶段是经营自己的服务业务，在第3阶段将服务产品化，第4阶段产品规模化。</p>
+<p>大环境低迷的情况下，做任何投资风险都是比以前更高的。作者在文中也提到，“在阶梯之间流动往往意味着收入减少”。</p>
+<p>第2阶段，首先要有可出售的服务，其次是找到客户并出售。所以说，我可以给别人提供什么服务？这不应限于所处的行业，也许应该从自身擅长点出发。我认为这一阶段更重要的是迈出第一步，哪怕没有公司这个名头，没有其他人员，只要做到卖出服务就标志着已经来到了第2阶段。</p>
+<p>在第3阶段，将服务作为产品出售，就像商店货架上的商品或者购物网站上的商品一样，导购并非必需的，用户可以自行浏览、下单。</p>
+<p>第4阶段重点在于规模化。在产品规模化的初始阶段要花费较多的精力，一旦把这条路走通，后续就能躺赚了，那么是否所有的产业都符合这一逻辑？文中提到的制作一本书籍、录制一段教程，都符合这一模型。售卖实体商品也符合的，打造一条生产链，包括原材料、生产机器、工人等。再比如装修好一套房子出租，也是在最初装修、上架租房平台需要花费大量精力。</p>
+<p>抱着一种先做个垃圾出来的想法，哪怕是用 Excel 维护客户资料，只要肯迈出第一步都是好的，毕竟万事始于微末。至于细节打磨，把整个流程跑通，都是之后才要考虑的事情。</p>
+<h2>财富积累的8个原则<span class="hx-absolute -hx-mt-20" id="财富积累的8个原则"></span>
+    <a href="#%e8%b4%a2%e5%af%8c%e7%a7%af%e7%b4%af%e7%9a%848%e4%b8%aa%e5%8e%9f%e5%88%99" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>作者还提到了财富积累的8个原则：</p>
+<ol>
+<li>
+<p>把收入转化为财富</p>
+<p>例如学习技能、投资、养老金等，而不是用于提高当下生活水平和短暂的消费。之前读《穷爸爸富爸爸》这本书中也有提到，在那本书里有更加细致的理论，维持正向的现金流，增加<strong>资产</strong>减少<strong>负债</strong>。</p>
+<p>资产现金流，让钱流入口袋
+<img src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202501061544864.png" alt="穷爸爸富爸爸" loading="lazy" /></p>
+<p>负债现金流，让钱流出口袋
+<img src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202501061545099.png" alt="穷爸爸富爸爸" loading="lazy" /></p>
+</li>
+<li>
+<p>你可以跳过前面的步骤，但还是要从每一步中吸取教训</p>
+<p>像爬楼梯一样，当然也可以两步并做一步，但这之中要学习的东西不会变少，所以应该调整预期，也许会花费更多的时间、面对更多的挑战。</p>
+</li>
+<li>
+<p>以新的方式运用现有技能创造财富</p>
+<p>作者讲了一个朋友的故事，朋友是建筑师，买下了一栋要大修的房子，运用自身的建筑师天赋点，将原来破旧不堪的房子改造成漂亮的公寓并出租，而这栋房子就是所谓的资产，可以源源不断的带来收入。</p>
+<p>重点在于“创造财富”，比如作为一个程序员，能够想到利用技能创造财富的方式有什么？做一个网页或app通过收取费用盈利，在Medium等技术网站上发表文章赚取稿酬等。</p>
+</li>
+<li>
+<p>为高工资而工作与真正创造财富是有区别的</p>
+<p>躺赚的业务优于计时计薪的业务。做一个自己的app，比收费为别人做app更好。</p>
+</li>
+<li>
+<p>用上一阶梯来资助下一阶梯</p>
+<p>通常情况下，都需要在上一个阶梯上付出<strong>额外</strong>的努力，以获得跃升到下一个阶梯的资金。所以处在第一阶梯也不要感到沮丧，只要清楚自己不是为了工资而白白浪费时间，只要清楚自己是为了更多的储蓄和投资，以助跳上下一个阶梯。</p>
+</li>
+<li>
+<p>在阶梯之间流动往往意味着收入减少</p>
+<p>从这一个阶梯前往下一个阶梯，收入可能会经历一段低谷。但不一定要非此即彼，可以继续全职工作，先作为副业培养，也可以在自由职业的时候通过其他方式赚取收入来支持创业。</p>
+</li>
+<li>
+<p>有了观众，每一步都更容易</p>
+<p>利用自媒体平台，讲述自己的故事，建立受众群体。</p>
+<p>A. 明确目标
+B. 记录进展
+C. 寻求帮助</p>
+</li>
+<li>
+<p>所需要的时间比你想象的要长，但结果可能令人难以置信</p>
+<p>坚持把时间和金钱再投资到创造财富上，而不是对生活的过分提升上，<strong>只要坚持足够长的时间，就能产生让人意想不到的效果</strong>。</p>
+</li>
 </ol>
-<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kd">function</span> <span class="nx">subtract</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<ol start="2">
-<li>配置 <code>package.json</code></li>
-</ol>
-<p>在 <code>package.json</code> 中配置 <code>sideEffects</code>，告诉 Webpack 哪些文件有<strong>副作用</strong>，哪些文件可以安全的进行 Tree Shaking。</p>
-<div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-flex-col hx-rounded-lg hx-border hx-py-4 hx-px-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-green-200 hx-bg-green-100 hx-text-green-900 dark:hx-border-green-200/30 dark:hx-bg-green-900/30 dark:hx-text-green-200">
-  <p class="hx-flex hx-items-center hx-font-medium"><svg height=16px class="hx-inline-block hx-align-middle hx-mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>什么是 <code>sideEffects</code>?</p>
-
-  <div class="hx-w-full hx-min-w-0 hx-leading-7">
-    <div class="hx-mt-6 hx-leading-7 first:hx-mt-0"><p><code>sideEffects</code> 即<strong>副作用</strong>，指模块在被导入时，除了导出模块，还会执行一些额外的操作，例如：</p>
-<ul>
-<li>修改全局变量</li>
-<li>动态加载资源（如CSS文件）</li>
-<li>执行一些初始化逻辑</li>
-</ul></div>
-  </div>
-</div>
-<p>如果没有副作用文件，直接设置为 false：</p>
-<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;sideEffects&#34;</span><span class="p">:</span> <span class="kc">false</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<p>如果有副作用文件，可指定文件路径：</p>
-<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;sideEffects&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;*.css&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;src/some-module.js&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<ol start="3">
-<li>启用生产模式</li>
-</ol>
-<p>在生产模式下，Webpack 会自动进行 Tree Shaking 和代码压缩</p>
-<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">mode</span><span class="o">:</span> <span class="s2">&#34;production&#34;</span><span class="p">,</span>  <span class="c1">// 开启生产模式
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">optimization</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">useExports</span><span class="o">:</span> <span class="kc">true</span>  <span class="c1">// 开启 Tree Shaking
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-flex-col hx-rounded-lg hx-border hx-py-4 hx-px-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-amber-200 hx-bg-amber-100 hx-text-amber-900 dark:hx-border-amber-200/30 dark:hx-bg-amber-900/30 dark:hx-text-amber-200">
-  <p class="hx-flex hx-items-center hx-font-medium"><svg height=16px class="hx-inline-block hx-align-middle hx-mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>Warning</p>
-
-  <div class="hx-w-full hx-min-w-0 hx-leading-7">
-    <div class="hx-mt-6 hx-leading-7 first:hx-mt-0"><p>如果使用了 <a href="https://github.com/babel/babel" target="_blank" rel="noopener">Babel</a>，要确保它不会将 ES6 Module 转换为 CommonJS Module，在 <code>babelrc</code> 或 <code>babel.config.js</code> 中配置：</p>
-<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="s2">&#34;presets&#34;</span><span class="o">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s2">&#34;@babel/preset-env&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="s2">&#34;modules&#34;</span><span class="o">:</span> <span class="kc">false</span> <span class="p">}]</span> <span class="c1">// 保留 ES6 模块语法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div></div>
-  </div>
-</div>
-<h3>Vite 和 Rollup<span class="hx-absolute -hx-mt-20" id="vite-和-rollup"></span>
-    <a href="#vite-%e5%92%8c-rollup" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Vite 和 Rollup 默认启用 Tree Shaking，确保使用 ES6 Module 语法，并在 <code>package.json</code> 文件中设置 <code>sideEffects: false</code>，打包即可。</p>
-<h2>CSS Tree Shaking<span class="hx-absolute -hx-mt-20" id="css-tree-shaking"></span>
-    <a href="#css-tree-shaking" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>除了 JS 外，通过 <a href="https://github.com/purifycss/purifycss" target="_blank" rel="noopener">purifyCSS</a> plugin，CSS 也可以实现 Tree Shaking。</p>
-<p><a href="https://cloud.tencent.com/developer/article/1617110" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1617110</a></p>
+<h2>财富阶梯的特点<span class="hx-absolute -hx-mt-20" id="财富阶梯的特点"></span>
+    <a href="#%e8%b4%a2%e5%af%8c%e9%98%b6%e6%a2%af%e7%9a%84%e7%89%b9%e7%82%b9" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>作者将个人的财富上升比喻成阶梯状，大量的小阶梯增长，从宏观角度看就是线性的。</p>
+<p><img src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202501061704783.png" alt="台阶" loading="lazy" /></p>
+<p><img src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202501061707573.png" alt="线性" loading="lazy" /></p>
+<p>当产品的每一次销售都可以带来复利时，就会产生指数型增长。这就需要一种可以重复销售的产品（无论实体产品还是数字产品），而且这种产品可以大规模生产。也就是说，<strong>你不能出售你的时间</strong>。</p>
+<p><img src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202501061707923.png" alt="指数" loading="lazy" /></p>
 
         </div>
         <div class="hx-mt-16"></div>
         
-        <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
-        href="/understand-vue-next-tick/"
-        title="理解 Vue.js nextTick"
-        class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-pr-4 rtl:hx-pl-4"
-      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>理解 Vue.js nextTick</a></div>
+        
         
       </main>
     </article>
@@ -533,7 +439,7 @@
         
         <li class="hx-flex hx-flex-col">
           <a
-            href="/tree-shaking/"
+            href="/read/read-nathan-barry-blog-the-ladders-of-wealth-creation/"
             class="hx-text-gray-800 dark:hx-text-gray-100 hover:hx-bg-primary-50 hover:hx-text-primary-600 hover:dark:hx-bg-primary-500/10 hover:dark:hx-text-primary-600 hx-relative hx-cursor-pointer hx-whitespace-nowrap hx-py-1.5 hx-transition-colors ltr:hx-pl-3 ltr:hx-pr-9 rtl:hx-pr-3 rtl:hx-pl-9"
           >中文<span class="hx-absolute hx-inset-y-0 hx-flex hx-items-center ltr:hx-right-3 rtl:hx-left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
         </li>
