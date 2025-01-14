@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/posts/:path*", 
+      "destination": "/:path*", 
+      "permanent": true
+    }
+  ]
+}
