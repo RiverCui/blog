@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – HTTPS</title>
-    <link>https://moon-odyssey.com/en/tags/https/</link>
+    <link>http://localhost:1313/en/tags/https/</link>
     <description>Recent content in HTTPS on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 25 Dec 2023 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://moon-odyssey.com/en/tags/https/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/en/tags/https/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Generating Local Certificates with mkcert/Vite</title>
-      <link>https://moon-odyssey.com/en/https-for-local-development/</link>
+      <link>http://localhost:1313/en/https-for-local-development/</link>
       <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/en/https-for-local-development/</guid>
+      <guid>http://localhost:1313/en/https-for-local-development/</guid>
       <description>
         
         
@@ -167,10 +167,10 @@ Note: Remember to restart the service after modifying the configuration.&lt;/p&g
     
     <item>
       <title>Capturing Mobile Device HTTPS Requests with Charles</title>
-      <link>https://moon-odyssey.com/en/capture-https-request-with-mobile-device/</link>
+      <link>http://localhost:1313/en/capture-https-request-with-mobile-device/</link>
       <pubDate>Fri, 10 Mar 2023 17:36:56 +0800</pubDate>
       
-      <guid>https://moon-odyssey.com/en/capture-https-request-with-mobile-device/</guid>
+      <guid>http://localhost:1313/en/capture-https-request-with-mobile-device/</guid>
       <description>
         
         

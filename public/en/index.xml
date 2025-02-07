@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – Blog</title>
-    <link>https://moon-odyssey.com/en/</link>
+    <link>http://localhost:1313/en/</link>
     <description>Recent content in Blog on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Thu, 06 Feb 2025 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://moon-odyssey.com/en/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Understanding Hoisting in JavaScript: Variables and Functions</title>
-      <link>https://moon-odyssey.com/en/variable-hoisting-vs-function-hoisting/</link>
+      <link>http://localhost:1313/en/variable-hoisting-vs-function-hoisting/</link>
       <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/en/variable-hoisting-vs-function-hoisting/</guid>
+      <guid>http://localhost:1313/en/variable-hoisting-vs-function-hoisting/</guid>
       <description>
         
         
@@ -152,10 +152,10 @@ Function expressions are not hoisted since they are essentially variable assignm
     
     <item>
       <title>Vue Reactivity Source Code Review</title>
-      <link>https://moon-odyssey.com/en/vue-reactivity-source-code-review/</link>
+      <link>http://localhost:1313/en/vue-reactivity-source-code-review/</link>
       <pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/en/vue-reactivity-source-code-review/</guid>
+      <guid>http://localhost:1313/en/vue-reactivity-source-code-review/</guid>
       <description>
         
         
@@ -1828,10 +1828,10 @@ So &lt;code&gt;sync&lt;/code&gt; mode is mainly used for scenarios that need imm
     
     <item>
       <title>MySQL Installation and Basic Usage</title>
-      <link>https://moon-odyssey.com/en/mysql/</link>
+      <link>http://localhost:1313/en/mysql/</link>
       <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/en/mysql/</guid>
+      <guid>http://localhost:1313/en/mysql/</guid>
       <description>
         
         
@@ -2370,10 +2370,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>Docker Proxy Configuration (Resolving Login Issues)</title>
-      <link>https://moon-odyssey.com/en/docker-proxy-configuration/</link>
+      <link>http://localhost:1313/en/docker-proxy-configuration/</link>
       <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/en/docker-proxy-configuration/</guid>
+      <guid>http://localhost:1313/en/docker-proxy-configuration/</guid>
       <description>
         
         
@@ -2399,10 +2399,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>How to Efficiently Manage Cloud Storage Files with Rclone</title>
-      <link>https://moon-odyssey.com/en/how-to-manage-files-on-cloud-storage-with-rclone/</link>
+      <link>http://localhost:1313/en/how-to-manage-files-on-cloud-storage-with-rclone/</link>
       <pubDate>Tue, 28 May 2024 16:36:10 +0800</pubDate>
       
-      <guid>https://moon-odyssey.com/en/how-to-manage-files-on-cloud-storage-with-rclone/</guid>
+      <guid>http://localhost:1313/en/how-to-manage-files-on-cloud-storage-with-rclone/</guid>
       <description>
         
         
@@ -2537,10 +2537,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>CSS Masonry</title>
-      <link>https://moon-odyssey.com/en/css-masonry/</link>
+      <link>http://localhost:1313/en/css-masonry/</link>
       <pubDate>Mon, 13 May 2024 22:05:46 +0800</pubDate>
       
-      <guid>https://moon-odyssey.com/en/css-masonry/</guid>
+      <guid>http://localhost:1313/en/css-masonry/</guid>
       <description>
         
         
@@ -2636,10 +2636,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>Generating Local Certificates with mkcert/Vite</title>
-      <link>https://moon-odyssey.com/en/https-for-local-development/</link>
+      <link>http://localhost:1313/en/https-for-local-development/</link>
       <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/en/https-for-local-development/</guid>
+      <guid>http://localhost:1313/en/https-for-local-development/</guid>
       <description>
         
         
@@ -2786,10 +2786,10 @@ Note: Remember to restart the service after modifying the configuration.&lt;/p&g
     
     <item>
       <title>NPM</title>
-      <link>https://moon-odyssey.com/en/npm/</link>
+      <link>http://localhost:1313/en/npm/</link>
       <pubDate>Fri, 17 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/en/npm/</guid>
+      <guid>http://localhost:1313/en/npm/</guid>
       <description>
         
         
@@ -2888,10 +2888,10 @@ Note: Remember to restart the service after modifying the configuration.&lt;/p&g
     
     <item>
       <title>Module Management</title>
-      <link>https://moon-odyssey.com/en/module-management/</link>
+      <link>http://localhost:1313/en/module-management/</link>
       <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/en/module-management/</guid>
+      <guid>http://localhost:1313/en/module-management/</guid>
       <description>
         
         
@@ -3254,10 +3254,10 @@ For example:&lt;/li&gt;
     
     <item>
       <title>Node.js Prerequisites</title>
-      <link>https://moon-odyssey.com/en/pre-knowledge-of-nodejs/</link>
+      <link>http://localhost:1313/en/pre-knowledge-of-nodejs/</link>
       <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/en/pre-knowledge-of-nodejs/</guid>
+      <guid>http://localhost:1313/en/pre-knowledge-of-nodejs/</guid>
       <description>
         
         
@@ -3314,10 +3314,10 @@ Source: &lt;a href=&#34;https://chathuranga94.medium.com/nodejs-architecture-con
     
     <item>
       <title>Capturing Mobile Device HTTPS Requests with Charles</title>
-      <link>https://moon-odyssey.com/en/capture-https-request-with-mobile-device/</link>
+      <link>http://localhost:1313/en/capture-https-request-with-mobile-device/</link>
       <pubDate>Fri, 10 Mar 2023 17:36:56 +0800</pubDate>
       
-      <guid>https://moon-odyssey.com/en/capture-https-request-with-mobile-device/</guid>
+      <guid>http://localhost:1313/en/capture-https-request-with-mobile-device/</guid>
       <description>
         
         

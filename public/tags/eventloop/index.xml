@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – EventLoop</title>
-    <link>https://moon-odyssey.com/tags/eventloop/</link>
+    <link>http://localhost:1313/tags/eventloop/</link>
     <description>Recent content in EventLoop on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 12 Aug 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://moon-odyssey.com/tags/eventloop/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/tags/eventloop/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>JavaScript 中的 Event Loop</title>
-      <link>https://moon-odyssey.com/event-loop-in-javascript/</link>
+      <link>http://localhost:1313/event-loop-in-javascript/</link>
       <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/event-loop-in-javascript/</guid>
+      <guid>http://localhost:1313/event-loop-in-javascript/</guid>
       <description>
         
         

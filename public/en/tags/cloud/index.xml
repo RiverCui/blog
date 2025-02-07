@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – Cloud</title>
-    <link>https://moon-odyssey.com/en/tags/cloud/</link>
+    <link>http://localhost:1313/en/tags/cloud/</link>
     <description>Recent content in Cloud on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 28 May 2024 16:36:10 +0800</lastBuildDate>
     
-	  <atom:link href="https://moon-odyssey.com/en/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/en/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>How to Efficiently Manage Cloud Storage Files with Rclone</title>
-      <link>https://moon-odyssey.com/en/how-to-manage-files-on-cloud-storage-with-rclone/</link>
+      <link>http://localhost:1313/en/how-to-manage-files-on-cloud-storage-with-rclone/</link>
       <pubDate>Tue, 28 May 2024 16:36:10 +0800</pubDate>
       
-      <guid>https://moon-odyssey.com/en/how-to-manage-files-on-cloud-storage-with-rclone/</guid>
+      <guid>http://localhost:1313/en/how-to-manage-files-on-cloud-storage-with-rclone/</guid>
       <description>
         
         
