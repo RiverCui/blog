@@ -15,6 +15,155 @@
     
     
     <item>
+      <title>ChatGPT 如何处理流式数据</title>
+      <link>https://moon-odyssey.com/how-does-chatgpt-stream-data/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://moon-odyssey.com/how-does-chatgpt-stream-data/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;SSE 是什么&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;sse-是什么&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#sse-%e6%98%af%e4%bb%80%e4%b9%88&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;SSE 即 Server-sent events，可以翻译为服务端事件。&lt;/p&gt;
+&lt;p&gt;简单来说，SSE 是一个请求和非常长的响应。&lt;/p&gt;
+&lt;p&gt;它允许服务端在数据可用时立即推送到客户端，而无需客户端不断询问或轮询服务器以获取新数据。这允许在不需要持续请求的情况下将实时更新传递给客户端。&lt;/p&gt;
+&lt;h2&gt;为什么 ChatGPT 会选择 SSE&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;为什么-chatgpt-会选择-sse&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%ba%e4%bb%80%e4%b9%88-chatgpt-%e4%bc%9a%e9%80%89%e6%8b%a9-sse&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;首先我们要清楚，客户端与服务端通信既可以通过客户端主动请求，也可以通过服务器主动推送。&lt;/p&gt;
+&lt;h3&gt;客户端主动请求&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;客户端主动请求&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%ae%a2%e6%88%b7%e7%ab%af%e4%b8%bb%e5%8a%a8%e8%af%b7%e6%b1%82&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;普通请求(Simple Request)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;一次请求一次响应&lt;/li&gt;
+&lt;li&gt;最基本的 HTTP 请求/响应模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;轮询(Polling)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;客户端定期发送请求查询更新&lt;/li&gt;
+&lt;li&gt;固定时间间隔，不管有无数据变化都请求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;长轮询(Long Polling)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;客户端发起请求，服务器挂起连接直到有数据更新&lt;/li&gt;
+&lt;li&gt;服务器响应后，客户端立即发起下一次请求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;服务器推送技术&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;服务器推送技术&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%9c%8d%e5%8a%a1%e5%99%a8%e6%8e%a8%e9%80%81%e6%8a%80%e6%9c%af&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;WebSocket&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;全双工通信&lt;/li&gt;
+&lt;li&gt;需要客户端和服务器都支持 WebSocket 协议&lt;/li&gt;
+&lt;li&gt;适合实时性要求高的场景（如聊天、游戏）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;SSE (Server-Sent Events)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;服务器到客户端的单向通信&lt;/li&gt;
+&lt;li&gt;基于 HTTP 协议&lt;/li&gt;
+&lt;li&gt;适合服务器数据推送场景（如通知、实时数据流）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;HTTP/2 Server Push&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;服务器主动推送相关资源&lt;/li&gt;
+&lt;li&gt;通常用于推送静态资源&lt;/li&gt;
+&lt;li&gt;需要 HTTP/2 支持&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;若要实现 ChatGPT 中的实时通信，可以通过 SSE 或 WebSocket，为什么 ChatGPT 会选择 SSE 而不是 WebSocket 呢？&lt;/p&gt;
+&lt;p&gt;我们来仔细对比下 SSE 和 WebSocket 的不同点：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;特性&lt;/th&gt;
+          &lt;th&gt;SSE&lt;/th&gt;
+          &lt;th&gt;WebSocket&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;通信方向&lt;/td&gt;
+          &lt;td&gt;单向&lt;/td&gt;
+          &lt;td&gt;双向&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;协议&lt;/td&gt;
+          &lt;td&gt;HTTP/HTTPS&lt;/td&gt;
+          &lt;td&gt;WS/WSS&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;自动重连&lt;/td&gt;
+          &lt;td&gt;支持&lt;/td&gt;
+          &lt;td&gt;需手动实现&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;最大连接数&lt;/td&gt;
+          &lt;td&gt;受浏览器限制&lt;/td&gt;
+          &lt;td&gt;较高&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;数据格式&lt;/td&gt;
+          &lt;td&gt;文本&lt;/td&gt;
+          &lt;td&gt;文本/二进制&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;跨域支持&lt;/td&gt;
+          &lt;td&gt;需要 CORS&lt;/td&gt;
+          &lt;td&gt;原生支持&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;实现复杂度&lt;/td&gt;
+          &lt;td&gt;简单&lt;/td&gt;
+          &lt;td&gt;相对复杂&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;服务器压力&lt;/td&gt;
+          &lt;td&gt;较小&lt;/td&gt;
+          &lt;td&gt;较大&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;SSE 使用场景：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;实时通知推送&lt;/li&gt;
+&lt;li&gt;股票行情更新&lt;/li&gt;
+&lt;li&gt;社交媒体 feed 流&lt;/li&gt;
+&lt;li&gt;日志实时显示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;WebSocket 使用场景：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在线聊天室&lt;/li&gt;
+&lt;li&gt;多人游戏&lt;/li&gt;
+&lt;li&gt;协同编辑&lt;/li&gt;
+&lt;li&gt;实时数据分析&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;考虑到以下几点，ChatGPT 选择 SSE 足够：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;单向通信。ChatGPT 只需要从服务端到客户端实时推送，并不需要频繁的双向通信，SSE 更符合需求。&lt;/li&gt;
+&lt;li&gt;实现和维护复杂度。SSE 简单易用，只需要服务端推送消息，客户端通过标准的 &lt;code&gt;EventSource&lt;/code&gt; API 可以轻松接收消息，并且是基于 HTTP/HTTPS 实现，不需要像 WebSocket 那样进行复杂的连接握手和状态管理。&lt;/li&gt;
+&lt;li&gt;兼容性和可靠性。SSE 通过 HTTP/1.1 实现，能够更好的穿透代理服务器、防火墙等设施，保证了消息推送可靠性。WebSocket 需要协议从 HTTP 升级到 WebSocket 协议(WS 或 WSS)，某些网络可能会阻断这种升级过程，从而影响连接的可靠性。&lt;/li&gt;
+&lt;li&gt;自动重连和消息重发。SSE 支持自动重连功能，WebSocket 重连需要手动实现较复杂。&lt;/li&gt;
+&lt;li&gt;资源效率和性能。SSE 使用较少的资源，服务器压力小，WebSocket 性能较优但资源消耗大，对服务器来说压力更大。&lt;/li&gt;
+&lt;li&gt;使用场景的适配性。SSE 适合更低频的消息推送，WebSocket 适合高频双向通信。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在 ChatGPT 的情况下，当你发送消息时，服务器可能会立即开始使用机器学习算法生成响应。一旦服务器生成新的文本，他就可以通过 SSE 发送给客户端，这样就允许客户端在响应到达时立即渲染。&lt;/p&gt;
+&lt;h2&gt;SSE Demo&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;sse-demo&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#sse-demo&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;数据流效果：
+&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/Kapture%202025-02-08%20at%2001.10.03.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;可以看到response一直在变化：
+&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/Kapture%202025-02-08%20at%2001.12.07.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;源码：&lt;a href=&#34;https://github.com/RiverCui/sse-demo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RiverCui/sse-demo&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>变量提升 vs 函数提升</title>
       <link>https://moon-odyssey.com/variable-hoisting-vs-function-hoisting/</link>
       <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
