@@ -28,7 +28,7 @@
 &lt;p&gt;简单来说，SSE 是一个请求和非常长的响应。&lt;/p&gt;
 &lt;p&gt;就像这样，我们打开 ChatGPT 并与它对话，就能够看到服务端一直在返回新数据，相应地，页面上也在以数据流的形式不断显示新的文字内容：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/Kapture%202025-02-08%20at%2016.04.35.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;它允许服务端在数据可用时立即推送到客户端，而无需客户端不断询问或轮询服务器以获取新数据。这允许在不需要持续请求的情况下将实时更新传递给客户端。&lt;/p&gt;
+&lt;p&gt;SSE 这种服务器推送技术允许服务端在数据可用时立即推送到客户端，而无需客户端不断询问或轮询服务器以获取新数据。这允许在不需要持续请求的情况下将实时更新传递给客户端。&lt;/p&gt;
 &lt;h2&gt;为什么 ChatGPT 会选择 SSE&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;为什么-chatgpt-会选择-sse&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#%e4%b8%ba%e4%bb%80%e4%b9%88-chatgpt-%e4%bc%9a%e9%80%89%e6%8b%a9-sse&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;首先我们要清楚，客户端与服务端通信既可以通过客户端主动请求，也可以通过服务器主动推送。&lt;/p&gt;
 &lt;h3&gt;客户端主动请求&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;客户端主动请求&#34;&gt;&lt;/span&gt;
