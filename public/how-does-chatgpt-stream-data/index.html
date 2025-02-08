@@ -24,7 +24,7 @@
   <meta itemprop="description" content="本文将展示 ChatGPT API 如何使用 SSE（服务器端事件）实时流式传输生成中的响应，以及如何使用 Node.js 和 express 实现简单SSE。">
   <meta itemprop="datePublished" content="2025-02-08T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-02-08T00:00:00+00:00">
-  <meta itemprop="wordCount" content="156">
+  <meta itemprop="wordCount" content="159">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="ChatGPT 如何处理流式数据">
   <meta name="twitter:description" content="本文将展示 ChatGPT API 如何使用 SSE（服务器端事件）实时流式传输生成中的响应，以及如何使用 Node.js 和 express 实现简单SSE。">
@@ -402,6 +402,8 @@
           <h2>SSE 是什么<span class="hx-absolute -hx-mt-20" id="sse-是什么"></span>
     <a href="#sse-%e6%98%af%e4%bb%80%e4%b9%88" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>SSE 即 Server-sent events，可以翻译为服务端事件。</p>
 <p>简单来说，SSE 是一个请求和非常长的响应。</p>
+<p>就像这样，我们打开 ChatGPT 并与它对话，就能够看到服务端一直在返回新数据，相应地，页面上也在以数据流的形式不断显示新的文字内容：</p>
+<p><img src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/Kapture%202025-02-08%20at%2016.04.35.gif" alt="" loading="lazy" /></p>
 <p>它允许服务端在数据可用时立即推送到客户端，而无需客户端不断询问或轮询服务器以获取新数据。这允许在不需要持续请求的情况下将实时更新传递给客户端。</p>
 <h2>为什么 ChatGPT 会选择 SSE<span class="hx-absolute -hx-mt-20" id="为什么-chatgpt-会选择-sse"></span>
     <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88-chatgpt-%e4%bc%9a%e9%80%89%e6%8b%a9-sse" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>首先我们要清楚，客户端与服务端通信既可以通过客户端主动请求，也可以通过服务器主动推送。</p>
