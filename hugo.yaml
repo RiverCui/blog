@@ -36,6 +36,9 @@ params:
   footer:
     displayCopyright: false
     displayPoweredBy: true
+  customHead: |
+    <script defer src="https://umami-lime-one.vercel.app/script.js" data-website-id="b7da381f-6463-4963-b799-8ad89c58c7a6"></script>
+
 
 enableEmoji: true
 
