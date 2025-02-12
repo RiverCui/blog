@@ -1,5 +1,7 @@
 # Editor
-.vscode/
+/.vscode/
+/public/
+/resources/
 
 # macOS
 .DS_Store
