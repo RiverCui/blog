@@ -1,4 +1,9 @@
 {
+  "build": {
+    "env": {
+      "HUGO_VERSION": "0.111.0"
+    }
+  },
   "redirects": [
     {
       "source": "/posts/:path*", 
