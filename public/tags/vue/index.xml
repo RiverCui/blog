@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – Vue</title>
-    <link>http://localhost:1313/tags/vue/</link>
+    <link>https://moon-odyssey.com/tags/vue/</link>
     <description>Recent content in Vue on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 20 Dec 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://moon-odyssey.com/tags/vue/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Tree Shaking 的原理和使用方法</title>
-      <link>http://localhost:1313/the-principle-and-usage-of-tree-shaking/</link>
+      <link>https://moon-odyssey.com/the-principle-and-usage-of-tree-shaking/</link>
       <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/the-principle-and-usage-of-tree-shaking/</guid>
+      <guid>https://moon-odyssey.com/the-principle-and-usage-of-tree-shaking/</guid>
       <description>
         
         
@@ -156,10 +156,10 @@
     
     <item>
       <title>理解 Vue.js nextTick</title>
-      <link>http://localhost:1313/understand-vue-next-tick/</link>
+      <link>https://moon-odyssey.com/understand-vue-next-tick/</link>
       <pubDate>Fri, 16 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/understand-vue-next-tick/</guid>
+      <guid>https://moon-odyssey.com/understand-vue-next-tick/</guid>
       <description>
         
         
@@ -336,10 +336,10 @@ vue3 默认浏览器支持 &lt;code&gt;Promise&lt;/code&gt;(微任务)。&lt;/p&
     
     <item>
       <title>Vue 响应式源码分析</title>
-      <link>http://localhost:1313/vue-reactivity-source-code-review/</link>
+      <link>https://moon-odyssey.com/vue-reactivity-source-code-review/</link>
       <pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/vue-reactivity-source-code-review/</guid>
+      <guid>https://moon-odyssey.com/vue-reactivity-source-code-review/</guid>
       <description>
         
         

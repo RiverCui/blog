@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>River&#39;s Blog – Blog</title>
-    <link>http://localhost:1313/</link>
+    <link>https://moon-odyssey.com/</link>
     <description>Recent content in Blog on River&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 11 Feb 2025 09:14:16 +0800</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://moon-odyssey.com/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>使用 Vercel 部署自托管 Umami 实时监控网站</title>
-      <link>http://localhost:1313/self-hosted-umami-analystics-with-vercel/</link>
+      <link>https://moon-odyssey.com/self-hosted-umami-analystics-with-vercel/</link>
       <pubDate>Tue, 11 Feb 2025 09:14:16 +0800</pubDate>
       
-      <guid>http://localhost:1313/self-hosted-umami-analystics-with-vercel/</guid>
+      <guid>https://moon-odyssey.com/self-hosted-umami-analystics-with-vercel/</guid>
       <description>
         
         
@@ -28,6 +28,9 @@
 
 &lt;/blockquote&gt;
 &lt;p&gt;Umami 是一个简单、快速、注重隐私的网站分析工具，旨在替代 Google Analytics。它提供实时的网站访问统计、用户行为分析等功能，帮助网站管理员更好地了解网站的访问情况和用户行为。&lt;/p&gt;
+&lt;p&gt;这是我在 Vercel 搭建的 umami，效果还不错，数据一目了然。
+&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202502131029383.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;
+&lt;img src=&#34;https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202502131031461.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;本文将详细介绍如何在 Vercel 上免费部署 umami，并且使用 Vercel 创建一个免费的数据库。&lt;/p&gt;
 &lt;h3&gt;通过 Vercel 免费部署 Umami&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;通过-vercel-免费部署-umami&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#%e9%80%9a%e8%bf%87-vercel-%e5%85%8d%e8%b4%b9%e9%83%a8%e7%bd%b2-umami&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
@@ -94,10 +97,10 @@ umami 官方文档要求使用 PostgreSQL，所以此处我们选择 &lt;a href=
     
     <item>
       <title>ChatGPT 如何处理流式数据</title>
-      <link>http://localhost:1313/how-does-chatgpt-stream-data/</link>
+      <link>https://moon-odyssey.com/how-does-chatgpt-stream-data/</link>
       <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/how-does-chatgpt-stream-data/</guid>
+      <guid>https://moon-odyssey.com/how-does-chatgpt-stream-data/</guid>
       <description>
         
         
@@ -245,10 +248,10 @@ umami 官方文档要求使用 PostgreSQL，所以此处我们选择 &lt;a href=
     
     <item>
       <title>变量提升 vs 函数提升</title>
-      <link>http://localhost:1313/variable-hoisting-vs-function-hoisting/</link>
+      <link>https://moon-odyssey.com/variable-hoisting-vs-function-hoisting/</link>
       <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/variable-hoisting-vs-function-hoisting/</guid>
+      <guid>https://moon-odyssey.com/variable-hoisting-vs-function-hoisting/</guid>
       <description>
         
         
@@ -377,10 +380,10 @@ umami 官方文档要求使用 PostgreSQL，所以此处我们选择 &lt;a href=
     
     <item>
       <title>读 Nathan Barry 的博客 《The ladders of wealth creation: a step-by-step roadmap to building wealth》</title>
-      <link>http://localhost:1313/read/read-nathan-barry-blog-the-ladders-of-wealth-creation/</link>
+      <link>https://moon-odyssey.com/read/read-nathan-barry-blog-the-ladders-of-wealth-creation/</link>
       <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/read/read-nathan-barry-blog-the-ladders-of-wealth-creation/</guid>
+      <guid>https://moon-odyssey.com/read/read-nathan-barry-blog-the-ladders-of-wealth-creation/</guid>
       <description>
         
         
@@ -452,10 +455,10 @@ umami 官方文档要求使用 PostgreSQL，所以此处我们选择 &lt;a href=
     
     <item>
       <title>Tree Shaking 的原理和使用方法</title>
-      <link>http://localhost:1313/the-principle-and-usage-of-tree-shaking/</link>
+      <link>https://moon-odyssey.com/the-principle-and-usage-of-tree-shaking/</link>
       <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/the-principle-and-usage-of-tree-shaking/</guid>
+      <guid>https://moon-odyssey.com/the-principle-and-usage-of-tree-shaking/</guid>
       <description>
         
         
@@ -591,10 +594,10 @@ umami 官方文档要求使用 PostgreSQL，所以此处我们选择 &lt;a href=
     
     <item>
       <title>函数式编程</title>
-      <link>http://localhost:1313/function-programming/</link>
+      <link>https://moon-odyssey.com/function-programming/</link>
       <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/function-programming/</guid>
+      <guid>https://moon-odyssey.com/function-programming/</guid>
       <description>
         
         
@@ -887,10 +890,10 @@ umami 官方文档要求使用 PostgreSQL，所以此处我们选择 &lt;a href=
     
     <item>
       <title>理解 Vue.js nextTick</title>
-      <link>http://localhost:1313/understand-vue-next-tick/</link>
+      <link>https://moon-odyssey.com/understand-vue-next-tick/</link>
       <pubDate>Fri, 16 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/understand-vue-next-tick/</guid>
+      <guid>https://moon-odyssey.com/understand-vue-next-tick/</guid>
       <description>
         
         
@@ -1067,10 +1070,10 @@ vue3 默认浏览器支持 &lt;code&gt;Promise&lt;/code&gt;(微任务)。&lt;/p&
     
     <item>
       <title>JavaScript 中的 Event Loop</title>
-      <link>http://localhost:1313/event-loop-in-javascript/</link>
+      <link>https://moon-odyssey.com/event-loop-in-javascript/</link>
       <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/event-loop-in-javascript/</guid>
+      <guid>https://moon-odyssey.com/event-loop-in-javascript/</guid>
       <description>
         
         
@@ -1211,10 +1214,10 @@ vue3 默认浏览器支持 &lt;code&gt;Promise&lt;/code&gt;(微任务)。&lt;/p&
     
     <item>
       <title>Vue 响应式源码分析</title>
-      <link>http://localhost:1313/vue-reactivity-source-code-review/</link>
+      <link>https://moon-odyssey.com/vue-reactivity-source-code-review/</link>
       <pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/vue-reactivity-source-code-review/</guid>
+      <guid>https://moon-odyssey.com/vue-reactivity-source-code-review/</guid>
       <description>
         
         
@@ -2882,10 +2885,10 @@ vue3 默认浏览器支持 &lt;code&gt;Promise&lt;/code&gt;(微任务)。&lt;/p&
     
     <item>
       <title>MySQL 安装和基础使用</title>
-      <link>http://localhost:1313/mysql/</link>
+      <link>https://moon-odyssey.com/mysql/</link>
       <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/mysql/</guid>
+      <guid>https://moon-odyssey.com/mysql/</guid>
       <description>
         
         
@@ -3420,10 +3423,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>Docker 代理配置（解决登录失败问题）</title>
-      <link>http://localhost:1313/docker-proxy-configuration/</link>
+      <link>https://moon-odyssey.com/docker-proxy-configuration/</link>
       <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/docker-proxy-configuration/</guid>
+      <guid>https://moon-odyssey.com/docker-proxy-configuration/</guid>
       <description>
         
         
@@ -3445,10 +3448,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>如何使用 Rclone 高效管理云存储文件</title>
-      <link>http://localhost:1313/how-to-manage-files-on-cloud-storage-with-rclone/</link>
+      <link>https://moon-odyssey.com/how-to-manage-files-on-cloud-storage-with-rclone/</link>
       <pubDate>Tue, 28 May 2024 16:36:10 +0800</pubDate>
       
-      <guid>http://localhost:1313/how-to-manage-files-on-cloud-storage-with-rclone/</guid>
+      <guid>https://moon-odyssey.com/how-to-manage-files-on-cloud-storage-with-rclone/</guid>
       <description>
         
         
@@ -3580,10 +3583,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>个人向的 RSS 订阅推荐</title>
-      <link>http://localhost:1313/personal-rss-feed-recommendations/</link>
+      <link>https://moon-odyssey.com/personal-rss-feed-recommendations/</link>
       <pubDate>Tue, 14 May 2024 18:45:10 +0800</pubDate>
       
-      <guid>http://localhost:1313/personal-rss-feed-recommendations/</guid>
+      <guid>https://moon-odyssey.com/personal-rss-feed-recommendations/</guid>
       <description>
         
         
@@ -3620,10 +3623,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>CSS Masonry</title>
-      <link>http://localhost:1313/css-masonry/</link>
+      <link>https://moon-odyssey.com/css-masonry/</link>
       <pubDate>Mon, 13 May 2024 22:05:46 +0800</pubDate>
       
-      <guid>http://localhost:1313/css-masonry/</guid>
+      <guid>https://moon-odyssey.com/css-masonry/</guid>
       <description>
         
         
@@ -3715,10 +3718,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>使用 mkcert/Vite 生成本地证书</title>
-      <link>http://localhost:1313/https-for-local-development/</link>
+      <link>https://moon-odyssey.com/https-for-local-development/</link>
       <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/https-for-local-development/</guid>
+      <guid>https://moon-odyssey.com/https-for-local-development/</guid>
       <description>
         
         
@@ -3861,10 +3864,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>NPM</title>
-      <link>http://localhost:1313/npm/</link>
+      <link>https://moon-odyssey.com/npm/</link>
       <pubDate>Fri, 17 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/npm/</guid>
+      <guid>https://moon-odyssey.com/npm/</guid>
       <description>
         
         
@@ -3959,10 +3962,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>模块管理</title>
-      <link>http://localhost:1313/module-management/</link>
+      <link>https://moon-odyssey.com/module-management/</link>
       <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/module-management/</guid>
+      <guid>https://moon-odyssey.com/module-management/</guid>
       <description>
         
         
@@ -4321,10 +4324,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>Node.js 前置知识</title>
-      <link>http://localhost:1313/pre-knowledge-of-nodejs/</link>
+      <link>https://moon-odyssey.com/pre-knowledge-of-nodejs/</link>
       <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/pre-knowledge-of-nodejs/</guid>
+      <guid>https://moon-odyssey.com/pre-knowledge-of-nodejs/</guid>
       <description>
         
         
@@ -4377,10 +4380,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>使用 Charles 抓取移动设备 HTTPS 请求</title>
-      <link>http://localhost:1313/capture-https-request-with-mobile-device/</link>
+      <link>https://moon-odyssey.com/capture-https-request-with-mobile-device/</link>
       <pubDate>Fri, 10 Mar 2023 17:36:56 +0800</pubDate>
       
-      <guid>http://localhost:1313/capture-https-request-with-mobile-device/</guid>
+      <guid>https://moon-odyssey.com/capture-https-request-with-mobile-device/</guid>
       <description>
         
         
@@ -4430,10 +4433,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
     
     <item>
       <title>JavaScript 模块化</title>
-      <link>http://localhost:1313/javascript-modular-development/</link>
+      <link>https://moon-odyssey.com/javascript-modular-development/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/javascript-modular-development/</guid>
+      <guid>https://moon-odyssey.com/javascript-modular-development/</guid>
       <description>
         
         

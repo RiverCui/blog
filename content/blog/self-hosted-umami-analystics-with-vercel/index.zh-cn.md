@@ -3,10 +3,13 @@ title: "使用 Vercel 部署自托管 Umami 实时监控网站"
 date: 2025-02-11T09:14:16+08:00
 description: " "
 ---
-
 > Umami is a simple, fast, privacy-focused alternative to Google Analytics.
 
 Umami 是一个简单、快速、注重隐私的网站分析工具，旨在替代 Google Analytics。它提供实时的网站访问统计、用户行为分析等功能，帮助网站管理员更好地了解网站的访问情况和用户行为。
+
+这是我在 Vercel 搭建的 umami，效果还不错，数据一目了然。
+![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202502131029383.png)
+![](https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/202502131031461.png)
 
 本文将详细介绍如何在 Vercel 上免费部署 umami，并且使用 Vercel 创建一个免费的数据库。
 
