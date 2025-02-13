@@ -1,5 +1,5 @@
 ---
-title: 'ChatGPT 如何处理流式数据'
+title: '为什么 ChatGPT 使用 SSE 进行流式传输'
 date: 2025-02-08
 description: "本文将展示 ChatGPT API 如何使用 SSE（服务器端事件）实时流式传输生成中的响应，以及如何使用 Node.js 和 express 实现简单SSE。"
 ---

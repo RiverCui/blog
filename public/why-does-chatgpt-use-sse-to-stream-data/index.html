@@ -10,25 +10,24 @@
 <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
-<title>如何使用 Rclone 高效管理云存储文件 – River&#39;s Blog</title>
-  <meta name="description" content="本文介绍了如何使用 Rclone 命令行工具来管理阿里云 OSS 或其他云存储服务。" /><link rel="canonical" href="https://moon-odyssey.com/how-to-manage-files-on-cloud-storage-with-rclone/" itemprop="url" />
+<title>为什么 ChatGPT 使用 SSE 进行流式传输 – River&#39;s Blog</title>
+  <meta name="description" content="本文将展示 ChatGPT API 如何使用 SSE（服务器端事件）实时流式传输生成中的响应，以及如何使用 Node.js 和 express 实现简单SSE。" /><link rel="canonical" href="https://moon-odyssey.com/why-does-chatgpt-use-sse-to-stream-data/" itemprop="url" />
 
-<meta property="og:title" content="如何使用 Rclone 高效管理云存储文件" />
-<meta property="og:description" content="本文介绍了如何使用 Rclone 命令行工具来管理阿里云 OSS 或其他云存储服务。" />
+<meta property="og:title" content="为什么 ChatGPT 使用 SSE 进行流式传输" />
+<meta property="og:description" content="本文将展示 ChatGPT API 如何使用 SSE（服务器端事件）实时流式传输生成中的响应，以及如何使用 Node.js 和 express 实现简单SSE。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://moon-odyssey.com/how-to-manage-files-on-cloud-storage-with-rclone/" /><meta property="article:section" content="" />
-<meta property="article:published_time" content="2024-05-28T16:36:10+08:00" />
-<meta property="article:modified_time" content="2024-05-28T16:36:10+08:00" />
+<meta property="og:url" content="https://moon-odyssey.com/why-does-chatgpt-use-sse-to-stream-data/" /><meta property="article:section" content="" />
+<meta property="article:published_time" content="2025-02-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-02-08T00:00:00+00:00" />
 
-  <meta itemprop="name" content="如何使用 Rclone 高效管理云存储文件">
-  <meta itemprop="description" content="本文介绍了如何使用 Rclone 命令行工具来管理阿里云 OSS 或其他云存储服务。">
-  <meta itemprop="datePublished" content="2024-05-28T16:36:10+08:00">
-  <meta itemprop="dateModified" content="2024-05-28T16:36:10+08:00">
-  <meta itemprop="wordCount" content="132">
-  <meta itemprop="keywords" content="Tools,Cloud">
+  <meta itemprop="name" content="为什么 ChatGPT 使用 SSE 进行流式传输">
+  <meta itemprop="description" content="本文将展示 ChatGPT API 如何使用 SSE（服务器端事件）实时流式传输生成中的响应，以及如何使用 Node.js 和 express 实现简单SSE。">
+  <meta itemprop="datePublished" content="2025-02-08T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-02-08T00:00:00+00:00">
+  <meta itemprop="wordCount" content="160">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="如何使用 Rclone 高效管理云存储文件">
-  <meta name="twitter:description" content="本文介绍了如何使用 Rclone 命令行工具来管理阿里云 OSS 或其他云存储服务。">
+  <meta name="twitter:title" content="为什么 ChatGPT 使用 SSE 进行流式传输">
+  <meta name="twitter:description" content="本文将展示 ChatGPT API 如何使用 SSE（服务器端事件）实时流式传输生成中的响应，以及如何使用 Node.js 和 express 实现简单SSE。">
 
     <link rel="preload" href="/css/compiled/main.min.c697307cafa791c9b405fe69f29b2345d58146c0293709ed7261c913cec724ba.css" as="style" integrity="sha256-xpcwfK&#43;nkcm0Bf5p8psjRdWBRsApNwntcmHJE87HJLo=" />
     <link href="/css/compiled/main.min.c697307cafa791c9b405fe69f29b2345d58146c0293709ed7261c913cec724ba.css" rel="stylesheet" integrity="sha256-xpcwfK&#43;nkcm0Bf5p8psjRdWBRsApNwntcmHJE87HJLo=" />
@@ -171,13 +170,34 @@
     
   >使用 Vercel 部署自托管 Umami 实时监控网站
     </a></li>
-          <li class=""><a
+          <li class="open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/why-does-chatgpt-use-sse-to-stream-data/"
     
   >为什么 ChatGPT 使用 SSE 进行流式传输
-    </a></li>
+    </a>
+  
+    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
+              <a
+                href="#sse-%e6%98%af%e4%bb%80%e4%b9%88"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >SSE 是什么</a>
+            </li>
+          <li>
+              <a
+                href="#%e4%b8%ba%e4%bb%80%e4%b9%88-chatgpt-%e4%bc%9a%e9%80%89%e6%8b%a9-sse"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >为什么 ChatGPT 会选择 SSE</a>
+            </li>
+          <li>
+              <a
+                href="#sse-demo"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >SSE Demo</a>
+            </li>
+          </ul>
+  </li>
           <li class=""><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
@@ -234,46 +254,13 @@
     
   >Docker 代理配置（解决登录失败问题）
     </a></li>
-          <li class="open"><a
+          <li class=""><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/how-to-manage-files-on-cloud-storage-with-rclone/"
     
   >如何使用 Rclone 高效管理云存储文件
-    </a>
-  
-    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
-              <a
-                href="#%e4%bb%80%e4%b9%88%e6%98%af-rclone"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >什么是 Rclone？</a>
-            </li>
-          <li>
-              <a
-                href="#%e5%ae%89%e8%a3%85-rclone"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >安装 Rclone</a>
-            </li>
-          <li>
-              <a
-                href="#%e9%85%8d%e7%bd%ae-rclone-%e8%bf%9e%e6%8e%a5%e9%98%bf%e9%87%8c%e4%ba%91-oss"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >配置 Rclone 连接阿里云 OSS</a>
-            </li>
-          <li>
-              <a
-                href="#%e5%b8%b8%e7%94%a8%e6%93%8d%e4%bd%9c%e7%a4%ba%e4%be%8b"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >常用操作示例</a>
-            </li>
-          <li>
-              <a
-                href="#%e6%80%bb%e7%bb%93"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >总结</a>
-            </li>
-          </ul>
-  </li>
+    </a></li>
           <li class=""><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
@@ -353,7 +340,7 @@
         
         <li class="hx-flex hx-flex-col">
           <a
-            href="/how-to-manage-files-on-cloud-storage-with-rclone/"
+            href="/why-does-chatgpt-use-sse-to-stream-data/"
             class="hx-text-gray-800 dark:hx-text-gray-100 hover:hx-bg-primary-50 hover:hx-text-primary-600 hover:dark:hx-bg-primary-500/10 hover:dark:hx-text-primary-600 hx-relative hx-cursor-pointer hx-whitespace-nowrap hx-py-1.5 hx-transition-colors ltr:hx-pl-3 ltr:hx-pr-9 rtl:hx-pr-3 rtl:hx-pl-9"
           >中文<span class="hx-absolute hx-inset-y-0 hx-flex hx-items-center ltr:hx-right-3 rtl:hx-left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
         </li>
@@ -361,7 +348,7 @@
         
         <li class="hx-flex hx-flex-col">
           <a
-            href="/en/how-to-manage-files-on-cloud-storage-with-rclone/"
+            href="/en/"
             class="hx-text-gray-800 dark:hx-text-gray-100 hover:hx-bg-primary-50 hover:hx-text-primary-600 hover:dark:hx-bg-primary-500/10 hover:dark:hx-text-primary-600 hx-relative hx-cursor-pointer hx-whitespace-nowrap hx-py-1.5 hx-transition-colors ltr:hx-pl-3 ltr:hx-pr-9 rtl:hx-pr-3 rtl:hx-pl-9"
           >English</a>
         </li>
@@ -380,39 +367,23 @@
 <nav class="hextra-toc hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4" aria-label="table of contents">
     <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4"><p class="hx-mb-4 hx-font-semibold hx-tracking-tight">此页上</p><ul>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e4%bb%80%e4%b9%88%e6%98%af-rclone">什么是 Rclone？
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#sse-%e6%98%af%e4%bb%80%e4%b9%88">SSE 是什么
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e5%ae%89%e8%a3%85-rclone">安装 Rclone
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e4%b8%ba%e4%bb%80%e4%b9%88-chatgpt-%e4%bc%9a%e9%80%89%e6%8b%a9-sse">为什么 ChatGPT 会选择 SSE
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e9%85%8d%e7%bd%ae-rclone-%e8%bf%9e%e6%8e%a5%e9%98%bf%e9%87%8c%e4%ba%91-oss">配置 Rclone 连接阿里云 OSS
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e5%ae%a2%e6%88%b7%e7%ab%af%e4%b8%bb%e5%8a%a8%e8%af%b7%e6%b1%82">客户端主动请求
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e5%b8%b8%e7%94%a8%e6%93%8d%e4%bd%9c%e7%a4%ba%e4%be%8b">常用操作示例
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e6%9c%8d%e5%8a%a1%e5%99%a8%e6%8e%a8%e9%80%81%e6%8a%80%e6%9c%af">服务器推送技术
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e5%88%97%e5%87%ba%e5%ad%98%e5%82%a8%e6%a1%b6bucket%e4%b8%ad%e7%9a%84%e6%96%87%e4%bb%b6">列出存储桶(bucket)中的文件
-        </a>
-      </li>
-      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e4%b8%8a%e4%bc%a0%e6%96%87%e4%bb%b6%e5%88%b0bucket">上传文件到bucket
-        </a>
-      </li>
-      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e4%b8%8b%e8%bd%bd%e6%96%87%e4%bb%b6%e5%88%b0%e6%9c%ac%e5%9c%b0">下载文件到本地
-        </a>
-      </li>
-      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e5%90%8c%e6%ad%a5%e6%9c%ac%e5%9c%b0%e7%9b%ae%e5%bd%95%e5%92%8c%e5%ad%98%e5%82%a8%e6%a1%b6">同步本地目录和存储桶
-        </a>
-      </li>
-      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%e6%80%bb%e7%bb%93">总结
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#sse-demo">SSE Demo
         </a>
       </li></ul>
       <div class="hx-mt-8 hx-border-t hx-bg-white hx-pt-8 hx-shadow-[0_-12px_16px_white] dark:hx-bg-dark dark:hx-shadow-[0_-12px_16px_#111] hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400">
@@ -430,147 +401,163 @@
     <article class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center hx-pb-8 hx-pr-[calc(env(safe-area-inset-right)-1.5rem)]">
       <main class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-px-6 hx-pt-4 md:hx-px-12">
         
-  <div class="hx-mt-1.5 hx-flex hx-items-center hx-gap-1 hx-overflow-hidden hx-text-sm hx-text-gray-500 dark:hx-text-gray-400 contrast-more:hx-text-current"><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">如何使用 Rclone 高效管理云存储文件</div>
+  <div class="hx-mt-1.5 hx-flex hx-items-center hx-gap-1 hx-overflow-hidden hx-text-sm hx-text-gray-500 dark:hx-text-gray-400 contrast-more:hx-text-current"><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">为什么 ChatGPT 使用 SSE 进行流式传输</div>
   </div>
 
-        <h1 class="hx-mt-2 hx-text-4xl hx-font-bold hx-tracking-tight hx-text-slate-900 dark:hx-text-slate-100">如何使用 Rclone 高效管理云存储文件</h1>
-        <div class="hx-mt-4 hx-mb-16 hx-text-gray-500 hx-text-sm hx-flex hx-items-center hx-flex-wrap hx-gap-y-2"><span class="hx-mr-1">May 28, 2024</span></div>
+        <h1 class="hx-mt-2 hx-text-4xl hx-font-bold hx-tracking-tight hx-text-slate-900 dark:hx-text-slate-100">为什么 ChatGPT 使用 SSE 进行流式传输</h1>
+        <div class="hx-mt-4 hx-mb-16 hx-text-gray-500 hx-text-sm hx-flex hx-items-center hx-flex-wrap hx-gap-y-2"><span class="hx-mr-1">February 8, 2025</span></div>
         <div class="content">
-          <p>在现代数据管理中，云存储已经成为不可或缺的一部分。无论是个人用户还是企业用户，云存储都提供了便捷的存储和访问方式。<strong>本文将介绍如何使用 Rclone 这个强大的命令行工具来管理阿里云 OSS(对象存储服务) 文件</strong>。</p>
-<h2>什么是 Rclone？<span class="hx-absolute -hx-mt-20" id="什么是-rclone"></span>
-    <a href="#%e4%bb%80%e4%b9%88%e6%98%af-rclone" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p><a href="https://github.com/rclone/rclone" target="_blank" rel="noopener">Rclone</a> 是一个开源<strong>命令行程序</strong>，支持多种云存储服务，包括 Google Drive、Amazon S3(阿里云OSS、腾讯COS、华为OBS等)、Dropbox。他可以用于同步文件、备份数据、迁移存储，以及其他文件管理任务。Rclone 提供了丰富的功能，如加密、压缩、多线程下载等，非常适合高效管理云存储文件。</p>
-<p>它支持以下功能：</p>
-<ol>
-<li>按需复制，每次仅仅复制更改的文件</li>
-<li>断电续传</li>
-<li>压缩传输</li>
+          <h2>SSE 是什么<span class="hx-absolute -hx-mt-20" id="sse-是什么"></span>
+    <a href="#sse-%e6%98%af%e4%bb%80%e4%b9%88" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>SSE 即 Server-sent events，可以翻译为服务端事件。</p>
+<p>简单来说，SSE 是一个请求和非常长的响应。</p>
+<p>就像这样，我们打开 ChatGPT 并与它对话，就能够看到服务端一直在返回新数据，相应地，页面上也在以数据流的形式不断显示新的文字内容：</p>
+<p><img src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/Kapture%202025-02-08%20at%2016.04.35.gif" alt="" loading="lazy" /></p>
+<p>SSE 这种服务器推送技术允许服务端在数据可用时立即推送到客户端，而无需客户端不断询问或轮询服务器以获取新数据。这允许在不需要持续请求的情况下将实时更新传递给客户端。</p>
+<h2>为什么 ChatGPT 会选择 SSE<span class="hx-absolute -hx-mt-20" id="为什么-chatgpt-会选择-sse"></span>
+    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88-chatgpt-%e4%bc%9a%e9%80%89%e6%8b%a9-sse" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>首先我们要清楚，客户端与服务端通信既可以通过客户端主动请求，也可以通过服务器主动推送。</p>
+<h3>客户端主动请求<span class="hx-absolute -hx-mt-20" id="客户端主动请求"></span>
+    <a href="#%e5%ae%a2%e6%88%b7%e7%ab%af%e4%b8%bb%e5%8a%a8%e8%af%b7%e6%b1%82" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ol>
+<li>普通请求(Simple Request)</li>
 </ol>
-<h2>安装 Rclone<span class="hx-absolute -hx-mt-20" id="安装-rclone"></span>
-    <a href="#%e5%ae%89%e8%a3%85-rclone" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>首先，我们需要安装 Rclone。可以从 <a href="https://rclone.org/install/" target="_blank" rel="noopener">Rclone 官网</a> 下载适合你操作系统的安装包，并按照响应的安装步骤进行安装。</p>
-<p>对于 macOS 用户，可以通过 brew 进行安装：</p>
-<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">brew install rclone</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<p>如果你是 Windows 用户，可以<a href="https://rclone.org/install/#windows-precompiled" target="_blank" rel="noopener">下载 <code>.exe</code> 文件</a>并运行安装程序。</p>
-<h2>配置 Rclone 连接阿里云 OSS<span class="hx-absolute -hx-mt-20" id="配置-rclone-连接阿里云-oss"></span>
-    <a href="#%e9%85%8d%e7%bd%ae-rclone-%e8%bf%9e%e6%8e%a5%e9%98%bf%e9%87%8c%e4%ba%91-oss" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>安装完成后，我们需要配置 Rclone 以链接阿里云 OSS。打开终端(Terminal)，输入以下命令启动配置向导：</p>
-<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">rclone config</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<p>接下来，你会看到一个交互式的配置界面：</p>
-<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">No remotes found - make a new one
-</span></span><span class="line"><span class="cl">n<span class="o">)</span> New remote
-</span></span><span class="line"><span class="cl">s<span class="o">)</span> Set configuration password
-</span></span><span class="line"><span class="cl">q<span class="o">)</span> Quit config
-</span></span><span class="line"><span class="cl">n/s/q&gt;</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<p>输入 <code>n</code> 并按回车，开始创建一个新的 remote。然后按照提示输入以下信息：</p>
-<ol>
-<li>remote 名称：例如<code>alioss</code></li>
-<li>存储类型：输入 <code>4</code>，即 Amazon S3 Compliant Storage Providers</li>
-<li>服务提供商：输入 <code>2</code>，即 Alibaba Cloud Object Storage System (OSS) formerly Aliyun</li>
-<li>Access Key ID 和 ACCESS Key Secret：从阿里云 OSS 控制台获取</li>
-<li>Endpoint：选择你的 OSS 终端节点，例如 <code>oss-cn-shenzhen.aliyuncs.com</code></li>
-<li>其他选项：根据需要配置，通常可以使用默认值</li>
+<ul>
+<li>一次请求一次响应</li>
+<li>最基本的 HTTP 请求/响应模式</li>
+</ul>
+<ol start="2">
+<li>轮询(Polling)</li>
 </ol>
-<p>配置完成后，保存并退出。</p>
-<h2>常用操作示例<span class="hx-absolute -hx-mt-20" id="常用操作示例"></span>
-    <a href="#%e5%b8%b8%e7%94%a8%e6%93%8d%e4%bd%9c%e7%a4%ba%e4%be%8b" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>列出存储桶(bucket)中的文件<span class="hx-absolute -hx-mt-20" id="列出存储桶bucket中的文件"></span>
-    <a href="#%e5%88%97%e5%87%ba%e5%ad%98%e5%82%a8%e6%a1%b6bucket%e4%b8%ad%e7%9a%84%e6%96%87%e4%bb%b6" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">rclone ls alioss:your-bucket-name</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<h3>上传文件到bucket<span class="hx-absolute -hx-mt-20" id="上传文件到bucket"></span>
-    <a href="#%e4%b8%8a%e4%bc%a0%e6%96%87%e4%bb%b6%e5%88%b0bucket" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">rclone copy /path/to/local/file alioss:your-bucket-name</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<h3>下载文件到本地<span class="hx-absolute -hx-mt-20" id="下载文件到本地"></span>
-    <a href="#%e4%b8%8b%e8%bd%bd%e6%96%87%e4%bb%b6%e5%88%b0%e6%9c%ac%e5%9c%b0" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">rclone copy alioss:your-bucket-name /path/to/local/dir</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<h3>同步本地目录和存储桶<span class="hx-absolute -hx-mt-20" id="同步本地目录和存储桶"></span>
-    <a href="#%e5%90%8c%e6%ad%a5%e6%9c%ac%e5%9c%b0%e7%9b%ae%e5%bd%95%e5%92%8c%e5%ad%98%e5%82%a8%e6%a1%b6" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">rclone sync /path/to/local/dir alioss:your-bucket-name</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<h2>总结<span class="hx-absolute -hx-mt-20" id="总结"></span>
-    <a href="#%e6%80%bb%e7%bb%93" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Rclone 是一个功能强大的工具，能够帮助你高效地管理阿里云 OSS 或是其他云服务的文件，通过简单的配置和命令行操作，你可以轻松实现文件的上传
-、下载和同步等任务。希望本文能够帮助你快速上手 Rclone，并充分利用其强大的功能来管理你的云存储文件。</p>
+<ul>
+<li>客户端定期发送请求查询更新</li>
+<li>固定时间间隔，不管有无数据变化都请求</li>
+</ul>
+<ol start="3">
+<li>长轮询(Long Polling)</li>
+</ol>
+<ul>
+<li>客户端发起请求，服务器挂起连接直到有数据更新</li>
+<li>服务器响应后，客户端立即发起下一次请求</li>
+</ul>
+<h3>服务器推送技术<span class="hx-absolute -hx-mt-20" id="服务器推送技术"></span>
+    <a href="#%e6%9c%8d%e5%8a%a1%e5%99%a8%e6%8e%a8%e9%80%81%e6%8a%80%e6%9c%af" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ol>
+<li>WebSocket</li>
+</ol>
+<ul>
+<li>全双工通信</li>
+<li>需要客户端和服务器都支持 WebSocket 协议</li>
+<li>适合实时性要求高的场景（如聊天、游戏）</li>
+</ul>
+<ol start="2">
+<li>SSE (Server-Sent Events)</li>
+</ol>
+<ul>
+<li>服务器到客户端的单向通信</li>
+<li>基于 HTTP 协议</li>
+<li>适合服务器数据推送场景（如通知、实时数据流）</li>
+</ul>
+<ol start="3">
+<li>HTTP/2 Server Push</li>
+</ol>
+<ul>
+<li>服务器主动推送相关资源</li>
+<li>通常用于推送静态资源</li>
+<li>需要 HTTP/2 支持</li>
+</ul>
+<p>若要实现 ChatGPT 中的实时通信，可以通过 SSE 或 WebSocket，为什么 ChatGPT 会选择 SSE 而不是 WebSocket 呢？</p>
+<p>我们来仔细对比下 SSE 和 WebSocket 的不同点：</p>
+<table>
+  <thead>
+      <tr>
+          <th>特性</th>
+          <th>SSE</th>
+          <th>WebSocket</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>通信方向</td>
+          <td>单向</td>
+          <td>双向</td>
+      </tr>
+      <tr>
+          <td>协议</td>
+          <td>HTTP/HTTPS</td>
+          <td>WS/WSS</td>
+      </tr>
+      <tr>
+          <td>自动重连</td>
+          <td>支持</td>
+          <td>需手动实现</td>
+      </tr>
+      <tr>
+          <td>最大连接数</td>
+          <td>受浏览器限制</td>
+          <td>较高</td>
+      </tr>
+      <tr>
+          <td>数据格式</td>
+          <td>文本</td>
+          <td>文本/二进制</td>
+      </tr>
+      <tr>
+          <td>跨域支持</td>
+          <td>需要 CORS</td>
+          <td>原生支持</td>
+      </tr>
+      <tr>
+          <td>实现复杂度</td>
+          <td>简单</td>
+          <td>相对复杂</td>
+      </tr>
+      <tr>
+          <td>服务器压力</td>
+          <td>较小</td>
+          <td>较大</td>
+      </tr>
+  </tbody>
+</table>
+<p>SSE 使用场景：</p>
+<ul>
+<li>实时通知推送</li>
+<li>股票行情更新</li>
+<li>社交媒体 feed 流</li>
+<li>日志实时显示</li>
+</ul>
+<p>WebSocket 使用场景：</p>
+<ul>
+<li>在线聊天室</li>
+<li>多人游戏</li>
+<li>协同编辑</li>
+<li>实时数据分析</li>
+</ul>
+<p>考虑到以下几点，ChatGPT 选择 SSE 足够：</p>
+<ol>
+<li>单向通信。ChatGPT 只需要从服务端到客户端实时推送，并不需要频繁的双向通信，SSE 更符合需求。</li>
+<li>实现和维护复杂度。SSE 简单易用，只需要服务端推送消息，客户端通过标准的 <code>EventSource</code> API 可以轻松接收消息，并且是基于 HTTP/HTTPS 实现，不需要像 WebSocket 那样进行复杂的连接握手和状态管理。</li>
+<li>兼容性和可靠性。SSE 通过 HTTP/1.1 实现，能够更好的穿透代理服务器、防火墙等设施，保证了消息推送可靠性。WebSocket 需要协议从 HTTP 升级到 WebSocket 协议(WS 或 WSS)，某些网络可能会阻断这种升级过程，从而影响连接的可靠性。</li>
+<li>自动重连和消息重发。SSE 支持自动重连功能，WebSocket 重连需要手动实现较复杂。</li>
+<li>资源效率和性能。SSE 使用较少的资源，服务器压力小，WebSocket 性能较优但资源消耗大，对服务器来说压力更大。</li>
+<li>使用场景的适配性。SSE 适合更低频的消息推送，WebSocket 适合高频双向通信。</li>
+</ol>
+<p>在 ChatGPT 的情况下，当你发送消息时，服务器可能会立即开始使用机器学习算法生成响应。一旦服务器生成新的文本，他就可以通过 SSE 发送给客户端，这样就允许客户端在响应到达时立即渲染。</p>
+<h2>SSE Demo<span class="hx-absolute -hx-mt-20" id="sse-demo"></span>
+    <a href="#sse-demo" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>数据流效果：
+<img src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/Kapture%202025-02-08%20at%2001.10.03.gif" alt="" loading="lazy" /></p>
+<p>可以看到response一直在变化：
+<img src="https://cyl-blog-image.oss-cn-shenzhen.aliyuncs.com/img/Kapture%202025-02-08%20at%2001.12.07.gif" alt="" loading="lazy" /></p>
+<p>源码：<a href="https://github.com/RiverCui/sse-demo" target="_blank" rel="noopener">RiverCui/sse-demo</a></p>
 
         </div>
         <div class="hx-mt-16"></div>
         
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
-        href="/personal-rss-feed-recommendations/"
-        title="个人向的 RSS 订阅推荐"
+        href="/variable-hoisting-vs-function-hoisting/"
+        title="变量提升 vs 函数提升"
         class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-pr-4 rtl:hx-pl-4"
-      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>个人向的 RSS 订阅推荐</a><a
-        href="/docker-proxy-configuration/"
-        title="Docker 代理配置（解决登录失败问题）"
+      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>变量提升 vs 函数提升</a><a
+        href="/self-hosted-umami-analystics-with-vercel/"
+        title="使用 Vercel 部署自托管 Umami 实时监控网站"
         class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-ml-auto ltr:hx-pl-4 ltr:hx-text-right rtl:hx-mr-auto rtl:hx-pr-4 rtl:hx-text-left"
-      >Docker 代理配置（解决登录失败问题）<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+      >使用 Vercel 部署自托管 Umami 实时监控网站<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
         
       </main>
     </article>
@@ -594,7 +581,7 @@
         
         <li class="hx-flex hx-flex-col">
           <a
-            href="/how-to-manage-files-on-cloud-storage-with-rclone/"
+            href="/why-does-chatgpt-use-sse-to-stream-data/"
             class="hx-text-gray-800 dark:hx-text-gray-100 hover:hx-bg-primary-50 hover:hx-text-primary-600 hover:dark:hx-bg-primary-500/10 hover:dark:hx-text-primary-600 hx-relative hx-cursor-pointer hx-whitespace-nowrap hx-py-1.5 hx-transition-colors ltr:hx-pl-3 ltr:hx-pr-9 rtl:hx-pr-3 rtl:hx-pl-9"
           >中文<span class="hx-absolute hx-inset-y-0 hx-flex hx-items-center ltr:hx-right-3 rtl:hx-left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
         </li>
@@ -602,7 +589,7 @@
         
         <li class="hx-flex hx-flex-col">
           <a
-            href="/en/how-to-manage-files-on-cloud-storage-with-rclone/"
+            href="/en/"
             class="hx-text-gray-800 dark:hx-text-gray-100 hover:hx-bg-primary-50 hover:hx-text-primary-600 hover:dark:hx-bg-primary-500/10 hover:dark:hx-text-primary-600 hx-relative hx-cursor-pointer hx-whitespace-nowrap hx-py-1.5 hx-transition-colors ltr:hx-pl-3 ltr:hx-pr-9 rtl:hx-pr-3 rtl:hx-pl-9"
           >English</a>
         </li>

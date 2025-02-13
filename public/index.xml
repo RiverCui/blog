@@ -78,11 +78,11 @@ umami 官方文档要求使用 PostgreSQL，所以此处我们选择 &lt;a href=
     </item>
     
     <item>
-      <title>ChatGPT 如何处理流式数据</title>
-      <link>https://moon-odyssey.com/how-does-chatgpt-stream-data/</link>
+      <title>为什么 ChatGPT 使用 SSE 进行流式传输</title>
+      <link>https://moon-odyssey.com/why-does-chatgpt-use-sse-to-stream-data/</link>
       <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://moon-odyssey.com/how-does-chatgpt-stream-data/</guid>
+      <guid>https://moon-odyssey.com/why-does-chatgpt-use-sse-to-stream-data/</guid>
       <description>
         
         
