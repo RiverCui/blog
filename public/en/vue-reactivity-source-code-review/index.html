@@ -438,7 +438,6 @@
         <div class="content">
           <blockquote>
   <p>Note: This article was translated from Chinese to English by Claude AI (Anthropic).</p>
-
 </blockquote>
 <h2>Vue 2 Reactivity Principles<span class="hx-absolute -hx-mt-20" id="vue-2-reactivity-principles"></span>
     <a href="#vue-2-reactivity-principles" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>In Vue 2, when a JavaScript object is passed into a Vue instance as a <code>data</code> option, Vue will traverse all <code>properties</code> of this object and use <strong><code>Object.defineProperty()</code></strong> to convert these properties into <code>getters/setters</code>. Dependencies are collected in the <code>getter</code> and updates are triggered in the <code>setter</code>: each component instance corresponds to a <code>watcher</code> instance, which records data <code>properties</code> accessed during component rendering as dependencies. When a dependency&rsquo;s <code>setter</code> is triggered, it notifies the <code>watcher</code>, causing its associated component to re-render. This is the approach behind Vue 2&rsquo;s reactivity implementation. As for how it is specifically implemented, we&rsquo;ll analyze this in detail below.</p>

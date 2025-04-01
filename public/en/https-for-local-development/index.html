@@ -368,7 +368,6 @@
         <div class="content">
           <blockquote>
   <p>Note: This article was translated from Chinese to English by Claude AI (Anthropic).</p>
-
 </blockquote>
 <p>I recently developed a webpage with QR code scanning functionality, but the scanning feature requires camera access, which browsers only allow in HTTPS environments for security reasons. Therefore, to debug these features locally, we need to configure HTTPS for the local development server. The core solution to this problem is <strong>generating local certificates and self-signing them</strong>. While there are many methods available online, I&rsquo;ll introduce two approaches here that you can follow along with - they should be sufficient for basic development needs.</p>
 <h2>mkcert<span class="hx-absolute -hx-mt-20" id="mkcert"></span>

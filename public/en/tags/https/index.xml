@@ -26,7 +26,6 @@
         
         &lt;blockquote&gt;
   &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
-
 &lt;/blockquote&gt;
 &lt;p&gt;I recently developed a webpage with QR code scanning functionality, but the scanning feature requires camera access, which browsers only allow in HTTPS environments for security reasons. Therefore, to debug these features locally, we need to configure HTTPS for the local development server. The core solution to this problem is &lt;strong&gt;generating local certificates and self-signing them&lt;/strong&gt;. While there are many methods available online, I&amp;rsquo;ll introduce two approaches here that you can follow along with - they should be sufficient for basic development needs.&lt;/p&gt;
 &lt;h2&gt;mkcert&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;mkcert&#34;&gt;&lt;/span&gt;
@@ -176,7 +175,6 @@ Note: Remember to restart the service after modifying the configuration.&lt;/p&g
         
         &lt;blockquote&gt;
   &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
-
 &lt;/blockquote&gt;
 &lt;p&gt;Recently, while working on a project reconstruction for my company, which originally had native Android and iOS applications, I decided to understand the business logic and write new code by capturing network packets while operating the business on a mobile phone, referencing existing documentation and code for reconstruction. This article explains &lt;strong&gt;how I used a computer and a mobile phone to capture network requests from mobile devices&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;First, let me introduce the tool — &lt;strong&gt;Charles&lt;/strong&gt;, a network packet capture tool that allows developers to view and monitor HTTP/HTTPS communication data, primarily designed for developers to debug and analyze web applications and mobile apps. You can visit the &lt;a href=&#34;https://www.charlesproxy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Charles website&lt;/a&gt; to download it, which supports Windows, macOS, and Linux.&lt;/p&gt;

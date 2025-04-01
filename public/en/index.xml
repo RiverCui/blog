@@ -25,7 +25,6 @@
         
         &lt;blockquote&gt;
   &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
-
 &lt;/blockquote&gt;
 &lt;h2&gt;Variable Hoisting&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;variable-hoisting&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#variable-hoisting&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Variables declared with &lt;strong&gt;&lt;code&gt;var&lt;/code&gt;&lt;/strong&gt; are hoisted to the top of their current scope. Only the declaration is hoisted, not the initialization.
@@ -161,7 +160,6 @@ Function expressions are not hoisted since they are essentially variable assignm
         
         &lt;blockquote&gt;
   &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
-
 &lt;/blockquote&gt;
 &lt;h2&gt;Vue 2 Reactivity Principles&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;vue-2-reactivity-principles&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#vue-2-reactivity-principles&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In Vue 2, when a JavaScript object is passed into a Vue instance as a &lt;code&gt;data&lt;/code&gt; option, Vue will traverse all &lt;code&gt;properties&lt;/code&gt; of this object and use &lt;strong&gt;&lt;code&gt;Object.defineProperty()&lt;/code&gt;&lt;/strong&gt; to convert these properties into &lt;code&gt;getters/setters&lt;/code&gt;. Dependencies are collected in the &lt;code&gt;getter&lt;/code&gt; and updates are triggered in the &lt;code&gt;setter&lt;/code&gt;: each component instance corresponds to a &lt;code&gt;watcher&lt;/code&gt; instance, which records data &lt;code&gt;properties&lt;/code&gt; accessed during component rendering as dependencies. When a dependency&amp;rsquo;s &lt;code&gt;setter&lt;/code&gt; is triggered, it notifies the &lt;code&gt;watcher&lt;/code&gt;, causing its associated component to re-render. This is the approach behind Vue 2&amp;rsquo;s reactivity implementation. As for how it is specifically implemented, we&amp;rsquo;ll analyze this in detail below.&lt;/p&gt;
@@ -1837,7 +1835,6 @@ So &lt;code&gt;sync&lt;/code&gt; mode is mainly used for scenarios that need imm
         
         &lt;blockquote&gt;
   &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
-
 &lt;/blockquote&gt;
 &lt;h1&gt;MySQL Installation and Usage&lt;/h1&gt;&lt;h2&gt;Installation&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;installation&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#installation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;MySQL Community Server&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;mysql-community-server&#34;&gt;&lt;/span&gt;
@@ -2379,7 +2376,6 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
         
         &lt;blockquote&gt;
   &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
-
 &lt;/blockquote&gt;
 &lt;p&gt;Docker Desktop login failures can occur for many reasons. If you can log in to &lt;a href=&#34;https://hub.docker.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker Hub&lt;/a&gt; via web browser without issues but Docker Desktop login times out, it&amp;rsquo;s likely due to proxy settings. You can follow the method below to configure it.&lt;/p&gt;
 &lt;h2&gt;Login Issues&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;login-issues&#34;&gt;&lt;/span&gt;
@@ -2408,7 +2404,6 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
         
         &lt;blockquote&gt;
   &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
-
 &lt;/blockquote&gt;
 &lt;p&gt;In modern data management, cloud storage has become indispensable. Whether for individual users or enterprises, cloud storage provides convenient storage and access methods. &lt;strong&gt;This article will introduce how to use Rclone, a powerful command-line tool, to manage Alibaba Cloud OSS (Object Storage Service) files&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2&gt;What is Rclone?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;what-is-rclone&#34;&gt;&lt;/span&gt;
@@ -2546,7 +2541,6 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
         
         &lt;blockquote&gt;
   &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
-
 &lt;/blockquote&gt;
 &lt;h3&gt;The Debate Around Masonry&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;the-debate-around-masonry&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#the-debate-around-masonry&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Recently, the WebKit team published an article titled &lt;a href=&#34;https://webkit.org/blog/15269/help-us-invent-masonry-layouts-for-css-grid-level-3/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Help us invent CSS Grid Level 3, aka &amp;ldquo;Masonry&amp;rdquo; layout&lt;/a&gt;, discussing the proposal for &lt;code&gt;Masonry&lt;/code&gt; layout.&lt;/p&gt;
@@ -2645,7 +2639,6 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED WITH my
         
         &lt;blockquote&gt;
   &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
-
 &lt;/blockquote&gt;
 &lt;p&gt;I recently developed a webpage with QR code scanning functionality, but the scanning feature requires camera access, which browsers only allow in HTTPS environments for security reasons. Therefore, to debug these features locally, we need to configure HTTPS for the local development server. The core solution to this problem is &lt;strong&gt;generating local certificates and self-signing them&lt;/strong&gt;. While there are many methods available online, I&amp;rsquo;ll introduce two approaches here that you can follow along with - they should be sufficient for basic development needs.&lt;/p&gt;
 &lt;h2&gt;mkcert&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;mkcert&#34;&gt;&lt;/span&gt;
@@ -2795,7 +2788,6 @@ Note: Remember to restart the service after modifying the configuration.&lt;/p&g
         
         &lt;blockquote&gt;
   &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
-
 &lt;/blockquote&gt;
 &lt;h2&gt;NPM&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;npm&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#npm&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;NPM is the package manager that comes with Node.js.&lt;/p&gt;
@@ -2897,7 +2889,6 @@ Note: Remember to restart the service after modifying the configuration.&lt;/p&g
         
         &lt;blockquote&gt;
   &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
-
 &lt;/blockquote&gt;
 &lt;h2&gt;Modularization and Its Benefits&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;modularization-and-its-benefits&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#modularization-and-its-benefits&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The biggest difference between Node.js and browser JavaScript is that &lt;strong&gt;Node.js is modular&lt;/strong&gt;.&lt;/p&gt;
@@ -3263,12 +3254,10 @@ For example:&lt;/li&gt;
         
         &lt;blockquote&gt;
   &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
-
 &lt;/blockquote&gt;
 &lt;h2&gt;Node.js is a JavaScript Runtime Environment&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;nodejs-is-a-javascript-runtime-environment&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#nodejs-is-a-javascript-runtime-environment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;blockquote&gt;
   &lt;p&gt;Node.js® is an open-source, cross-platform JavaScript runtime environment.&lt;center&gt;&lt;font size=2&gt;Source: &lt;a href=&#34;https://nodejs.org/en&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Node.js&lt;/a&gt;&lt;/font&gt;&lt;/center&gt;&lt;/p&gt;
-
 &lt;/blockquote&gt;
 &lt;p&gt;Node.js is not a language but a platform, serving as a JavaScript runtime environment/host environment.&lt;/p&gt;
 &lt;p&gt;Any discussion of Node.js inevitably involves the Chrome V8 engine. In 2009, Google began developing the Chrome browser, now the most widely used browser, and the Chrome V8 engine developed under Lars Bak&amp;rsquo;s leadership was born, launching a performance revolution for JavaScript. Node.js was built on the Chrome V8 engine. Later, Node.js creator Ryan Dahl also built &lt;a href=&#34;https://github.com/denoland/deno&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deno&lt;/a&gt;.&lt;/p&gt;
@@ -3323,7 +3312,6 @@ Source: &lt;a href=&#34;https://chathuranga94.medium.com/nodejs-architecture-con
         
         &lt;blockquote&gt;
   &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
-
 &lt;/blockquote&gt;
 &lt;p&gt;Recently, while working on a project reconstruction for my company, which originally had native Android and iOS applications, I decided to understand the business logic and write new code by capturing network packets while operating the business on a mobile phone, referencing existing documentation and code for reconstruction. This article explains &lt;strong&gt;how I used a computer and a mobile phone to capture network requests from mobile devices&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;First, let me introduce the tool — &lt;strong&gt;Charles&lt;/strong&gt;, a network packet capture tool that allows developers to view and monitor HTTP/HTTPS communication data, primarily designed for developers to debug and analyze web applications and mobile apps. You can visit the &lt;a href=&#34;https://www.charlesproxy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Charles website&lt;/a&gt; to download it, which supports Windows, macOS, and Linux.&lt;/p&gt;

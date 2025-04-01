@@ -26,7 +26,6 @@
         
         &lt;blockquote&gt;
   &lt;p&gt;Note: This article was translated from Chinese to English by Claude AI (Anthropic).&lt;/p&gt;
-
 &lt;/blockquote&gt;
 &lt;p&gt;Docker Desktop login failures can occur for many reasons. If you can log in to &lt;a href=&#34;https://hub.docker.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker Hub&lt;/a&gt; via web browser without issues but Docker Desktop login times out, it&amp;rsquo;s likely due to proxy settings. You can follow the method below to configure it.&lt;/p&gt;
 &lt;h2&gt;Login Issues&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;login-issues&#34;&gt;&lt;/span&gt;
